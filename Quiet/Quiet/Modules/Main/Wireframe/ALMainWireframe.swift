@@ -18,19 +18,11 @@ class ALMainWireframe: ALMainViewWireframeProtocol {
     
     func goTo(_ section: Section) {
         switch section {
-        case .SleepCast:
-            break
         case .Breathe:
             presentBreatheSection()
             break
-        case .Sleep:
-            break
-        case .Landscapes:
-            break
-        case .ASMR:
-            break
-        case .YogaStretch:
-            break
+        default:
+            presentGeneralSelection(section)
         }
     }
     
@@ -39,5 +31,10 @@ class ALMainWireframe: ALMainViewWireframeProtocol {
     private func presentBreatheSection() {
         let breatheWireframe = breatheFactory()
         breatheWireframe.presentBreatheViewIn(view)
+    }
+    
+    private func presentGeneralSelection(_ section: Section) {
+        let wireframe = generalSelectionFactory(of: section)
+        wireframe.presentGeneralSelectionViewIn(view)
     }
 }

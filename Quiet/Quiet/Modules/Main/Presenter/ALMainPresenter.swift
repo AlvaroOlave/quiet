@@ -24,8 +24,6 @@ class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSo
         return cells.count
     }
     
-    
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ALMainCollectionViewCell", for: indexPath) as! ALMainCollectionViewCell
         

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		380C6CA321AB78FD00BF853C /* ALGeneralSelectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA221AB78FD00BF853C /* ALGeneralSelectionProtocols.swift */; };
+		380C6CA521AB790C00BF853C /* ALGeneralSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA421AB790C00BF853C /* ALGeneralSelectionPresenter.swift */; };
+		380C6CA721AB791700BF853C /* ALGeneralSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA621AB791700BF853C /* ALGeneralSelectionInteractor.swift */; };
+		380C6CA921AB792000BF853C /* ALGeneralSelectionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA821AB792000BF853C /* ALGeneralSelectionDataManager.swift */; };
+		380C6CAB21AB792B00BF853C /* ALGeneralSelectionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CAA21AB792B00BF853C /* ALGeneralSelectionWireframe.swift */; };
+		380C6CAE21AB794700BF853C /* ALGeneralSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CAC21AB794700BF853C /* ALGeneralSelectionViewController.swift */; };
+		380C6CAF21AB794700BF853C /* ALGeneralSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380C6CAD21AB794700BF853C /* ALGeneralSelectionViewController.xib */; };
 		381F2FEA21A82C6C00B573F8 /* ALMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F2FE821A82C6C00B573F8 /* ALMainCollectionViewCell.swift */; };
 		381F2FEB21A82C6C00B573F8 /* ALMainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381F2FE921A82C6C00B573F8 /* ALMainCollectionViewCell.xib */; };
 		3861379521A41AEC000BD657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861379421A41AEC000BD657 /* AppDelegate.swift */; };
@@ -28,6 +35,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		380C6CA221AB78FD00BF853C /* ALGeneralSelectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionProtocols.swift; sourceTree = "<group>"; };
+		380C6CA421AB790C00BF853C /* ALGeneralSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionPresenter.swift; sourceTree = "<group>"; };
+		380C6CA621AB791700BF853C /* ALGeneralSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionInteractor.swift; sourceTree = "<group>"; };
+		380C6CA821AB792000BF853C /* ALGeneralSelectionDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionDataManager.swift; sourceTree = "<group>"; };
+		380C6CAA21AB792B00BF853C /* ALGeneralSelectionWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionWireframe.swift; sourceTree = "<group>"; };
+		380C6CAC21AB794700BF853C /* ALGeneralSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionViewController.swift; sourceTree = "<group>"; };
+		380C6CAD21AB794700BF853C /* ALGeneralSelectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALGeneralSelectionViewController.xib; sourceTree = "<group>"; };
 		381F2FE821A82C6C00B573F8 /* ALMainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALMainCollectionViewCell.swift; sourceTree = "<group>"; };
 		381F2FE921A82C6C00B573F8 /* ALMainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALMainCollectionViewCell.xib; sourceTree = "<group>"; };
 		3861379121A41AEC000BD657 /* Quiet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +75,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		380C6C9B21AB784600BF853C /* GeneralSelection */ = {
+			isa = PBXGroup;
+			children = (
+				380C6CA121AB78B700BF853C /* Protocols */,
+				380C6CA021AB78B200BF853C /* View */,
+				380C6C9F21AB78AD00BF853C /* Presenter */,
+				380C6C9E21AB78A700BF853C /* Interactor */,
+				380C6C9D21AB78A100BF853C /* DataManager */,
+				380C6C9C21AB789B00BF853C /* Wireframe */,
+			);
+			path = GeneralSelection;
+			sourceTree = "<group>";
+		};
+		380C6C9C21AB789B00BF853C /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				380C6CAA21AB792B00BF853C /* ALGeneralSelectionWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		380C6C9D21AB78A100BF853C /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				380C6CA821AB792000BF853C /* ALGeneralSelectionDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		380C6C9E21AB78A700BF853C /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				380C6CA621AB791700BF853C /* ALGeneralSelectionInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		380C6C9F21AB78AD00BF853C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				380C6CA421AB790C00BF853C /* ALGeneralSelectionPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		380C6CA021AB78B200BF853C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				380C6CAC21AB794700BF853C /* ALGeneralSelectionViewController.swift */,
+				380C6CAD21AB794700BF853C /* ALGeneralSelectionViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		380C6CA121AB78B700BF853C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				380C6CA221AB78FD00BF853C /* ALGeneralSelectionProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		381F2FE721A82C3B00B573F8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +179,7 @@
 		386137A621A463BB000BD657 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				380C6C9B21AB784600BF853C /* GeneralSelection */,
 				386137AB21A463E0000BD657 /* Main */,
 				386137BB21A47266000BD657 /* Breathe */,
 			);
@@ -278,6 +355,7 @@
 				386137CD21A473B0000BD657 /* ALBreatheViewController.xib in Resources */,
 				3861379F21A41AED000BD657 /* LaunchScreen.storyboard in Resources */,
 				3861379C21A41AED000BD657 /* Assets.xcassets in Resources */,
+				380C6CAF21AB794700BF853C /* ALGeneralSelectionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,16 +367,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				386137D221A47832000BD657 /* ALStyleSheet.swift in Sources */,
+				380C6CA521AB790C00BF853C /* ALGeneralSelectionPresenter.swift in Sources */,
 				386137B521A46461000BD657 /* ALMainWireframe.swift in Sources */,
+				380C6CA921AB792000BF853C /* ALGeneralSelectionDataManager.swift in Sources */,
 				386137A921A463D5000BD657 /* ALMainViewController.swift in Sources */,
 				3861379521A41AEC000BD657 /* AppDelegate.swift in Sources */,
+				380C6CA321AB78FD00BF853C /* ALGeneralSelectionProtocols.swift in Sources */,
+				380C6CAE21AB794700BF853C /* ALGeneralSelectionViewController.swift in Sources */,
 				386137C721A472EF000BD657 /* ALBreathePresenter.swift in Sources */,
 				386137B321A46457000BD657 /* ALMainPresenter.swift in Sources */,
+				380C6CAB21AB792B00BF853C /* ALGeneralSelectionWireframe.swift in Sources */,
 				386137B121A4644A000BD657 /* ALMainProtocols.swift in Sources */,
 				386137D021A4782A000BD657 /* ALFontSheet.swift in Sources */,
 				386137BA21A46BD3000BD657 /* ALFactory.swift in Sources */,
 				386137CC21A473B0000BD657 /* ALBreatheViewController.swift in Sources */,
 				381F2FEA21A82C6C00B573F8 /* ALMainCollectionViewCell.swift in Sources */,
+				380C6CA721AB791700BF853C /* ALGeneralSelectionInteractor.swift in Sources */,
 				386137C121A472C4000BD657 /* ALBreatheProtocols.swift in Sources */,
 				386137C921A472FD000BD657 /* ALBreatheWireframe.swift in Sources */,
 			);

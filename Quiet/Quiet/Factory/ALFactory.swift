@@ -31,3 +31,19 @@ func breatheFactory() -> ALBreatheViewWireframeProtocol {
     
     return wireframe
 }
+
+func generalSelectionFactory(of section: Section) -> ALGeneralSelectionViewWireframeProtocol {
+    let wireframe = ALGeneralSelectionWireframe()
+
+    wireframe.view = ALGeneralSelectionViewController(nibName: "ALGeneralSelectionViewController", bundle: nil)
+    
+    wireframe.view.presenter = ALGeneralSelectionPresenter()
+    wireframe.view.presenter.view = wireframe.view
+    wireframe.view.presenter.wireframe = wireframe
+    wireframe.view.presenter.interactor = ALGeneralSelectionInteractor()
+    
+    wireframe.view.presenter.interactor.section = section
+    wireframe.view.presenter.interactor.dataManager = ALGeneralSelectionDataManager()
+    
+    return wireframe
+}
