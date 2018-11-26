@@ -12,7 +12,6 @@ class ALMainCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var icon: UIImageView!
-//    @IBOutlet weak var backgroundImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,26 +19,25 @@ class ALMainCollectionViewCell: UICollectionViewCell {
         commonInit()
     }
 
-//    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
-//        
-//        return CGSize(width: frame.width / 2.0, height: 150)
-//    }
     
     //MARK:- private methods
     
     private func commonInit() {
         layer.cornerRadius = 6.0
         title.text = "Start"
-        title.textColor = BROWNISH_GREY
-        title.font = FontSheet.FontRegularWith(size: BIG_FONT_SIZE)
+        title.textColor = WARM_GREY
+        title.font = FontSheet.FontRegularWith(size: SMALL_FONT_SIZE)
+        
+        icon.layer.cornerRadius = icon.bounds.height / 2.0
+        icon.layer.borderColor = WARM_GREY.cgColor
+        icon.layer.borderWidth = 2.0
     }
     
     //MARK:- public methods
     
     func setCellTitle(_ title: String? = nil, background: UIImage? = nil, icon: UIImage? = nil) {
-        self.title.text = title
-        (backgroundView as? UIImageView)?.image = background
-        backgroundColor = BORING_GREEN
+        self.title.text = title?.replacingOccurrences(of: " ", with: "\n")
+        
         self.icon.image = icon
     }
 }
