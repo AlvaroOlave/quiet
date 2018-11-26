@@ -14,12 +14,30 @@ class ALMainWireframe: ALMainViewWireframeProtocol {
     
     func presentMainViewInWindow(_ window: UIWindow) {
         window.rootViewController = view
-        window.rootViewController?.view.alpha = 0.0
-        UIView.transition(with: window,
-                          duration: 0.2,
-                          options: [.transitionCrossDissolve, .curveEaseInOut],
-                          animations: {
-                            window.rootViewController?.view.alpha = 1.0
-        })
+    }
+    
+    func goTo(_ section: Section) {
+        switch section {
+        case .SleepCast:
+            break
+        case .Breathe:
+            presentBreatheSection()
+            break
+        case .Sleep:
+            break
+        case .Landscapes:
+            break
+        case .ASMR:
+            break
+        case .YogaStretch:
+            break
+        }
+    }
+    
+    //MARK:- privateMethods
+    
+    private func presentBreatheSection() {
+        let breatheWireframe = breatheFactory()
+        breatheWireframe.presentBreatheViewIn(view)
     }
 }

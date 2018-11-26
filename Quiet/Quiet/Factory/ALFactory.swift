@@ -19,3 +19,15 @@ func mainFactory() -> ALMainViewWireframeProtocol {
     
     return wireframe
 }
+
+func breatheFactory() -> ALBreatheViewWireframeProtocol {
+    let wireframe = ALBreatheWireframe()
+    
+    wireframe.view = ALBreatheViewController(nibName: "ALBreatheViewController", bundle: nil)
+    
+    wireframe.view.presenter = ALBreathePresenter()
+    wireframe.view.presenter.view = wireframe.view
+    wireframe.view.presenter.wireframe = wireframe
+    
+    return wireframe
+}

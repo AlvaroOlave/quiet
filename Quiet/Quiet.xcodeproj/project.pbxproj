@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381F2FEA21A82C6C00B573F8 /* ALMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F2FE821A82C6C00B573F8 /* ALMainCollectionViewCell.swift */; };
+		381F2FEB21A82C6C00B573F8 /* ALMainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381F2FE921A82C6C00B573F8 /* ALMainCollectionViewCell.xib */; };
 		3861379521A41AEC000BD657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861379421A41AEC000BD657 /* AppDelegate.swift */; };
 		3861379C21A41AED000BD657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3861379B21A41AED000BD657 /* Assets.xcassets */; };
 		3861379F21A41AED000BD657 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3861379D21A41AED000BD657 /* LaunchScreen.storyboard */; };
@@ -16,9 +18,18 @@
 		386137B321A46457000BD657 /* ALMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137B221A46457000BD657 /* ALMainPresenter.swift */; };
 		386137B521A46461000BD657 /* ALMainWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137B421A46461000BD657 /* ALMainWireframe.swift */; };
 		386137BA21A46BD3000BD657 /* ALFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137B921A46BD3000BD657 /* ALFactory.swift */; };
+		386137C121A472C4000BD657 /* ALBreatheProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137C021A472C4000BD657 /* ALBreatheProtocols.swift */; };
+		386137C721A472EF000BD657 /* ALBreathePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137C621A472EF000BD657 /* ALBreathePresenter.swift */; };
+		386137C921A472FD000BD657 /* ALBreatheWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137C821A472FD000BD657 /* ALBreatheWireframe.swift */; };
+		386137CC21A473B0000BD657 /* ALBreatheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137CA21A473AF000BD657 /* ALBreatheViewController.swift */; };
+		386137CD21A473B0000BD657 /* ALBreatheViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386137CB21A473AF000BD657 /* ALBreatheViewController.xib */; };
+		386137D021A4782A000BD657 /* ALFontSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137CF21A4782A000BD657 /* ALFontSheet.swift */; };
+		386137D221A47832000BD657 /* ALStyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137D121A47832000BD657 /* ALStyleSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		381F2FE821A82C6C00B573F8 /* ALMainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALMainCollectionViewCell.swift; sourceTree = "<group>"; };
+		381F2FE921A82C6C00B573F8 /* ALMainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALMainCollectionViewCell.xib; sourceTree = "<group>"; };
 		3861379121A41AEC000BD657 /* Quiet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3861379421A41AEC000BD657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3861379B21A41AED000BD657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -30,6 +41,13 @@
 		386137B221A46457000BD657 /* ALMainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALMainPresenter.swift; sourceTree = "<group>"; };
 		386137B421A46461000BD657 /* ALMainWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALMainWireframe.swift; sourceTree = "<group>"; };
 		386137B921A46BD3000BD657 /* ALFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALFactory.swift; sourceTree = "<group>"; };
+		386137C021A472C4000BD657 /* ALBreatheProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBreatheProtocols.swift; sourceTree = "<group>"; };
+		386137C621A472EF000BD657 /* ALBreathePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBreathePresenter.swift; sourceTree = "<group>"; };
+		386137C821A472FD000BD657 /* ALBreatheWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBreatheWireframe.swift; sourceTree = "<group>"; };
+		386137CA21A473AF000BD657 /* ALBreatheViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALBreatheViewController.swift; sourceTree = "<group>"; };
+		386137CB21A473AF000BD657 /* ALBreatheViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ALBreatheViewController.xib; sourceTree = "<group>"; };
+		386137CF21A4782A000BD657 /* ALFontSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALFontSheet.swift; sourceTree = "<group>"; };
+		386137D121A47832000BD657 /* ALStyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALStyleSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		381F2FE721A82C3B00B573F8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				381F2FE821A82C6C00B573F8 /* ALMainCollectionViewCell.swift */,
+				381F2FE921A82C6C00B573F8 /* ALMainCollectionViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		3861378821A41AEC000BD657 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +89,7 @@
 		3861379321A41AEC000BD657 /* Quiet */ = {
 			isa = PBXGroup;
 			children = (
+				386137CE21A4780C000BD657 /* Style */,
 				386137B821A46BC4000BD657 /* Factory */,
 				386137A621A463BB000BD657 /* Modules */,
 				3861379421A41AEC000BD657 /* AppDelegate.swift */,
@@ -76,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				386137AB21A463E0000BD657 /* Main */,
+				386137BB21A47266000BD657 /* Breathe */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -110,6 +139,7 @@
 		386137AE21A4642A000BD657 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				381F2FE721A82C3B00B573F8 /* Cells */,
 				386137A721A463D5000BD657 /* ALMainViewController.swift */,
 				386137A821A463D5000BD657 /* ALMainViewController.xib */,
 			);
@@ -130,6 +160,59 @@
 				386137B921A46BD3000BD657 /* ALFactory.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		386137BB21A47266000BD657 /* Breathe */ = {
+			isa = PBXGroup;
+			children = (
+				386137BF21A4729A000BD657 /* Protocols */,
+				386137BE21A47296000BD657 /* View */,
+				386137BD21A4728D000BD657 /* Presenter */,
+				386137BC21A47281000BD657 /* Wireframe */,
+			);
+			path = Breathe;
+			sourceTree = "<group>";
+		};
+		386137BC21A47281000BD657 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				386137C821A472FD000BD657 /* ALBreatheWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		386137BD21A4728D000BD657 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				386137C621A472EF000BD657 /* ALBreathePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		386137BE21A47296000BD657 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				386137CA21A473AF000BD657 /* ALBreatheViewController.swift */,
+				386137CB21A473AF000BD657 /* ALBreatheViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		386137BF21A4729A000BD657 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				386137C021A472C4000BD657 /* ALBreatheProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		386137CE21A4780C000BD657 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				386137CF21A4782A000BD657 /* ALFontSheet.swift */,
+				386137D121A47832000BD657 /* ALStyleSheet.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +274,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				386137AA21A463D5000BD657 /* ALMainViewController.xib in Resources */,
+				381F2FEB21A82C6C00B573F8 /* ALMainCollectionViewCell.xib in Resources */,
+				386137CD21A473B0000BD657 /* ALBreatheViewController.xib in Resources */,
 				3861379F21A41AED000BD657 /* LaunchScreen.storyboard in Resources */,
 				3861379C21A41AED000BD657 /* Assets.xcassets in Resources */,
 			);
@@ -203,12 +288,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				386137D221A47832000BD657 /* ALStyleSheet.swift in Sources */,
 				386137B521A46461000BD657 /* ALMainWireframe.swift in Sources */,
 				386137A921A463D5000BD657 /* ALMainViewController.swift in Sources */,
 				3861379521A41AEC000BD657 /* AppDelegate.swift in Sources */,
+				386137C721A472EF000BD657 /* ALBreathePresenter.swift in Sources */,
 				386137B321A46457000BD657 /* ALMainPresenter.swift in Sources */,
 				386137B121A4644A000BD657 /* ALMainProtocols.swift in Sources */,
+				386137D021A4782A000BD657 /* ALFontSheet.swift in Sources */,
 				386137BA21A46BD3000BD657 /* ALFactory.swift in Sources */,
+				386137CC21A473B0000BD657 /* ALBreatheViewController.swift in Sources */,
+				381F2FEA21A82C6C00B573F8 /* ALMainCollectionViewCell.swift in Sources */,
+				386137C121A472C4000BD657 /* ALBreatheProtocols.swift in Sources */,
+				386137C921A472FD000BD657 /* ALBreatheWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

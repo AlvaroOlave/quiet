@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ALMainViewProtocol {
-    var presenter: ALMainPresenterProtocol! {get set}
+    var presenter: (ALMainPresenterProtocol & UICollectionViewDelegate & UICollectionViewDataSource)! {get set}
 }
 
 protocol ALMainPresenterProtocol {
@@ -23,4 +23,14 @@ protocol ALMainViewWireframeProtocol {
     var view: (ALMainViewProtocol & UIViewController)! {get set}
     
     func presentMainViewInWindow(_ window: UIWindow)
+    func goTo(_ section: Section)
+}
+
+enum Section: String {
+    case SleepCast = "SleepCast"
+    case Breathe = "Breathe"
+    case Sleep = "Sleep"
+    case Landscapes = "Landscapes"
+    case ASMR = "ASMR"
+    case YogaStretch = "Yoga Stretch"
 }
