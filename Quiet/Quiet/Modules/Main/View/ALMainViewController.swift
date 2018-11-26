@@ -28,7 +28,7 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         mainCollectionView.register(UINib(nibName: "ALMainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ALMainCollectionViewCell")
     }
     
-    func configureCollectionViewLayout() {
+    private func configureCollectionViewLayout() {
         let flowLayout = UICollectionViewFlowLayout()
         
         flowLayout.itemSize = CGSize(width: 85, height: 150)
@@ -37,6 +37,5 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         flowLayout.minimumLineSpacing = 10
         mainCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         mainCollectionView.collectionViewLayout = flowLayout
-        mainCollectionView.translatesAutoresizingMaskIntoConstraints = false
     }
 }

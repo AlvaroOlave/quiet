@@ -10,6 +10,8 @@ import UIKit
 
 protocol ALGeneralSelectionViewProtocol {
     var presenter: (ALGeneralSelectionPresenterProtocol & UICollectionViewDelegate & UICollectionViewDataSource)! {get set}
+    
+    func reloadCollectionView()
 }
 
 protocol ALGeneralSelectionPresenterProtocol {
@@ -18,15 +20,18 @@ protocol ALGeneralSelectionPresenterProtocol {
     var wireframe: ALGeneralSelectionViewWireframeProtocol! {get set}
     
     func viewDidLoad()
+    func backButtonPressed()
 }
 
 protocol ALGeneralSelectionInteractorProtocol {
     var dataManager: ALGeneralSelectionDataManagerProtocol! {get set}
     var section: Section! {get set}
+    
+    func getResourcesList(completion: @escaping ([ALSectionElem]) -> Void)
 }
 
 protocol ALGeneralSelectionDataManagerProtocol {
-    
+    func getResourcesListOf(_ section: Section, completion: @escaping ([Any]?) -> Void)
 }
 
 

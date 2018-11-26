@@ -8,4 +8,7 @@
 
 class ALGeneralSelectionDataManager: ALGeneralSelectionDataManagerProtocol {
     
+    func getResourcesListOf(_ section: Section, completion: @escaping ([Any]?) -> Void) {
+        completion(nil)
+    }
 }
