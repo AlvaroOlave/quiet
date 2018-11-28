@@ -11,6 +11,8 @@ import UIKit
 protocol ALGeneralSelectionViewProtocol {
     var presenter: (ALGeneralSelectionPresenterProtocol & UICollectionViewDelegate & UICollectionViewDataSource)! {get set}
     
+    var section: Section! {get set}
+    
     func reloadCollectionView()
 }
 
@@ -40,5 +42,6 @@ protocol ALGeneralSelectionViewWireframeProtocol {
     var view: (ALGeneralSelectionViewProtocol & UIViewController)! {get set}
     
     func presentGeneralSelectionViewIn(_ view: UIViewController)
+    func presentSectionElem(_ elem: ALSectionElem)
     func dismiss()
 }

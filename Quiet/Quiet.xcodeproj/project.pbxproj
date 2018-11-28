@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3806EAD421AD9A4000C93662 /* ALSleepProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EAD321AD9A4000C93662 /* ALSleepProtocols.swift */; };
+		3806EAD721AD9A5400C93662 /* ALSleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EAD521AD9A5400C93662 /* ALSleepViewController.swift */; };
+		3806EAD821AD9A5400C93662 /* ALSleepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3806EAD621AD9A5400C93662 /* ALSleepViewController.xib */; };
+		3806EADA21AD9A6400C93662 /* ALSleepPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EAD921AD9A6400C93662 /* ALSleepPresenter.swift */; };
+		3806EADC21AD9A6E00C93662 /* ALSleepWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EADB21AD9A6E00C93662 /* ALSleepWireframe.swift */; };
+		3806EADF21AD9C8500C93662 /* ALBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EADE21AD9C8500C93662 /* ALBaseViewController.swift */; };
 		380C6CA321AB78FD00BF853C /* ALGeneralSelectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA221AB78FD00BF853C /* ALGeneralSelectionProtocols.swift */; };
 		380C6CA521AB790C00BF853C /* ALGeneralSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA421AB790C00BF853C /* ALGeneralSelectionPresenter.swift */; };
 		380C6CA721AB791700BF853C /* ALGeneralSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA621AB791700BF853C /* ALGeneralSelectionInteractor.swift */; };
@@ -38,6 +44,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3806EAD321AD9A4000C93662 /* ALSleepProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSleepProtocols.swift; sourceTree = "<group>"; };
+		3806EAD521AD9A5400C93662 /* ALSleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSleepViewController.swift; sourceTree = "<group>"; };
+		3806EAD621AD9A5400C93662 /* ALSleepViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALSleepViewController.xib; sourceTree = "<group>"; };
+		3806EAD921AD9A6400C93662 /* ALSleepPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSleepPresenter.swift; sourceTree = "<group>"; };
+		3806EADB21AD9A6E00C93662 /* ALSleepWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSleepWireframe.swift; sourceTree = "<group>"; };
+		3806EADE21AD9C8500C93662 /* ALBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBaseViewController.swift; sourceTree = "<group>"; };
 		380C6CA221AB78FD00BF853C /* ALGeneralSelectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionProtocols.swift; sourceTree = "<group>"; };
 		380C6CA421AB790C00BF853C /* ALGeneralSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionPresenter.swift; sourceTree = "<group>"; };
 		380C6CA621AB791700BF853C /* ALGeneralSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionInteractor.swift; sourceTree = "<group>"; };
@@ -81,6 +93,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3806EACE21AD99BD00C93662 /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				3806EAD221AD9A2D00C93662 /* Protocols */,
+				3806EAD121AD9A2900C93662 /* View */,
+				3806EAD021AD9A2300C93662 /* Presenter */,
+				3806EACF21AD9A1C00C93662 /* Wireframe */,
+			);
+			path = Sleep;
+			sourceTree = "<group>";
+		};
+		3806EACF21AD9A1C00C93662 /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				3806EADB21AD9A6E00C93662 /* ALSleepWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		3806EAD021AD9A2300C93662 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3806EAD921AD9A6400C93662 /* ALSleepPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3806EAD121AD9A2900C93662 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3806EAD521AD9A5400C93662 /* ALSleepViewController.swift */,
+				3806EAD621AD9A5400C93662 /* ALSleepViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3806EAD221AD9A2D00C93662 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3806EAD321AD9A4000C93662 /* ALSleepProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3806EADD21AD9C4800C93662 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3806EADE21AD9C8500C93662 /* ALBaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		380C6C9B21AB784600BF853C /* GeneralSelection */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +268,8 @@
 		386137A621A463BB000BD657 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3806EADD21AD9C4800C93662 /* Base */,
+				3806EACE21AD99BD00C93662 /* Sleep */,
 				380C6C9B21AB784600BF853C /* GeneralSelection */,
 				386137AB21A463E0000BD657 /* Main */,
 				386137BB21A47266000BD657 /* Breathe */,
@@ -382,6 +448,7 @@
 				3861379F21A41AED000BD657 /* LaunchScreen.storyboard in Resources */,
 				3861379C21A41AED000BD657 /* Assets.xcassets in Resources */,
 				380C6CAF21AB794700BF853C /* ALGeneralSelectionViewController.xib in Resources */,
+				3806EAD821AD9A5400C93662 /* ALSleepViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,11 +459,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3806EAD421AD9A4000C93662 /* ALSleepProtocols.swift in Sources */,
 				386137D221A47832000BD657 /* ALStyleSheet.swift in Sources */,
 				380C6CA521AB790C00BF853C /* ALGeneralSelectionPresenter.swift in Sources */,
 				386137B521A46461000BD657 /* ALMainWireframe.swift in Sources */,
+				3806EADC21AD9A6E00C93662 /* ALSleepWireframe.swift in Sources */,
 				380C6CA921AB792000BF853C /* ALGeneralSelectionDataManager.swift in Sources */,
+				3806EADF21AD9C8500C93662 /* ALBaseViewController.swift in Sources */,
+				3806EAD721AD9A5400C93662 /* ALSleepViewController.swift in Sources */,
 				386137A921A463D5000BD657 /* ALMainViewController.swift in Sources */,
+				3806EADA21AD9A6400C93662 /* ALSleepPresenter.swift in Sources */,
 				3861379521A41AEC000BD657 /* AppDelegate.swift in Sources */,
 				380C6CA321AB78FD00BF853C /* ALGeneralSelectionProtocols.swift in Sources */,
 				380C6CAE21AB794700BF853C /* ALGeneralSelectionViewController.swift in Sources */,
@@ -553,6 +625,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Quiet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -561,7 +634,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -572,6 +645,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Quiet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -580,7 +654,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

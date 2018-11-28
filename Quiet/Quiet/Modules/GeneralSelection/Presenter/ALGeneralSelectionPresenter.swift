@@ -44,6 +44,7 @@ class ALGeneralSelectionPresenter: NSObject, ALGeneralSelectionPresenterProtocol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        wireframe.presentSectionElem(resourceList[indexPath.row])
     }
     
     //MARK:- UICollectionViewDelegate methods

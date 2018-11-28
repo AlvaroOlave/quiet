@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -43,13 +43,13 @@
                 <constraint firstItem="LYt-xp-NzN" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="HTm-Fi-igl"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="dOZ-xd-l1o" secondAttribute="bottom" constant="16" id="Ik1-Kd-hwx"/>
                 <constraint firstItem="dOZ-xd-l1o" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="16" id="Lvg-zh-pnr"/>
-                <constraint firstItem="LYt-xp-NzN" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" id="aJM-BU-5Lo"/>
+                <constraint firstItem="LYt-xp-NzN" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" id="Scq-nv-sAO"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="dOZ-xd-l1o" secondAttribute="trailing" constant="16" id="p2o-0P-mm6"/>
                 <constraint firstItem="EHO-hp-HoH" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" constant="24" id="qQc-Ab-67W"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
-                <outlet property="backgroundView" destination="LYt-xp-NzN" id="uxQ-TI-jyM"/>
+                <outlet property="backgroungImage" destination="LYt-xp-NzN" id="CAE-uW-BZU"/>
                 <outlet property="lockImage" destination="EHO-hp-HoH" id="Lkr-BV-MhF"/>
                 <outlet property="titleLabel" destination="dOZ-xd-l1o" id="XRa-9t-uey"/>
             </connections>

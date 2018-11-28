@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ALGeneralSelectionViewController: UIViewController, ALGeneralSelectionViewProtocol {
+class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelectionViewProtocol {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var backIcon: UIImageView!
+    
+    var section: Section!
     
     var presenter: (ALGeneralSelectionPresenterProtocol & UICollectionViewDataSource & UICollectionViewDelegate)!
 
@@ -29,29 +29,43 @@ class ALGeneralSelectionViewController: UIViewController, ALGeneralSelectionView
         collectionView.dataSource = presenter
         collectionView.delegate = presenter
         collectionView.register(UINib(nibName: "ALResourceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ALResourceCollectionViewCell")
-        configureBackButton()
-    }
-    
-    private func configureBackButton() {
-        backView.backgroundColor = MERCURY_GREY
-        backView.layer.cornerRadius = backView.bounds.height / 2.0
-        backView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backButtonPressed)))
-        backView.isUserInteractionEnabled = true
         
-        backIcon.image = UIImage(named: "icBackArrow")
+        backIcon?.image = UIImage(named: "cancel")
     }
     
-    @objc func backButtonPressed() { presenter.backButtonPressed() }
+    override func backButtonPressed() { presenter.backButtonPressed() }
     
     private func configureCollectionViewLayout() {
         let flowLayout = UICollectionViewFlowLayout()
         
-        flowLayout.itemSize = CGSize(width: collectionView.bounds.width - 20,
-                                     height: 150)
+        flowLayout.itemSize = cellFrameForSection()
         flowLayout.scrollDirection = .vertical
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 10
-        collectionView.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = contentInsets()
         collectionView.collectionViewLayout = flowLayout
+    }
+    
+    private func cellFrameForSection() -> CGSize {
+        switch section {
+        case .SleepCast?:
+            return CGSize(width: collectionView.bounds.width - 20, height: 150)
+        case .Landscapes?:
+            return CGSize(width: collectionView.bounds.width - 20, height: 150)
+        case .Sleep?:
+            return CGSize(width: (collectionView.bounds.width / 3.0) - 20, height: 150)
+        case .ASMR?:
+            return CGSize(width: (collectionView.bounds.width / 3.0) - 20, height: 150)
+        case .YogaStretch?:
+            return CGSize(width: collectionView.bounds.width - 20, height: 200)
+        default:
+            return CGSize(width: collectionView.bounds.width - 20, height: 150)
+        }
+    }
+    
+    private func contentInsets() -> UIEdgeInsets {
+        let horizontalEdge = CGFloat((section == .Sleep || section == .ASMR) ? 20 : 0)
+        
+        return UIEdgeInsets(top: 50, left: horizontalEdge, bottom: 20, right: horizontalEdge)
     }
 }

@@ -20,6 +20,23 @@ func mainFactory() -> ALMainViewWireframeProtocol {
     return wireframe
 }
 
+func generalSelectionFactory(of section: Section) -> ALGeneralSelectionViewWireframeProtocol {
+    let wireframe = ALGeneralSelectionWireframe()
+
+    wireframe.view = ALGeneralSelectionViewController(nibName: "ALGeneralSelectionViewController", bundle: nil)
+    wireframe.view.section = section
+    
+    wireframe.view.presenter = ALGeneralSelectionPresenter()
+    wireframe.view.presenter.view = wireframe.view
+    wireframe.view.presenter.wireframe = wireframe
+    wireframe.view.presenter.interactor = ALGeneralSelectionInteractor()
+    
+    wireframe.view.presenter.interactor.section = section
+    wireframe.view.presenter.interactor.dataManager = ALGeneralSelectionDataManager()
+    
+    return wireframe
+}
+
 func breatheFactory() -> ALBreatheViewWireframeProtocol {
     let wireframe = ALBreatheWireframe()
     
@@ -32,18 +49,14 @@ func breatheFactory() -> ALBreatheViewWireframeProtocol {
     return wireframe
 }
 
-func generalSelectionFactory(of section: Section) -> ALGeneralSelectionViewWireframeProtocol {
-    let wireframe = ALGeneralSelectionWireframe()
-
-    wireframe.view = ALGeneralSelectionViewController(nibName: "ALGeneralSelectionViewController", bundle: nil)
+func sleepFactory() -> ALSleepViewWireframeProtocol {
+    let wireframe = ALSleepWireframe()
     
-    wireframe.view.presenter = ALGeneralSelectionPresenter()
+    wireframe.view = ALSleepViewController(nibName: "ALSleepViewController", bundle: nil)
+    
+    wireframe.view.presenter = ALSleepPresenter()
     wireframe.view.presenter.view = wireframe.view
     wireframe.view.presenter.wireframe = wireframe
-    wireframe.view.presenter.interactor = ALGeneralSelectionInteractor()
-    
-    wireframe.view.presenter.interactor.section = section
-    wireframe.view.presenter.interactor.dataManager = ALGeneralSelectionDataManager()
     
     return wireframe
 }

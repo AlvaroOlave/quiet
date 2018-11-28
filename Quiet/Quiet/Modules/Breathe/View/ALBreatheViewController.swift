@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ALBreatheViewController: UIViewController, ALBreatheViewProtocol {
+class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
     
     var presenter: ALBreathePresenterProtocol!
 
     @IBOutlet weak var breathView: ALBreathView!
-    @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var backIcon: UIImageView!
     @IBOutlet weak var breathLabel: UILabel!
     @IBOutlet weak var subtButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
@@ -92,20 +90,9 @@ class ALBreatheViewController: UIViewController, ALBreatheViewProtocol {
         cancelButton.titleLabel?.font = FontSheet.FontRegularWith(size: NORMAL_FONT_SIZE)
         cancelButton.addTarget(self, action: #selector(cancelBreath), for: .touchUpInside)
         cancelButton.isHidden = true
-        
-        configureBackButton()
     }
     
-    private func configureBackButton() {
-        backView.backgroundColor = MERCURY_GREY
-        backView.layer.cornerRadius = backView.bounds.height / 2.0
-        backView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backButtonPressed)))
-        backView.isUserInteractionEnabled = true
-        
-        backIcon.image = UIImage(named: "icBackArrow")
-    }
-    
-    @objc func backButtonPressed() { presenter.backButtonPressed() }
+    override func backButtonPressed() { presenter.backButtonPressed() }
     
     @objc func addSecs() {
         currentTimeSecs += 2 * breathTime

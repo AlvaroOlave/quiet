@@ -12,8 +12,15 @@ class ALGeneralSelectionInteractor: ALGeneralSelectionInteractorProtocol {
  
     func getResourcesList(completion: @escaping ([ALSectionElem]) -> Void) {
         dataManager.getResourcesListOf(section) {
-            guard let response = $0 else { completion([]); return }
+            guard let response = $0 else { completion(self.fakeResponse()); return }
             completion(ALSectionElem.sectionElemsFrom(dict: response, of: self.section))
         }
+    }
+    
+    func fakeResponse() -> [ALSectionElem] {
+        return [ALSectionElem(title: "New Resuorce", imgURL: "", resourceURL: "", isPremium: true, kindOfResource: self.section),
+                ALSectionElem(title: "New Resuorce2", imgURL: "", resourceURL: "", isPremium: false, kindOfResource: self.section),
+                ALSectionElem(title: "New Resuorce3", imgURL: "", resourceURL: "", isPremium: true, kindOfResource: self.section),
+                ALSectionElem(title: "New Resuorce4", imgURL: "", resourceURL: "", isPremium: false, kindOfResource: self.section)]
     }
 }

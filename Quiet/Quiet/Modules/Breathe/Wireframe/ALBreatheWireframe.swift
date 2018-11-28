@@ -12,9 +12,7 @@ class ALBreatheWireframe: ALBreatheViewWireframeProtocol {
     
     var view: (UIViewController & ALBreatheViewProtocol)!
     
-    func presentBreatheViewIn(_ fromView: UIViewController) {
-        fromView.present(view, animated: true)
-    }
+    func presentBreatheViewIn(_ fromView: UIViewController) { fromView.present(view, animated: true) }
     
     func dismiss() { view.dismiss(animated: true) }
 }
