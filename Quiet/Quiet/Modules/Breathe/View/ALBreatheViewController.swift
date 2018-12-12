@@ -12,6 +12,7 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
     
     var presenter: ALBreathePresenterProtocol!
 
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var breathView: ALBreathView!
     @IBOutlet weak var breathLabel: UILabel!
     @IBOutlet weak var subtButton: UIButton!
@@ -47,6 +48,12 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
         configureGestures()
         configureLabels()
         configureButtons()
+        configureBackground()
+    }
+    
+    private func configureBackground() {
+        backgroundImageView.image = UIImage(named: "breatheLandscape")
+        backgroundImageView.contentMode = .scaleAspectFill
     }
     
     private func configureGestures() {
