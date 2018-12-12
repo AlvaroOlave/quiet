@@ -10,6 +10,7 @@ import UIKit
 
 class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var resourceImage: UIImageView!
     @IBOutlet weak var resourceTitle: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -18,6 +19,7 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     @IBOutlet weak var separationView2: UIView!
     @IBOutlet weak var playView: UIView!
     @IBOutlet weak var playIcon: UIImageView!
+    @IBOutlet weak var curtainView: UIView!
     
     @IBOutlet weak var keyboardConstraint: NSLayoutConstraint!
     
@@ -52,9 +54,16 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     
     private func commonInit() {
         dateFormatter.dateFormat = "HH:mm"
+        configureBackground()
         configurePlayButton()
         configureResourceInfo()
         configureTimeView()
+        backView?.backgroundColor = WHITE.withAlphaComponent(0.7)
+    }
+    
+    private func configureBackground() {
+        backgroundImageView.image = UIImage(named: "sleepLandscape")
+        backgroundImageView.contentMode = .scaleAspectFill
     }
     
     private func configurePlayButton() {
@@ -79,17 +88,18 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     }
     
     private func configureTimeView() {
-        separationView1.backgroundColor = MERCURY_GREY
-        separationView2.backgroundColor = MERCURY_GREY
+        separationView1.backgroundColor = BROWNISH_GREY
+        separationView2.backgroundColor = BROWNISH_GREY
         
-        descriptionLabel.text = "how long do you want it to sound"
         descriptionLabel.font = FontSheet.FontRegularWith(size: SMALL_FONT_SIZE)
-        descriptionLabel.textColor = WARM_GREY
+        descriptionLabel.textColor = BROWNISH_GREY
         
         dateTextField.font = FontSheet.FontRegularWith(size: BIG_FONT_SIZE)
         dateTextField.textColor = BROWNISH_GREY
         dateTextField.inputAccessoryView = getAccessoryView()
         dateTextField.inputView = configureDatePicker()
+        
+        curtainView.backgroundColor = WHITE.withAlphaComponent(0.8)
     }
     
     private func configureDatePicker() -> UIDatePicker {

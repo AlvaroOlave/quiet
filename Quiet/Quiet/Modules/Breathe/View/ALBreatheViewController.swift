@@ -49,6 +49,7 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
         configureLabels()
         configureButtons()
         configureBackground()
+        backView?.backgroundColor = WHITE.withAlphaComponent(0.7)
     }
     
     private func configureBackground() {
@@ -65,17 +66,17 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
         inspireTimeLabel.attributedText = attributtedLabel()
         
         inspireLabel.text = "inspire"
-        inspireLabel.textColor = WARM_GREY
+        inspireLabel.textColor = WHITE
         inspireLabel.font = FontSheet.FontRegularWith(size: NORMAL_FONT_SIZE)
         
         expireTimeLabel.attributedText = attributtedLabel()
         
         expireLabel.text = "expire"
-        expireLabel.textColor = WARM_GREY
+        expireLabel.textColor = WHITE
         expireLabel.font = FontSheet.FontRegularWith(size: NORMAL_FONT_SIZE)
         
         breathLabel.text = "Start"
-        breathLabel.textColor = BROWNISH_GREY
+        breathLabel.textColor = MERCURY_GREY
         breathLabel.font = FontSheet.FontRegularWith(size: MEGA_FONT_SIZE)
         
         setTimeLabel()
@@ -85,10 +86,16 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
         subtButton.setTitleColor(DARK_SKY_BLUE, for: .normal)
         subtButton.titleLabel?.font = FontSheet.FontRegularWith(size: MEGA_FONT_SIZE * 2)
         subtButton.addTarget(self, action: #selector(subsSecs), for: .touchUpInside)
+        subtButton.backgroundColor = WHITE.withAlphaComponent(0.5)
+        subtButton.layer.cornerRadius = 4.0
+        subtButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 6, right: 0)
         
         addButton.setTitleColor(DARK_SKY_BLUE, for: .normal)
         addButton.titleLabel?.font = FontSheet.FontRegularWith(size: MEGA_FONT_SIZE * 2)
         addButton.addTarget(self, action: #selector(addSecs), for: .touchUpInside)
+        addButton.backgroundColor = WHITE.withAlphaComponent(0.5)
+        addButton.layer.cornerRadius = 4.0
+        addButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 6, right: 0)
         
         cancelButton.layer.cornerRadius = cancelButton.bounds.height / 2.0
         cancelButton.backgroundColor = DARK_SKY_BLUE
@@ -119,20 +126,20 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
         let mins = Int(value / 60.0)
         if mins >= 1 {
             desc.append(NSMutableAttributedString(attributedString: NSMutableAttributedString(string: String(format: "%i", mins),
-                                                                                             attributes: [NSAttributedString.Key.foregroundColor:BROWNISH_GREY,
+                                                                                             attributes: [NSAttributedString.Key.foregroundColor:MERCURY_GREY,
                                                                                                           NSAttributedString.Key.font: FontSheet.FontRegularWith(size: BIG_FONT_SIZE)])))
             desc.append(NSMutableAttributedString(string: mins == 1 ? " min" : " mins",
-                                                  attributes: [NSAttributedString.Key.foregroundColor:BROWNISH_GREY,
+                                                  attributes: [NSAttributedString.Key.foregroundColor:MERCURY_GREY,
                                                                NSAttributedString.Key.font: FontSheet.FontRegularWith(size: NORMAL_FONT_SIZE) ]))
         }
         
         let secs = Int(value.truncatingRemainder(dividingBy: 60.0))
         if secs > 0 {
             desc.append(NSMutableAttributedString(attributedString: NSMutableAttributedString(string: String(format: " %i", secs),
-                                                                                              attributes: [NSAttributedString.Key.foregroundColor:BROWNISH_GREY,
+                                                                                              attributes: [NSAttributedString.Key.foregroundColor:MERCURY_GREY,
                                                                                                            NSAttributedString.Key.font: FontSheet.FontRegularWith(size: BIG_FONT_SIZE)])))
             desc.append(NSMutableAttributedString(string: " secs",
-                                                  attributes: [NSAttributedString.Key.foregroundColor:BROWNISH_GREY,
+                                                  attributes: [NSAttributedString.Key.foregroundColor:MERCURY_GREY,
                                                                NSAttributedString.Key.font: FontSheet.FontRegularWith(size: NORMAL_FONT_SIZE) ]))
         }
         
