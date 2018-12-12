@@ -12,6 +12,7 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     
     @IBOutlet weak var resourceImage: UIImageView!
     @IBOutlet weak var resourceTitle: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var separationView1: UIView!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var separationView2: UIView!
@@ -19,6 +20,8 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     @IBOutlet weak var playIcon: UIImageView!
     
     @IBOutlet weak var keyboardConstraint: NSLayoutConstraint!
+    
+    let dateFormatter = DateFormatter()
     
     var presenter: ALSleepPresenterProtocol!
     
@@ -48,6 +51,7 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     //MARK:- viewConfiguration
     
     private func commonInit() {
+        dateFormatter.dateFormat = "HH:mm"
         configurePlayButton()
         configureResourceInfo()
         configureTimeView()
@@ -78,9 +82,14 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
         separationView1.backgroundColor = MERCURY_GREY
         separationView2.backgroundColor = MERCURY_GREY
         
+        descriptionLabel.text = "how long do you want it to sound"
+        descriptionLabel.font = FontSheet.FontRegularWith(size: SMALL_FONT_SIZE)
+        descriptionLabel.textColor = WARM_GREY
+        
         dateTextField.font = FontSheet.FontRegularWith(size: BIG_FONT_SIZE)
         dateTextField.textColor = BROWNISH_GREY
-        dateTextField.inputAccessoryView = configureDatePicker()
+        dateTextField.inputAccessoryView = getAccessoryView()
+        dateTextField.inputView = configureDatePicker()
     }
     
     private func configureDatePicker() -> UIDatePicker {
@@ -89,16 +98,28 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
         datePicker.datePickerMode = .countDownTimer
         datePicker.minuteInterval = 15
         datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: UIControl.Event.valueChanged)
-        
+        datePicker.date = Date(timeIntervalSince1970: 0)
+        datePickerValueChanged(sender: datePicker)
         return datePicker
     }
     
-    @objc func datePickerValueChanged(sender:UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
+    func getAccessoryView() -> UIToolbar {
+        let toolBar = UIToolbar()
+        let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector (doneKeyboardButtonPressed))
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.setItems([doneButton, space], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        toolBar.sizeToFit()
         
+        return toolBar
+    }
+    
+    @objc func doneKeyboardButtonPressed() { dateTextField.endEditing(true) }
+    
+    @objc func datePickerValueChanged(sender:UIDatePicker) {
         dateTextField.text = dateFormatter.string(from: sender.date)
-        dateTextField.endEditing(true)
     }
     
     //MARK: - Notification methods
@@ -113,7 +134,7 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        self.keyboardConstraint.constant = 112
+        self.keyboardConstraint.constant = 142
         UIView.animate(withDuration: (notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! Double)) {
             self.view.layoutIfNeeded()
         }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		35C2AD95EB00D2E0943C97CE /* Pods_Quiet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D496BA59A2255F4FA6BB52 /* Pods_Quiet.framework */; };
 		3806EAD421AD9A4000C93662 /* ALSleepProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EAD321AD9A4000C93662 /* ALSleepProtocols.swift */; };
 		3806EAD721AD9A5400C93662 /* ALSleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EAD521AD9A5400C93662 /* ALSleepViewController.swift */; };
 		3806EAD821AD9A5400C93662 /* ALSleepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3806EAD621AD9A5400C93662 /* ALSleepViewController.xib */; };
@@ -25,6 +26,10 @@
 		380C6CB721AB975A00BF853C /* ALResourceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380C6CB521AB975A00BF853C /* ALResourceCollectionViewCell.xib */; };
 		381F2FEA21A82C6C00B573F8 /* ALMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F2FE821A82C6C00B573F8 /* ALMainCollectionViewCell.swift */; };
 		381F2FEB21A82C6C00B573F8 /* ALMainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381F2FE921A82C6C00B573F8 /* ALMainCollectionViewCell.xib */; };
+		381FDA0221C085F300C782BF /* ALSubscriptionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381FDA0121C085F300C782BF /* ALSubscriptionPopup.swift */; };
+		381FDA0421C0860600C782BF /* ALSubscriptionPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381FDA0321C0860600C782BF /* ALSubscriptionPopup.xib */; };
+		384C20D321C07BFE00025D24 /* ALPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C20D221C07BFE00025D24 /* ALPurchaseManager.swift */; };
+		384C20D521C07EF800025D24 /* ALUserTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C20D421C07EF800025D24 /* ALUserTokenManager.swift */; };
 		3861379521A41AEC000BD657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861379421A41AEC000BD657 /* AppDelegate.swift */; };
 		3861379C21A41AED000BD657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3861379B21A41AED000BD657 /* Assets.xcassets */; };
 		3861379F21A41AED000BD657 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3861379D21A41AED000BD657 /* LaunchScreen.storyboard */; };
@@ -44,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04D496BA59A2255F4FA6BB52 /* Pods_Quiet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quiet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3806EAD321AD9A4000C93662 /* ALSleepProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSleepProtocols.swift; sourceTree = "<group>"; };
 		3806EAD521AD9A5400C93662 /* ALSleepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSleepViewController.swift; sourceTree = "<group>"; };
 		3806EAD621AD9A5400C93662 /* ALSleepViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALSleepViewController.xib; sourceTree = "<group>"; };
@@ -62,6 +68,10 @@
 		380C6CB521AB975A00BF853C /* ALResourceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALResourceCollectionViewCell.xib; sourceTree = "<group>"; };
 		381F2FE821A82C6C00B573F8 /* ALMainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALMainCollectionViewCell.swift; sourceTree = "<group>"; };
 		381F2FE921A82C6C00B573F8 /* ALMainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALMainCollectionViewCell.xib; sourceTree = "<group>"; };
+		381FDA0121C085F300C782BF /* ALSubscriptionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSubscriptionPopup.swift; sourceTree = "<group>"; };
+		381FDA0321C0860600C782BF /* ALSubscriptionPopup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALSubscriptionPopup.xib; sourceTree = "<group>"; };
+		384C20D221C07BFE00025D24 /* ALPurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALPurchaseManager.swift; sourceTree = "<group>"; };
+		384C20D421C07EF800025D24 /* ALUserTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALUserTokenManager.swift; sourceTree = "<group>"; };
 		3861379121A41AEC000BD657 /* Quiet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3861379421A41AEC000BD657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3861379B21A41AED000BD657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +90,8 @@
 		386137CB21A473AF000BD657 /* ALBreatheViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ALBreatheViewController.xib; sourceTree = "<group>"; };
 		386137CF21A4782A000BD657 /* ALFontSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALFontSheet.swift; sourceTree = "<group>"; };
 		386137D121A47832000BD657 /* ALStyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALStyleSheet.swift; sourceTree = "<group>"; };
+		64F3B4DF94FB99911BBDED44 /* Pods-Quiet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quiet/Pods-Quiet.release.xcconfig"; sourceTree = "<group>"; };
+		DF2234D20B063C4D66276831 /* Pods-Quiet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quiet/Pods-Quiet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35C2AD95EB00D2E0943C97CE /* Pods_Quiet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,11 +247,39 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		381FD9FF21C085B100C782BF /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				381FDA0021C085CA00C782BF /* Subscription */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		381FDA0021C085CA00C782BF /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				381FDA0121C085F300C782BF /* ALSubscriptionPopup.swift */,
+				381FDA0321C0860600C782BF /* ALSubscriptionPopup.xib */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
+		384C20D121C07BD900025D24 /* Singletons */ = {
+			isa = PBXGroup;
+			children = (
+				384C20D221C07BFE00025D24 /* ALPurchaseManager.swift */,
+				384C20D421C07EF800025D24 /* ALUserTokenManager.swift */,
+			);
+			path = Singletons;
+			sourceTree = "<group>";
+		};
 		3861378821A41AEC000BD657 = {
 			isa = PBXGroup;
 			children = (
 				3861379321A41AEC000BD657 /* Quiet */,
 				3861379221A41AEC000BD657 /* Products */,
+				9F772C1FB3F4655051A81531 /* Pods */,
+				422B922CC3D18F6B7FCF68D1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -256,6 +297,8 @@
 				386137CE21A4780C000BD657 /* Style */,
 				386137B821A46BC4000BD657 /* Factory */,
 				380C6CB021AB8F8000BF853C /* Models */,
+				384C20D121C07BD900025D24 /* Singletons */,
+				381FD9FF21C085B100C782BF /* CustomViews */,
 				386137A621A463BB000BD657 /* Modules */,
 				3861379421A41AEC000BD657 /* AppDelegate.swift */,
 				3861379B21A41AED000BD657 /* Assets.xcassets */,
@@ -383,6 +426,23 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
+		422B922CC3D18F6B7FCF68D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04D496BA59A2255F4FA6BB52 /* Pods_Quiet.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F772C1FB3F4655051A81531 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF2234D20B063C4D66276831 /* Pods-Quiet.debug.xcconfig */,
+				64F3B4DF94FB99911BBDED44 /* Pods-Quiet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -390,9 +450,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 386137A321A41AED000BD657 /* Build configuration list for PBXNativeTarget "Quiet" */;
 			buildPhases = (
+				DC8608B1E9F05EA10E290265 /* [CP] Check Pods Manifest.lock */,
 				3861378D21A41AEC000BD657 /* Sources */,
 				3861378E21A41AEC000BD657 /* Frameworks */,
 				3861378F21A41AEC000BD657 /* Resources */,
+				B2D874A70697229E52D5F555 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -444,6 +506,7 @@
 				386137AA21A463D5000BD657 /* ALMainViewController.xib in Resources */,
 				381F2FEB21A82C6C00B573F8 /* ALMainCollectionViewCell.xib in Resources */,
 				386137CD21A473B0000BD657 /* ALBreatheViewController.xib in Resources */,
+				381FDA0421C0860600C782BF /* ALSubscriptionPopup.xib in Resources */,
 				380C6CB721AB975A00BF853C /* ALResourceCollectionViewCell.xib in Resources */,
 				3861379F21A41AED000BD657 /* LaunchScreen.storyboard in Resources */,
 				3861379C21A41AED000BD657 /* Assets.xcassets in Resources */,
@@ -454,6 +517,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B2D874A70697229E52D5F555 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Quiet/Pods-Quiet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/JTMaterialSpinner/JTMaterialSpinner.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBase64/SwiftyBase64.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTMaterialSpinner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBase64.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quiet/Pods-Quiet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC8608B1E9F05EA10E290265 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Quiet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3861378D21A41AEC000BD657 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -462,9 +580,11 @@
 				3806EAD421AD9A4000C93662 /* ALSleepProtocols.swift in Sources */,
 				386137D221A47832000BD657 /* ALStyleSheet.swift in Sources */,
 				380C6CA521AB790C00BF853C /* ALGeneralSelectionPresenter.swift in Sources */,
+				381FDA0221C085F300C782BF /* ALSubscriptionPopup.swift in Sources */,
 				386137B521A46461000BD657 /* ALMainWireframe.swift in Sources */,
 				3806EADC21AD9A6E00C93662 /* ALSleepWireframe.swift in Sources */,
 				380C6CA921AB792000BF853C /* ALGeneralSelectionDataManager.swift in Sources */,
+				384C20D321C07BFE00025D24 /* ALPurchaseManager.swift in Sources */,
 				3806EADF21AD9C8500C93662 /* ALBaseViewController.swift in Sources */,
 				3806EAD721AD9A5400C93662 /* ALSleepViewController.swift in Sources */,
 				386137A921A463D5000BD657 /* ALMainViewController.swift in Sources */,
@@ -481,6 +601,7 @@
 				386137BA21A46BD3000BD657 /* ALFactory.swift in Sources */,
 				386137CC21A473B0000BD657 /* ALBreatheViewController.swift in Sources */,
 				380C6CB221AB8FF900BF853C /* ALSectionElem.swift in Sources */,
+				384C20D521C07EF800025D24 /* ALUserTokenManager.swift in Sources */,
 				381F2FEA21A82C6C00B573F8 /* ALMainCollectionViewCell.swift in Sources */,
 				380C6CA721AB791700BF853C /* ALGeneralSelectionInteractor.swift in Sources */,
 				386137C121A472C4000BD657 /* ALBreatheProtocols.swift in Sources */,
@@ -620,6 +741,7 @@
 		};
 		386137A421A41AED000BD657 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF2234D20B063C4D66276831 /* Pods-Quiet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -640,6 +762,7 @@
 		};
 		386137A521A41AED000BD657 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64F3B4DF94FB99911BBDED44 /* Pods-Quiet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;

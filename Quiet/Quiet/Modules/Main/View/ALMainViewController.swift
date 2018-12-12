@@ -10,6 +10,7 @@ import UIKit
 
 class ALMainViewController: UIViewController, ALMainViewProtocol {
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
     var presenter: (ALMainPresenterProtocol & UICollectionViewDataSource & UICollectionViewDelegate)!
@@ -23,6 +24,7 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
 
     private func commonInit() {
         configureCollectionViewLayout()
+        configureBackgroundImage()
         mainCollectionView.dataSource = presenter
         mainCollectionView.delegate = presenter
         mainCollectionView.register(UINib(nibName: "ALMainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ALMainCollectionViewCell")
@@ -37,5 +39,9 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         flowLayout.minimumLineSpacing = 10
         mainCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         mainCollectionView.collectionViewLayout = flowLayout
+    }
+    
+    private func configureBackgroundImage() {
+        backgroundImageView.image = UIImage.animatedImageNamed("waterfall", duration: 0.0)
     }
 }
