@@ -10,7 +10,8 @@ import UIKit
 
 class ALMainCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var title: ALLabel!
+    @IBOutlet weak var iconView: UIView!
     @IBOutlet weak var icon: UIImageView!
     
     override func awakeFromNib() {
@@ -25,12 +26,16 @@ class ALMainCollectionViewCell: UICollectionViewCell {
     private func commonInit() {
         layer.cornerRadius = 6.0
         title.text = "Start"
-        title.textColor = WARM_GREY
+        title.textColor = WHITE.withAlphaComponent(0.7)
         title.font = FontSheet.FontRegularWith(size: SMALL_FONT_SIZE)
         
-        icon.layer.cornerRadius = icon.bounds.height / 2.0
-        icon.layer.borderColor = WARM_GREY.cgColor
-        icon.layer.borderWidth = 2.0
+        iconView.backgroundColor = WHITE.withAlphaComponent(0.7)
+        iconView.layer.cornerRadius = iconView.bounds.height / 2.0
+        iconView.layer.borderColor = WARM_GREY.cgColor
+        iconView.layer.borderWidth = 2.0
+        
+        self.icon.contentMode = .scaleAspectFill
+        self.icon.tintColor = BROWNISH_GREY
     }
     
     //MARK:- public methods
@@ -38,6 +43,14 @@ class ALMainCollectionViewCell: UICollectionViewCell {
     func setCellTitle(_ title: String? = nil, background: UIImage? = nil, icon: UIImage? = nil) {
         self.title.text = title?.replacingOccurrences(of: " ", with: "\n")
         
-        self.icon.image = icon
+        self.icon.image = icon?.withRenderingMode(.alwaysTemplate)
+    }
+}
+
+class ALLabel: UILabel {
+    override func drawText(in rect: CGRect) {
+        
+        
+        super.drawText(in: rect)
     }
 }

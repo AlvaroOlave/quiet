@@ -13,6 +13,7 @@ class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSo
     var wireframe: ALMainViewWireframeProtocol!
     
     let cells: [Section] = [.SleepCast, .Breathe, .Sleep, .Landscapes, .ASMR, .YogaStretch]
+    let cellIcons: [String] = ["sleepCastIcon", "breatheIcon", "sleepIcon", "ladscapeIcon", "asmrIcon", "yogaIcon"]
     
     func viewDidLoad() {
         
@@ -27,7 +28,7 @@ class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ALMainCollectionViewCell", for: indexPath) as! ALMainCollectionViewCell
         
-        cell.setCellTitle(cells[indexPath.row].rawValue, background: nil, icon: nil)
+        cell.setCellTitle(cells[indexPath.row].rawValue, background: nil, icon: UIImage(named: cellIcons[indexPath.row]))
         
         return cell
     }
