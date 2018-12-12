@@ -7,17 +7,18 @@
 //
 
 import UIKit
+import Gifu
 
 class ALMainViewController: UIViewController, ALMainViewProtocol {
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: GIFImageView!
     @IBOutlet weak var mainCollectionView: UICollectionView!
     
     var presenter: (ALMainPresenterProtocol & UICollectionViewDataSource & UICollectionViewDelegate)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         commonInit()
         presenter.viewDidLoad()
     }
@@ -42,6 +43,8 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
     }
     
     private func configureBackgroundImage() {
-        backgroundImageView.image = UIImage.animatedImageNamed("waterfall", duration: 0.0)
+        backgroundImageView.animate(withGIFNamed: "waterfall") {
+            print("Ready to animate!")
+        }
     }
 }

@@ -1,13 +1,15 @@
 # Uncomment the next line to define a global platform for your project
 platform :ios, '11.0'
+inhibit_all_warnings!
+use_frameworks!
 
 target 'Quiet' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+  
   pod 'JTMaterialSpinner', '~> 3.0'
   pod 'CryptoSwift','0.7.1'
   pod 'SwiftyBase64', '~> 1.1'
   pod 'SDWebImage'
   pod 'KeychainSwift'
-
+  pod 'Gifu'
 end

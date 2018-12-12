@@ -22,8 +22,8 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lwK-4z-Lnn">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lwK-4z-Lnn" customClass="GIFImageView" customModule="Gifu">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1sI-dW-3EA">
                     <rect key="frame" x="0.0" y="497" width="375" height="170"/>
@@ -44,9 +44,9 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1sI-dW-3EA" secondAttribute="trailing" id="1o6-UX-ogf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lwK-4z-Lnn" secondAttribute="trailing" id="81T-As-UWH"/>
                 <constraint firstItem="lwK-4z-Lnn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9jp-tf-nLj"/>
-                <constraint firstItem="lwK-4z-Lnn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FSf-az-7Hh"/>
+                <constraint firstItem="lwK-4z-Lnn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FSf-az-7Hh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1sI-dW-3EA" secondAttribute="bottom" id="V0V-mM-Rmw"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="lwK-4z-Lnn" secondAttribute="bottom" id="kT4-PC-RKo"/>
+                <constraint firstAttribute="bottom" secondItem="lwK-4z-Lnn" secondAttribute="bottom" id="kT4-PC-RKo"/>
                 <constraint firstItem="1sI-dW-3EA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yHU-wH-ZOr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

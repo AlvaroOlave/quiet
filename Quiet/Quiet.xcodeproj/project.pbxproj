@@ -46,6 +46,7 @@
 		386137CD21A473B0000BD657 /* ALBreatheViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386137CB21A473AF000BD657 /* ALBreatheViewController.xib */; };
 		386137D021A4782A000BD657 /* ALFontSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137CF21A4782A000BD657 /* ALFontSheet.swift */; };
 		386137D221A47832000BD657 /* ALStyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137D121A47832000BD657 /* ALStyleSheet.swift */; };
+		38F4ABCB21C08FE700E3ACB5 /* waterfall.gif in Resources */ = {isa = PBXBuildFile; fileRef = 38F4ABCA21C08FE700E3ACB5 /* waterfall.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		386137CB21A473AF000BD657 /* ALBreatheViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ALBreatheViewController.xib; sourceTree = "<group>"; };
 		386137CF21A4782A000BD657 /* ALFontSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALFontSheet.swift; sourceTree = "<group>"; };
 		386137D121A47832000BD657 /* ALStyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALStyleSheet.swift; sourceTree = "<group>"; };
+		38F4ABCA21C08FE700E3ACB5 /* waterfall.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = waterfall.gif; sourceTree = "<group>"; };
 		64F3B4DF94FB99911BBDED44 /* Pods-Quiet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quiet/Pods-Quiet.release.xcconfig"; sourceTree = "<group>"; };
 		DF2234D20B063C4D66276831 /* Pods-Quiet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quiet/Pods-Quiet.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -294,6 +296,7 @@
 		3861379321A41AEC000BD657 /* Quiet */ = {
 			isa = PBXGroup;
 			children = (
+				38F4ABCA21C08FE700E3ACB5 /* waterfall.gif */,
 				386137CE21A4780C000BD657 /* Style */,
 				386137B821A46BC4000BD657 /* Factory */,
 				380C6CB021AB8F8000BF853C /* Models */,
@@ -510,6 +513,7 @@
 				380C6CB721AB975A00BF853C /* ALResourceCollectionViewCell.xib in Resources */,
 				3861379F21A41AED000BD657 /* LaunchScreen.storyboard in Resources */,
 				3861379C21A41AED000BD657 /* Assets.xcassets in Resources */,
+				38F4ABCB21C08FE700E3ACB5 /* waterfall.gif in Resources */,
 				380C6CAF21AB794700BF853C /* ALGeneralSelectionViewController.xib in Resources */,
 				3806EAD821AD9A5400C93662 /* ALSleepViewController.xib in Resources */,
 			);
@@ -528,6 +532,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Quiet/Pods-Quiet-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Gifu/Gifu.framework",
 				"${BUILT_PRODUCTS_DIR}/JTMaterialSpinner/JTMaterialSpinner.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -538,6 +543,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gifu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTMaterialSpinner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
