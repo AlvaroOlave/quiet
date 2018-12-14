@@ -40,16 +40,16 @@
                     <rect key="frame" x="25" y="45" width="40" height="40"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uNM-ke-8ye">
-                            <rect key="frame" x="12" y="9" width="12" height="22"/>
+                            <rect key="frame" x="7" y="8" width="24" height="24"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="22" id="sad-Sm-ifS"/>
-                                <constraint firstAttribute="width" constant="12" id="xjZ-kZ-Sp1"/>
+                                <constraint firstAttribute="height" constant="24" id="sad-Sm-ifS"/>
+                                <constraint firstAttribute="width" constant="24" id="xjZ-kZ-Sp1"/>
                             </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="uNM-ke-8ye" firstAttribute="centerX" secondItem="Trk-D4-NdU" secondAttribute="centerX" constant="-2" id="94A-Fp-VQd"/>
+                        <constraint firstItem="uNM-ke-8ye" firstAttribute="centerX" secondItem="Trk-D4-NdU" secondAttribute="centerX" constant="-1" id="94A-Fp-VQd"/>
                         <constraint firstAttribute="height" constant="40" id="jxV-4q-ML3"/>
                         <constraint firstAttribute="width" constant="40" id="pSz-Cj-iWS"/>
                         <constraint firstItem="uNM-ke-8ye" firstAttribute="centerY" secondItem="Trk-D4-NdU" secondAttribute="centerY" id="u2x-Rr-qLn"/>
@@ -108,10 +108,10 @@
                     <rect key="frame" x="155.5" y="569" width="64" height="64"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZKM-Za-kvS">
-                            <rect key="frame" x="15" y="12" width="40" height="40"/>
+                            <rect key="frame" x="20" y="17" width="30" height="30"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="40" id="leS-Ed-lSV"/>
-                                <constraint firstAttribute="width" constant="40" id="wal-o1-uXe"/>
+                                <constraint firstAttribute="height" constant="30" id="leS-Ed-lSV"/>
+                                <constraint firstAttribute="width" constant="30" id="wal-o1-uXe"/>
                             </constraints>
                         </imageView>
                     </subviews>

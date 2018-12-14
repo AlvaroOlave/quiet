@@ -30,7 +30,7 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
         collectionView.delegate = presenter
         collectionView.register(UINib(nibName: "ALResourceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ALResourceCollectionViewCell")
         
-        backIcon?.image = UIImage(named: "cancel")
+        backIcon?.image = UIImage(named: "icCancel")
     }
     
     override func backButtonPressed() { presenter.backButtonPressed() }

@@ -28,7 +28,7 @@ class ALBaseViewController: UIViewController {
         backView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backButtonPressed)))
         backView?.isUserInteractionEnabled = true
         
-        backIcon?.image = UIImage(named: "icBackArrow")
+        backIcon?.image = UIImage(named: "icBack")
     }
     
     @objc func backButtonPressed() { }

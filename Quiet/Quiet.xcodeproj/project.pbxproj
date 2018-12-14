@@ -46,6 +46,11 @@
 		386137CD21A473B0000BD657 /* ALBreatheViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386137CB21A473AF000BD657 /* ALBreatheViewController.xib */; };
 		386137D021A4782A000BD657 /* ALFontSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137CF21A4782A000BD657 /* ALFontSheet.swift */; };
 		386137D221A47832000BD657 /* ALStyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137D121A47832000BD657 /* ALStyleSheet.swift */; };
+		3866B30721C3BC080017A16E /* ALSleepCastProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3866B30621C3BC080017A16E /* ALSleepCastProtocols.swift */; };
+		3866B30921C3BC150017A16E /* ALSleepCastWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3866B30821C3BC150017A16E /* ALSleepCastWireframe.swift */; };
+		3866B30B21C3BC1E0017A16E /* ALSleepCastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3866B30A21C3BC1E0017A16E /* ALSleepCastPresenter.swift */; };
+		3866B30E21C3BC310017A16E /* ALSleepCastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3866B30C21C3BC310017A16E /* ALSleepCastViewController.swift */; };
+		3866B30F21C3BC310017A16E /* ALSleepCastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3866B30D21C3BC310017A16E /* ALSleepCastViewController.xib */; };
 		38F4ABCB21C08FE700E3ACB5 /* waterfall.gif in Resources */ = {isa = PBXBuildFile; fileRef = 38F4ABCA21C08FE700E3ACB5 /* waterfall.gif */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +96,11 @@
 		386137CB21A473AF000BD657 /* ALBreatheViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ALBreatheViewController.xib; sourceTree = "<group>"; };
 		386137CF21A4782A000BD657 /* ALFontSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALFontSheet.swift; sourceTree = "<group>"; };
 		386137D121A47832000BD657 /* ALStyleSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ALStyleSheet.swift; sourceTree = "<group>"; };
+		3866B30621C3BC080017A16E /* ALSleepCastProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSleepCastProtocols.swift; sourceTree = "<group>"; };
+		3866B30821C3BC150017A16E /* ALSleepCastWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSleepCastWireframe.swift; sourceTree = "<group>"; };
+		3866B30A21C3BC1E0017A16E /* ALSleepCastPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSleepCastPresenter.swift; sourceTree = "<group>"; };
+		3866B30C21C3BC310017A16E /* ALSleepCastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSleepCastViewController.swift; sourceTree = "<group>"; };
+		3866B30D21C3BC310017A16E /* ALSleepCastViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALSleepCastViewController.xib; sourceTree = "<group>"; };
 		38F4ABCA21C08FE700E3ACB5 /* waterfall.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = waterfall.gif; sourceTree = "<group>"; };
 		64F3B4DF94FB99911BBDED44 /* Pods-Quiet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Quiet/Pods-Quiet.release.xcconfig"; sourceTree = "<group>"; };
 		DF2234D20B063C4D66276831 /* Pods-Quiet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quiet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Quiet/Pods-Quiet.debug.xcconfig"; sourceTree = "<group>"; };
@@ -314,6 +324,7 @@
 		386137A621A463BB000BD657 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				3866B30121C3BBCF0017A16E /* SleepCast */,
 				3806EADD21AD9C4800C93662 /* Base */,
 				3806EACE21AD99BD00C93662 /* Sleep */,
 				380C6C9B21AB784600BF853C /* GeneralSelection */,
@@ -429,6 +440,50 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
+		3866B30121C3BBCF0017A16E /* SleepCast */ = {
+			isa = PBXGroup;
+			children = (
+				3866B30521C3BBF10017A16E /* Protocols */,
+				3866B30421C3BBEB0017A16E /* View */,
+				3866B30321C3BBE50017A16E /* Presenter */,
+				3866B30221C3BBDF0017A16E /* Wireframe */,
+			);
+			path = SleepCast;
+			sourceTree = "<group>";
+		};
+		3866B30221C3BBDF0017A16E /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+				3866B30821C3BC150017A16E /* ALSleepCastWireframe.swift */,
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		3866B30321C3BBE50017A16E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3866B30A21C3BC1E0017A16E /* ALSleepCastPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3866B30421C3BBEB0017A16E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3866B30C21C3BC310017A16E /* ALSleepCastViewController.swift */,
+				3866B30D21C3BC310017A16E /* ALSleepCastViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3866B30521C3BBF10017A16E /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3866B30621C3BC080017A16E /* ALSleepCastProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		422B922CC3D18F6B7FCF68D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -515,6 +570,7 @@
 				3861379C21A41AED000BD657 /* Assets.xcassets in Resources */,
 				38F4ABCB21C08FE700E3ACB5 /* waterfall.gif in Resources */,
 				380C6CAF21AB794700BF853C /* ALGeneralSelectionViewController.xib in Resources */,
+				3866B30F21C3BC310017A16E /* ALSleepCastViewController.xib in Resources */,
 				3806EAD821AD9A5400C93662 /* ALSleepViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,10 +650,13 @@
 				3806EADF21AD9C8500C93662 /* ALBaseViewController.swift in Sources */,
 				3806EAD721AD9A5400C93662 /* ALSleepViewController.swift in Sources */,
 				386137A921A463D5000BD657 /* ALMainViewController.swift in Sources */,
+				3866B30E21C3BC310017A16E /* ALSleepCastViewController.swift in Sources */,
 				3806EADA21AD9A6400C93662 /* ALSleepPresenter.swift in Sources */,
 				3861379521A41AEC000BD657 /* AppDelegate.swift in Sources */,
 				380C6CA321AB78FD00BF853C /* ALGeneralSelectionProtocols.swift in Sources */,
 				380C6CAE21AB794700BF853C /* ALGeneralSelectionViewController.swift in Sources */,
+				3866B30921C3BC150017A16E /* ALSleepCastWireframe.swift in Sources */,
+				3866B30721C3BC080017A16E /* ALSleepCastProtocols.swift in Sources */,
 				386137C721A472EF000BD657 /* ALBreathePresenter.swift in Sources */,
 				386137B321A46457000BD657 /* ALMainPresenter.swift in Sources */,
 				380C6CB621AB975A00BF853C /* ALResourceCollectionViewCell.swift in Sources */,
@@ -611,6 +670,7 @@
 				381F2FEA21A82C6C00B573F8 /* ALMainCollectionViewCell.swift in Sources */,
 				380C6CA721AB791700BF853C /* ALGeneralSelectionInteractor.swift in Sources */,
 				386137C121A472C4000BD657 /* ALBreatheProtocols.swift in Sources */,
+				3866B30B21C3BC1E0017A16E /* ALSleepCastPresenter.swift in Sources */,
 				386137C921A472FD000BD657 /* ALBreatheWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

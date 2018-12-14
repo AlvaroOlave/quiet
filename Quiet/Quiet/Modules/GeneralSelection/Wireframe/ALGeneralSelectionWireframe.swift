@@ -16,6 +16,8 @@ class ALGeneralSelectionWireframe: ALGeneralSelectionViewWireframeProtocol {
     
     func presentSectionElem(_ elem: ALSectionElem) {
         switch elem.kindOfResource {
+        case .SleepCast:
+            presentSleepCastInterface()
         case .Sleep:
             presentSleepInterface()
         default:
@@ -26,5 +28,10 @@ class ALGeneralSelectionWireframe: ALGeneralSelectionViewWireframeProtocol {
     private func presentSleepInterface() {
         let wireframe = sleepFactory()
         wireframe.presentSleepViewIn(view)
+    }
+    
+    private func presentSleepCastInterface() {
+        let wireframe = sleepCastFactory()
+        wireframe.presentSleepCastViewIn(view)
     }
 }

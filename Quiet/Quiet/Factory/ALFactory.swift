@@ -60,3 +60,15 @@ func sleepFactory() -> ALSleepViewWireframeProtocol {
     
     return wireframe
 }
+
+func sleepCastFactory() -> ALSleepCastWireframe {
+    let wireframe = ALSleepCastWireframe()
+    
+    wireframe.view = ALSleepCastViewController(nibName: "ALSleepCastViewController", bundle: nil)
+    
+    wireframe.view.presenter = ALSleepCastPresenter()
+    wireframe.view.presenter.view = wireframe.view
+    wireframe.view.presenter.wireframe = wireframe
+    
+    return wireframe
+}

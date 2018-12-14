@@ -53,7 +53,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.67196413435078373" green="0.97613340616226196" blue="0.55860440569427128" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="9TD-cb-fUg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8Zl-G0-exW"/>
                 <constraint firstItem="9TD-cb-fUg" firstAttribute="top" secondItem="HrK-QW-8TN" secondAttribute="bottom" constant="25" id="SLr-yI-8Wj"/>
