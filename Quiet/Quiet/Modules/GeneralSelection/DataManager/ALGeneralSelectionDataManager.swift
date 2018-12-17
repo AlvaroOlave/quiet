@@ -6,9 +6,13 @@
 //  Copyright © 2018 surflabapps. All rights reserved.
 //
 
-class ALGeneralSelectionDataManager: ALGeneralSelectionDataManagerProtocol {
+class ALGeneralSelectionDataManager: ALRealtimeClient, ALGeneralSelectionDataManagerProtocol {
+    
+    var unobserveBlock: (() -> Void)? = nil
     
     func getResourcesListOf(_ section: Section, completion: @escaping ([Any]?) -> Void) {
-        completion(nil)
+        unobserveBlock = GET(URLString: section.rawValue, success: completion)
     }
+    
+    func dismiss() { unobserveBlock?() }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -51,6 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             mainWireframe = mainFactory()
             mainWireframe.presentMainViewInWindow(window)
         }
+        
+        FirebaseApp.configure()
     }
 
     private func createWindow() -> UIWindow? {

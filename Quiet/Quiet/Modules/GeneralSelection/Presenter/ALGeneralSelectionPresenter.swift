@@ -19,7 +19,9 @@ class ALGeneralSelectionPresenter: NSObject, ALGeneralSelectionPresenterProtocol
     }
     
     func viewDidLoad() { getResourcesList() }
+    func viewWillDisappear() { interactor.dismiss() }
     func backButtonPressed() { wireframe.dismiss() }
+    
     
     //MARK:- private methods
     

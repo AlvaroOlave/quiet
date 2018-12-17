@@ -22,6 +22,7 @@ protocol ALGeneralSelectionPresenterProtocol {
     var wireframe: ALGeneralSelectionViewWireframeProtocol! {get set}
     
     func viewDidLoad()
+    func viewWillDisappear()
     func backButtonPressed()
 }
 
@@ -30,10 +31,12 @@ protocol ALGeneralSelectionInteractorProtocol {
     var section: Section! {get set}
     
     func getResourcesList(completion: @escaping ([ALSectionElem]) -> Void)
+    func dismiss()
 }
 
 protocol ALGeneralSelectionDataManagerProtocol {
     func getResourcesListOf(_ section: Section, completion: @escaping ([Any]?) -> Void)
+    func dismiss()
 }
 
 

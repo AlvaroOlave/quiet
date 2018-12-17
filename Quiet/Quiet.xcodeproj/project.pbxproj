@@ -14,6 +14,8 @@
 		3806EADA21AD9A6400C93662 /* ALSleepPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EAD921AD9A6400C93662 /* ALSleepPresenter.swift */; };
 		3806EADC21AD9A6E00C93662 /* ALSleepWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EADB21AD9A6E00C93662 /* ALSleepWireframe.swift */; };
 		3806EADF21AD9C8500C93662 /* ALBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EADE21AD9C8500C93662 /* ALBaseViewController.swift */; };
+		380A430121C6AB6800A04B2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380A430021C6AB6800A04B2C /* GoogleService-Info.plist */; };
+		380A430321C6AE9B00A04B2C /* ALBaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A430221C6AE9B00A04B2C /* ALBaseDataManager.swift */; };
 		380C6CA321AB78FD00BF853C /* ALGeneralSelectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA221AB78FD00BF853C /* ALGeneralSelectionProtocols.swift */; };
 		380C6CA521AB790C00BF853C /* ALGeneralSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA421AB790C00BF853C /* ALGeneralSelectionPresenter.swift */; };
 		380C6CA721AB791700BF853C /* ALGeneralSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA621AB791700BF853C /* ALGeneralSelectionInteractor.swift */; };
@@ -62,6 +64,8 @@
 		3806EAD921AD9A6400C93662 /* ALSleepPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSleepPresenter.swift; sourceTree = "<group>"; };
 		3806EADB21AD9A6E00C93662 /* ALSleepWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSleepWireframe.swift; sourceTree = "<group>"; };
 		3806EADE21AD9C8500C93662 /* ALBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBaseViewController.swift; sourceTree = "<group>"; };
+		380A430021C6AB6800A04B2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		380A430221C6AE9B00A04B2C /* ALBaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBaseDataManager.swift; sourceTree = "<group>"; };
 		380C6CA221AB78FD00BF853C /* ALGeneralSelectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionProtocols.swift; sourceTree = "<group>"; };
 		380C6CA421AB790C00BF853C /* ALGeneralSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionPresenter.swift; sourceTree = "<group>"; };
 		380C6CA621AB791700BF853C /* ALGeneralSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionInteractor.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				3806EADE21AD9C8500C93662 /* ALBaseViewController.swift */,
+				380A430221C6AE9B00A04B2C /* ALBaseDataManager.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 				3861379B21A41AED000BD657 /* Assets.xcassets */,
 				3861379D21A41AED000BD657 /* LaunchScreen.storyboard */,
 				386137A021A41AED000BD657 /* Info.plist */,
+				380A430021C6AB6800A04B2C /* GoogleService-Info.plist */,
 			);
 			path = Quiet;
 			sourceTree = "<group>";
@@ -566,6 +572,7 @@
 				386137CD21A473B0000BD657 /* ALBreatheViewController.xib in Resources */,
 				381FDA0421C0860600C782BF /* ALSubscriptionPopup.xib in Resources */,
 				380C6CB721AB975A00BF853C /* ALResourceCollectionViewCell.xib in Resources */,
+				380A430121C6AB6800A04B2C /* GoogleService-Info.plist in Resources */,
 				3861379F21A41AED000BD657 /* LaunchScreen.storyboard in Resources */,
 				3861379C21A41AED000BD657 /* Assets.xcassets in Resources */,
 				38F4ABCB21C08FE700E3ACB5 /* waterfall.gif in Resources */,
@@ -588,22 +595,34 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Quiet/Pods-Quiet-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/Gifu/Gifu.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JTMaterialSpinner/JTMaterialSpinner.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyBase64/SwiftyBase64.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gifu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTMaterialSpinner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBase64.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -646,6 +665,7 @@
 				386137B521A46461000BD657 /* ALMainWireframe.swift in Sources */,
 				3806EADC21AD9A6E00C93662 /* ALSleepWireframe.swift in Sources */,
 				380C6CA921AB792000BF853C /* ALGeneralSelectionDataManager.swift in Sources */,
+				380A430321C6AE9B00A04B2C /* ALBaseDataManager.swift in Sources */,
 				384C20D321C07BFE00025D24 /* ALPurchaseManager.swift in Sources */,
 				3806EADF21AD9C8500C93662 /* ALBaseViewController.swift in Sources */,
 				3806EAD721AD9A5400C93662 /* ALSleepViewController.swift in Sources */,
@@ -818,7 +838,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.surflabapps.Quiet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.surflabappsios.Quiet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -831,17 +851,18 @@
 			baseConfigurationReference = 64F3B4DF94FB99911BBDED44 /* Pods-Quiet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 72S9AFUQPQ;
 				INFOPLIST_FILE = Quiet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.surflabapps.Quiet;
+				PRODUCT_BUNDLE_IDENTIFIER = com.surflabappsios.Quiet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = distribution_quiet;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

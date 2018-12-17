@@ -22,6 +22,11 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
         presenter.viewDidLoad()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter.viewWillDisappear()
+    }
+    
     func reloadCollectionView() { collectionView.reloadData() }
     
     private func commonInit() {
