@@ -36,9 +36,23 @@ class ALSleepPresenter: ALSleepPresenterProtocol {
         }
     }
     
-    func backButtonPressed() { wireframe.dismiss() }
+    func backButtonPressed() { stopAudio(); wireframe.dismiss() }
     
-    func playButtonDidPressed() {}
-    func pauseButtonDidPressed() {}
-    func loopSeconds(_ secs: Double) {}
+    func playButtonDidPressed() { playAudio() }
+    func pauseButtonDidPressed() { musicPlayer?.pause() }
+    func loopSeconds(_ secs: Double) {
+        
+    }
+    
+    private func playAudio() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+            try AVAudioSession.sharedInstance().setActive(true)
+            musicPlayer?.play()
+        } catch {
+            
+        }
+    }
+    
+    private func stopAudio() { musicPlayer?.stop() }
 }
