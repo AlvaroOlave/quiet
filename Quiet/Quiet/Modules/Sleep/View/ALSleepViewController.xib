@@ -56,13 +56,13 @@
                     </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BJ4-tJ-WtL">
-                    <rect key="frame" x="65" y="110" width="245" height="128"/>
+                    <rect key="frame" x="65" y="110" width="245" height="138"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="128" id="z64-4k-w0H"/>
+                        <constraint firstAttribute="width" secondItem="BJ4-tJ-WtL" secondAttribute="height" multiplier="16:9" id="nz6-c2-28Q"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poK-TR-i8H">
-                    <rect key="frame" x="40.5" y="254" width="294" height="20.5"/>
+                    <rect key="frame" x="40.5" y="264" width="294" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -108,17 +108,17 @@
                     <rect key="frame" x="155.5" y="569" width="64" height="64"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZKM-Za-kvS">
-                            <rect key="frame" x="20" y="17" width="30" height="30"/>
+                            <rect key="frame" x="24" y="22" width="20" height="20"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="30" id="leS-Ed-lSV"/>
-                                <constraint firstAttribute="width" constant="30" id="wal-o1-uXe"/>
+                                <constraint firstAttribute="height" constant="20" id="leS-Ed-lSV"/>
+                                <constraint firstAttribute="width" constant="20" id="wal-o1-uXe"/>
                             </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="ZKM-Za-kvS" firstAttribute="centerY" secondItem="j8S-J2-HlM" secondAttribute="centerY" id="J57-eO-W9L"/>
-                        <constraint firstItem="ZKM-Za-kvS" firstAttribute="centerX" secondItem="j8S-J2-HlM" secondAttribute="centerX" constant="3" id="baN-Ii-Yqt"/>
+                        <constraint firstItem="ZKM-Za-kvS" firstAttribute="centerX" secondItem="j8S-J2-HlM" secondAttribute="centerX" constant="2" id="baN-Ii-Yqt"/>
                         <constraint firstAttribute="height" constant="64" id="nIh-cP-sgG"/>
                         <constraint firstAttribute="width" constant="64" id="puq-LE-ye3"/>
                     </constraints>

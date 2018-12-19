@@ -5,6 +5,8 @@
 //  Created by Alvaro on 26/11/2018.
 //  Copyright © 2018 surflabapps. All rights reserved.
 //
+import Foundation
+
 struct ALSectionElem {
     let title: String
     let imgURL: String
@@ -33,5 +35,40 @@ struct ALSectionElem {
                                  isPremium: elem["isPremium"] as? Bool ?? false,
                                  kindOfResource: section)
         }
+    }
+}
+
+class ALBaseElem {
+    var baseSection: ALSectionElem!
+    init(baseSection: ALSectionElem!) {
+        self.baseSection = baseSection
+    }
+}
+
+class ALGeneralElem: ALBaseElem {
+    var resource: Data?
+    init(baseSection: ALSectionElem!, resource: Data?) {
+        super.init(baseSection: baseSection)
+        self.resource = resource
+    }
+}
+
+class ALSleepCastElem: ALBaseElem {
+    var primarySound: Data?
+    var secondarySound: Data?
+    
+    init(baseSection: ALSectionElem!, primarySound: Data?, secondarySound: Data?) {
+        super.init(baseSection: baseSection)
+        self.primarySound = primarySound
+        self.secondarySound = secondarySound
+    }
+}
+
+class ALLandscapeElem: ALBaseElem {
+    var images: [Data]?
+    
+    init(baseSection: ALSectionElem!, images: [Data]?) {
+        super.init(baseSection: baseSection)
+        self.images = images
     }
 }

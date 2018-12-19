@@ -49,7 +49,7 @@ func breatheFactory() -> ALBreatheViewWireframeProtocol {
     return wireframe
 }
 
-func sleepFactory() -> ALSleepViewWireframeProtocol {
+func sleepFactory(with elem: ALGeneralElem) -> ALSleepViewWireframeProtocol {
     let wireframe = ALSleepWireframe()
     
     wireframe.view = ALSleepViewController(nibName: "ALSleepViewController", bundle: nil)
@@ -57,11 +57,12 @@ func sleepFactory() -> ALSleepViewWireframeProtocol {
     wireframe.view.presenter = ALSleepPresenter()
     wireframe.view.presenter.view = wireframe.view
     wireframe.view.presenter.wireframe = wireframe
+    wireframe.view.presenter.elem = elem
     
     return wireframe
 }
 
-func sleepCastFactory() -> ALSleepCastWireframe {
+func sleepCastFactory(with elem: ALSleepCastElem) -> ALSleepCastWireframe {
     let wireframe = ALSleepCastWireframe()
     
     wireframe.view = ALSleepCastViewController(nibName: "ALSleepCastViewController", bundle: nil)
@@ -69,6 +70,7 @@ func sleepCastFactory() -> ALSleepCastWireframe {
     wireframe.view.presenter = ALSleepCastPresenter()
     wireframe.view.presenter.view = wireframe.view
     wireframe.view.presenter.wireframe = wireframe
+    wireframe.view.presenter.elem = elem
     
     return wireframe
 }

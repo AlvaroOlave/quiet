@@ -31,11 +31,13 @@ protocol ALGeneralSelectionInteractorProtocol {
     var section: Section! {get set}
     
     func getResourcesList(completion: @escaping ([ALSectionElem]) -> Void)
+    func getCompleteInfoOf(_ elem: ALSectionElem, completion: @escaping (ALBaseElem) -> Void)
     func dismiss()
 }
 
 protocol ALGeneralSelectionDataManagerProtocol {
     func getResourcesListOf(_ section: Section, completion: @escaping ([Any]?) -> Void)
+    func getResource(_ name: String, completion: @escaping (Data?) -> Void)
     func dismiss()
 }
 
@@ -45,6 +47,6 @@ protocol ALGeneralSelectionViewWireframeProtocol {
     var view: (ALGeneralSelectionViewProtocol & UIViewController)! {get set}
     
     func presentGeneralSelectionViewIn(_ view: UIViewController)
-    func presentSectionElem(_ elem: ALSectionElem)
+    func presentSectionElem(_ elem: ALBaseElem)
     func dismiss()
 }

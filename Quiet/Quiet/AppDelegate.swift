@@ -54,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
     }
 
     private func createWindow() -> UIWindow? {

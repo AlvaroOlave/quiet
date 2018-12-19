@@ -10,14 +10,21 @@ import UIKit
 
 protocol ALSleepViewProtocol {
     var presenter: ALSleepPresenterProtocol! {get set}
+    
+    func setImage(_ img: String, title: String)
 }
 
 protocol ALSleepPresenterProtocol {
     var view: ALSleepViewProtocol! {get set}
     var wireframe: ALSleepViewWireframeProtocol! {get set}
     
+    var elem: ALGeneralElem! {get set}
+    
     func viewDidLoad()
     func backButtonPressed()
+    func playButtonDidPressed()
+    func pauseButtonDidPressed()
+    func loopSeconds(_ secs: Double)
 }
 
 protocol ALSleepViewWireframeProtocol {

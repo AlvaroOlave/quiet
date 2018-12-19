@@ -39,6 +39,9 @@ class ALRealtimeClient {
 }
 
 class ALStorageClient {
+    
+    static let shared = ALStorageClient()
+    
     func downloadImage(ref: String, completion: @escaping (UIImage?) -> Void){
         downloadFile(fileName: ref) {
             guard let data = $0 else { completion(nil); return }
@@ -47,42 +50,39 @@ class ALStorageClient {
     }
     
     func downloadFile(fileName: String, completion: @escaping (Data?) -> Void) {
+        
         let storageReference = Storage.storage().reference().child(fileName)
-        storageReference.getMetadata { [weak self] metadata, error in
-            guard error == nil else { completion(nil); return }
-            //Get Local file created date
-            let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-            let filePath = paths[0] + fileName
-            if FileManager.default.fileExists(atPath: filePath) {
+        let fileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            
+            completion(self.dataFromURL(fileURL))
+            
+            storageReference.getMetadata { [weak self] metadata, error in
+                guard error == nil else { return }
                 do{
-                    let attrs = try FileManager.default.attributesOfItem(atPath: filePath) as NSDictionary
-                    
+                    let attrs = try FileManager.default.attributesOfItem(atPath: fileURL.path) as NSDictionary
                     if((metadata?.updated!)! > attrs.fileCreationDate()!){
-                        self?.downloadFile(storageReference, fileName: fileName, completion: completion)
-                    } else {
-                        completion(self?.dataFromURL(URL(string: filePath)))
+                        self?.downloadFile(storageReference, fileName: fileName)
                     }
                 }
-                catch {
-                    completion(nil)
-                }
-            } else {
-                self?.downloadFile(storageReference, fileName: fileName, completion: completion)
+                catch { }
             }
+        } else {
+            self.downloadFile(storageReference, fileName: fileName, completion: completion)
         }
     }
     
-    private func downloadFile(_ reference: StorageReference, fileName: String, completion: @escaping (Data?) -> Void) {
+    private func downloadFile(_ reference: StorageReference, fileName: String, completion: ((Data?) -> Void)? = nil) {
         
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        let filePath = paths[0] + fileName
-        let fileURL = URL.init(string: filePath)
-        
-        reference.write(toFile: fileURL!, completion: { (url, error) in
-            guard error == nil else { return }
-            
-            completion(self.dataFromURL(URL(string: filePath)))
-        })
+        let fileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+
+        DispatchQueue.main.async {
+            reference.write(toFile: fileURL) { (url, error) in
+                guard error == nil else { return }
+                
+                completion?(self.dataFromURL(url))
+            }
+        }
     }
     
     private func dataFromURL(_ url: URL?) -> Data? {

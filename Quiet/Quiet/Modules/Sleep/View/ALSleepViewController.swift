@@ -23,6 +23,9 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     
     @IBOutlet weak var keyboardConstraint: NSLayoutConstraint!
     
+    var playGesture: UITapGestureRecognizer!
+    var pauseGesture: UITapGestureRecognizer!
+    
     let dateFormatter = DateFormatter()
     
     var presenter: ALSleepPresenterProtocol!
@@ -50,6 +53,11 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     
     override func backButtonPressed() { presenter.backButtonPressed() }
     
+    func setImage(_ img: String, title: String) {
+        resourceImage.sd_setImage(with: URL(string: img), placeholderImage: nil)
+        resourceTitle.text = title
+    }
+    
     //MARK:- viewConfiguration
     
     private func commonInit() {
@@ -69,21 +77,27 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     private func configurePlayButton() {
         playIcon.image = UIImage(named: "icPlay")?.withRenderingMode(.alwaysTemplate)
         playIcon.tintColor = WHITE.withAlphaComponent(0.7)
+        playIcon.isUserInteractionEnabled = false
         
         playView.layer.cornerRadius = playView.bounds.height / 2.0
-        playView.layer.borderWidth = 2.0
-        playView.layer.borderColor = LIGHT_GREY_BLUE.cgColor
-        playView.backgroundColor = DARK_SKY_BLUE.withAlphaComponent(0.9)
+        playView.layer.borderWidth = 2.5
+        playView.layer.borderColor = MERCURY_GREY.withAlphaComponent(0.8).cgColor
+        playView.backgroundColor = WARM_GREY.withAlphaComponent(0.9)
+        
+        playGesture = UITapGestureRecognizer(target: self, action: #selector(playButtonPressed))
+        
+        playView.addGestureRecognizer(playGesture)
+        playView.isUserInteractionEnabled = true
     }
     
     private func configureResourceInfo() {
         resourceImage.contentMode = .scaleAspectFit
-        resourceImage.layer.borderColor = WARM_GREY.cgColor
+        resourceImage.layer.borderColor = WARM_GREY.withAlphaComponent(0.6).cgColor
         resourceImage.layer.borderWidth = 2.0
         resourceImage.layer.cornerRadius = 4.0
         
         resourceTitle.text = "ResourceTitleAux "
-        resourceTitle.textColor = BROWNISH_GREY
+        resourceTitle.textColor = WHITE_TWO
         resourceTitle.font = FontSheet.FontRegularWith(size: MEGA_FONT_SIZE)
     }
     
@@ -108,6 +122,7 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
         datePicker.datePickerMode = .countDownTimer
         datePicker.minuteInterval = 15
         datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: UIControl.Event.valueChanged)
+        datePicker.timeZone = TimeZone(abbreviation: "UTC")
         datePicker.date = Date(timeIntervalSince1970: 0)
         datePickerValueChanged(sender: datePicker)
         return datePicker
@@ -128,8 +143,25 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     
     @objc func doneKeyboardButtonPressed() { dateTextField.endEditing(true) }
     
-    @objc func datePickerValueChanged(sender:UIDatePicker) {
+    @objc func datePickerValueChanged(sender: UIDatePicker) {
         dateTextField.text = dateFormatter.string(from: sender.date)
+        presenter.loopSeconds(sender.date.timeIntervalSince1970)
+    }
+    
+    @objc func playButtonPressed() {
+        presenter.playButtonDidPressed()
+        if pauseGesture == nil { pauseGesture = UITapGestureRecognizer(target: self, action: #selector(pauseButtonPressed))}
+        playView.removeGestureRecognizer(playGesture)
+        playView.addGestureRecognizer(pauseGesture)
+        playIcon.image = UIImage(named: "icPause")?.withRenderingMode(.alwaysTemplate)
+    }
+    
+    @objc func pauseButtonPressed() {
+        presenter.pauseButtonDidPressed()
+        if playGesture == nil { playGesture = UITapGestureRecognizer(target: self, action: #selector(playButtonPressed))}
+        playView.removeGestureRecognizer(pauseGesture)
+        playView.addGestureRecognizer(playGesture)
+        playIcon.image = UIImage(named: "icPlay")?.withRenderingMode(.alwaysTemplate)
     }
     
     //MARK: - Notification methods

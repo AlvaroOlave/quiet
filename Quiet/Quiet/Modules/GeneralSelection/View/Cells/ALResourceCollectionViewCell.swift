@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ALResourceCollectionViewCell: UICollectionViewCell {
     
@@ -21,7 +22,7 @@ class ALResourceCollectionViewCell: UICollectionViewCell {
     
     func setTitle(_ title: String, backgroundImg: String, isPremium: Bool) {
         titleLabel.text = title
-
+        backgroungImage.sd_setImage(with: URL(string: backgroundImg), placeholderImage: nil)
         lockImage.isHidden = !isPremium
     }
     
@@ -31,7 +32,9 @@ class ALResourceCollectionViewCell: UICollectionViewCell {
         lockImage.image = UIImage(named: "icLock")?.withRenderingMode(.alwaysTemplate)
         lockImage.tintColor = WARM_GREY
         
-        titleLabel.textColor = WARM_GREY
+        backgroungImage.contentMode = .scaleAspectFill
+        
+        titleLabel.textColor = WHITE_TWO
         titleLabel.font = FontSheet.FontRegularWith(size: NORMAL_FONT_SIZE)
         
         layer.cornerRadius = 6.0
