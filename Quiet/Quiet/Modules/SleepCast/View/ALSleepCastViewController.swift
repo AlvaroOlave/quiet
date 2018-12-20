@@ -75,6 +75,7 @@ class ALSleepCastViewController: ALBaseViewController, ALSleepCastViewProtocol {
         backIcon?.tintColor = MERCURY_GREY
         view.backgroundColor = BROWNISH_GREY.withAlphaComponent(0.5)
         view.clipsToBounds = true
+        frameView.clipsToBounds = true
     }
     
     private func configurePlayButton() {

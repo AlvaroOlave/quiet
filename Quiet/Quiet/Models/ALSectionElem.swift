@@ -66,8 +66,9 @@ class ALSleepCastElem: ALBaseElem {
 
 class ALLandscapeElem: ALBaseElem {
     var images: [Data]?
+    var sound: Data?
     
-    init(baseSection: ALSectionElem!, images: [Data]?) {
+    init(baseSection: ALSectionElem!, images: [Data]?, sound: Data?) {
         super.init(baseSection: baseSection)
         self.images = images
     }

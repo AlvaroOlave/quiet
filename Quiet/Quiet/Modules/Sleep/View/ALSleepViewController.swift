@@ -58,10 +58,16 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
         resourceTitle.text = title
     }
     
+    func restorePlayButton() {
+        playIcon.image = UIImage(named: "icPlay")?.withRenderingMode(.alwaysTemplate)
+        playView.addGestureRecognizer(playGesture)
+    }
+    
     //MARK:- viewConfiguration
     
     private func commonInit() {
         dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         configureBackground()
         configurePlayButton()
         configureResourceInfo()
@@ -123,7 +129,7 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
         datePicker.minuteInterval = 15
         datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: UIControl.Event.valueChanged)
         datePicker.timeZone = TimeZone(abbreviation: "UTC")
-        datePicker.date = Date(timeIntervalSince1970: 0)
+        datePicker.date = Date(timeIntervalSince1970: 3600)
         datePickerValueChanged(sender: datePicker)
         return datePicker
     }
@@ -153,7 +159,7 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
         if pauseGesture == nil { pauseGesture = UITapGestureRecognizer(target: self, action: #selector(pauseButtonPressed))}
         playView.removeGestureRecognizer(playGesture)
         playView.addGestureRecognizer(pauseGesture)
-        playIcon.image = UIImage(named: "icPause")?.withRenderingMode(.alwaysTemplate)
+        playIcon.image = UIImage(named: "icStop")?.withRenderingMode(.alwaysTemplate)
     }
     
     @objc func pauseButtonPressed() {

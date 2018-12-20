@@ -12,6 +12,7 @@ protocol ALSleepViewProtocol {
     var presenter: ALSleepPresenterProtocol! {get set}
     
     func setImage(_ img: String, title: String)
+    func restorePlayButton()
 }
 
 protocol ALSleepPresenterProtocol {

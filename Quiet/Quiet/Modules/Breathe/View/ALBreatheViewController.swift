@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AudioToolbox
 
 class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
     
@@ -191,10 +192,12 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
         UIView.animate(withDuration: self.breathTime, animations: {
             self.breathView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         }) { _ in
+            AudioServicesPlayAlertSoundWithCompletion(1054) { }
             UIView.animate(withDuration: self.breathTime, animations: {
                 self.breathLabel.text = "Expire"
                 self.breathView.transform = CGAffineTransform.identity
             }, completion: { _ in
+                AudioServicesPlayAlertSoundWithCompletion(1054) { }
                 self.startBreathing(count - 1)
             })
         }

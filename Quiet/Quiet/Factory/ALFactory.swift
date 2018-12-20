@@ -74,3 +74,16 @@ func sleepCastFactory(with elem: ALSleepCastElem) -> ALSleepCastWireframe {
     
     return wireframe
 }
+
+func landscapeFactory(with elem: ALLandscapeElem) -> ALLandscapeWireframeProtocol {
+    let wireframe = ALLandscapeWireframe()
+    
+    wireframe.view = ALLandscapeViewController(nibName: "ALLandscapeViewController", bundle: nil)
+    
+    wireframe.view.presenter = ALLandscapePresenter()
+    wireframe.view.presenter.view = wireframe.view
+    wireframe.view.presenter.wireframe = wireframe
+    wireframe.view.presenter.elem = elem
+    
+    return wireframe
+}

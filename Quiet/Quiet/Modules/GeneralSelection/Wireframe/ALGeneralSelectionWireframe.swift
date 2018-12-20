@@ -20,6 +20,8 @@ class ALGeneralSelectionWireframe: ALGeneralSelectionViewWireframeProtocol {
             presentSleepCastInterface(elem as! ALSleepCastElem)
         case .Sleep:
             presentSleepInterface(elem as! ALGeneralElem)
+        case .Landscapes:
+            presentLandscapeInterface(elem as! ALLandscapeElem)
         default:
             break
         }
@@ -33,5 +35,10 @@ class ALGeneralSelectionWireframe: ALGeneralSelectionViewWireframeProtocol {
     private func presentSleepCastInterface(_ elem: ALSleepCastElem) {
         let wireframe = sleepCastFactory(with: elem)
         wireframe.presentSleepCastViewIn(view)
+    }
+    
+    private func presentLandscapeInterface(_ elem: ALLandscapeElem) {
+        let wireframe = landscapeFactory(with: elem)
+        wireframe.presentLandscapeViewIn(view)
     }
 }

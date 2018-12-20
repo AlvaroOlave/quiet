@@ -108,7 +108,7 @@
                     <rect key="frame" x="155.5" y="569" width="64" height="64"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZKM-Za-kvS">
-                            <rect key="frame" x="24" y="22" width="20" height="20"/>
+                            <rect key="frame" x="23" y="22" width="20" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="leS-Ed-lSV"/>
                                 <constraint firstAttribute="width" constant="20" id="wal-o1-uXe"/>
@@ -118,7 +118,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="ZKM-Za-kvS" firstAttribute="centerY" secondItem="j8S-J2-HlM" secondAttribute="centerY" id="J57-eO-W9L"/>
-                        <constraint firstItem="ZKM-Za-kvS" firstAttribute="centerX" secondItem="j8S-J2-HlM" secondAttribute="centerX" constant="2" id="baN-Ii-Yqt"/>
+                        <constraint firstItem="ZKM-Za-kvS" firstAttribute="centerX" secondItem="j8S-J2-HlM" secondAttribute="centerX" constant="1" id="baN-Ii-Yqt"/>
                         <constraint firstAttribute="height" constant="64" id="nIh-cP-sgG"/>
                         <constraint firstAttribute="width" constant="64" id="puq-LE-ye3"/>
                     </constraints>
@@ -146,7 +146,7 @@
                 <constraint firstItem="NCx-iL-8Gv" firstAttribute="top" relation="greaterThanOrEqual" secondItem="poK-TR-i8H" secondAttribute="bottom" constant="16" id="XXE-jV-XPz"/>
                 <constraint firstItem="KvX-mx-Mjd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bge-3S-Wkh"/>
                 <constraint firstAttribute="bottom" secondItem="KvX-mx-Mjd" secondAttribute="bottom" id="btp-7t-Sy5"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ioG-4R-b5z" secondAttribute="bottom" id="cuT-t6-jXL"/>
+                <constraint firstAttribute="bottom" secondItem="ioG-4R-b5z" secondAttribute="bottom" id="cuT-t6-jXL"/>
                 <constraint firstItem="KvX-mx-Mjd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fUu-ay-xkh"/>
                 <constraint firstItem="poK-TR-i8H" firstAttribute="top" secondItem="BJ4-tJ-WtL" secondAttribute="bottom" constant="16" id="hIC-CC-e2u"/>
                 <constraint firstItem="ioG-4R-b5z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kRe-Pc-cX7"/>

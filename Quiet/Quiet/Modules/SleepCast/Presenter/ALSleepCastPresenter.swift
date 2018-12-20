@@ -28,11 +28,13 @@ class ALSleepCastPresenter: NSObject, ALSleepCastPresenterProtocol, AVAudioPlaye
             if let prim = elem.primarySound {
                 voicePlayer = try AVAudioPlayer(data: prim)
                 voicePlayer?.prepareToPlay()
+                voicePlayer?.volume = 0.7
                 voicePlayer?.delegate = self
             }
             if let sec = elem.secondarySound {
                 musicPlayer = try AVAudioPlayer(data: sec)
                 musicPlayer?.prepareToPlay()
+                musicPlayer?.volume = 0.7
                 musicPlayer?.numberOfLoops = -1
             }
         } catch {
