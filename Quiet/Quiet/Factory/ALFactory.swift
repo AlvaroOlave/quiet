@@ -87,3 +87,29 @@ func landscapeFactory(with elem: ALLandscapeElem) -> ALLandscapeWireframeProtoco
     
     return wireframe
 }
+
+func asmrFactory(with elem: ALGeneralElem) -> ALASMRWireframeProtocol {
+    let wireframe = ALASMRWireframe()
+    
+    wireframe.view = ALASMRViewController(nibName: "ALASMRViewController", bundle: nil)
+    
+    wireframe.view.presenter = ALASMRPresenter()
+    wireframe.view.presenter.view = wireframe.view
+    wireframe.view.presenter.wireframe = wireframe
+    wireframe.view.presenter.elem = elem
+    
+    return wireframe
+}
+
+func yogaFactory(with elem: ALGeneralElem) -> ALYogaWireframeProtocol {
+    let wireframe = ALYogaWireframe()
+    
+    wireframe.view = ALYogaViewController(nibName: "ALYogaViewController", bundle: nil)
+    
+    wireframe.view.presenter = ALYogaPresenter()
+    wireframe.view.presenter.view = wireframe.view
+    wireframe.view.presenter.wireframe = wireframe
+    wireframe.view.presenter.elem = elem
+    
+    return wireframe
+}

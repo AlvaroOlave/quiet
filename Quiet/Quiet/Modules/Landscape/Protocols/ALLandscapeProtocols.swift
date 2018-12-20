@@ -11,6 +11,7 @@ import UIKit
 protocol ALLandscapeViewProtocol {
     var presenter: ALLandscapePresenterProtocol! {get set}
     
+    func setImage(_ image: UIImage, animated: Bool)
 }
 
 protocol ALLandscapePresenterProtocol {
@@ -20,6 +21,7 @@ protocol ALLandscapePresenterProtocol {
     var elem: ALLandscapeElem! {get set}
     
     func viewDidLoad()
+    func viewWillAppear()
     func backButtonPressed()
 }
 

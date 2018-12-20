@@ -54,10 +54,9 @@ class ALSleepPresenter: ALSleepPresenterProtocol {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
             try AVAudioSession.sharedInstance().setActive(true)
             musicPlayer?.play()
-        } catch {
-            
-        }
+        } catch { }
     }
+    
     private func stop() {
         self.stopAudio()
         DispatchQueue.main.async { self.view.restorePlayButton() }

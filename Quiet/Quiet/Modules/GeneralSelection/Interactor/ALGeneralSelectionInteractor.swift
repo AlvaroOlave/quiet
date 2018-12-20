@@ -25,6 +25,8 @@ class ALGeneralSelectionInteractor: ALGeneralSelectionInteractorProtocol {
             getSleepCastInfo(from: elem, completion: completion)
         case .Sleep:
             getGeneralInfo(from: elem, completion: completion)
+        case .Landscapes:
+            getLandscapeInfo(from: elem, completion: completion)
         default:
             break
         }
@@ -53,6 +55,34 @@ class ALGeneralSelectionInteractor: ALGeneralSelectionInteractorProtocol {
         }
         group.notify(queue: DispatchQueue.main) {
             completion(ALSleepCastElem(baseSection: elem, primarySound: primary, secondarySound: secondary))
+        }
+    }
+    
+    private func getLandscapeInfo(from elem: ALSectionElem, completion: @escaping (ALLandscapeElem) -> Void) {
+        var images = [Data]()
+        var sound: Data?
+        
+        let group = DispatchGroup()
+        let queue = DispatchQueue.global(qos: .userInitiated)
+        
+        queue.async(group : group) {
+            var imageURLs = elem.resourceURL as! [String]
+            let soundURL = imageURLs.removeLast()
+            imageURLs.forEach({ url in
+                group.enter()
+                self.dataManager.getResource(url) {
+                    if let data = $0 { images.append(data) }
+                    group.leave()
+                }
+            })
+            group.enter()
+            self.dataManager.getResource(soundURL) { (data) in
+                sound = data
+                group.leave()
+            }
+        }
+        group.notify(queue: DispatchQueue.main) {
+            completion(ALLandscapeElem(baseSection: elem, images: images, sound: sound))
         }
     }
     

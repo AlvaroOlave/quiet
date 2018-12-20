@@ -6,4 +6,11 @@
 //  Copyright © 2018 surflabapps. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ALYogaWireframe: ALYogaWireframeProtocol {
+    var view: (UIViewController & ALYogaViewProtocol)!
+    
+    func presentYogaViewIn(_ fromView: UIViewController) { fromView.present(view, animated: true) }
+    func dismiss() { view.dismiss(animated: true) }
+}

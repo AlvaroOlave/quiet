@@ -6,4 +6,15 @@
 //  Copyright © 2018 surflabapps. All rights reserved.
 //
 
-import Foundation
+class ALASMRPresenter: ALASMRPresenterProtocol {
+    var view: ALASMRViewProtocol!
+    var wireframe: ALASMRWireframeProtocol!
+    
+    var elem: ALGeneralElem!
+    
+    func viewDidLoad() {
+        
+    }
+    
+    func backButtonPressed() { wireframe.dismiss() }
+}

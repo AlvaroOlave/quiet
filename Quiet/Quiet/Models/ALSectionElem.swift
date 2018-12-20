@@ -24,7 +24,7 @@ struct ALSectionElem {
             case .SleepCast:
                 resource = (elem["resourceURL"] as? String ?? "", elem["secondaryResourceURL"] as? String ?? "")
             case .Landscapes:
-                resource = elem["resourceURLs"] as? [String] ?? []
+                resource = (elem["resourceURLs"] as? [String] ?? []) + [(elem["soundURL"] as? String ?? "")]
             default:
                 resource = elem["resourceURL"] as? String ?? ""
             }
@@ -71,5 +71,6 @@ class ALLandscapeElem: ALBaseElem {
     init(baseSection: ALSectionElem!, images: [Data]?, sound: Data?) {
         super.init(baseSection: baseSection)
         self.images = images
+        self.sound = sound
     }
 }

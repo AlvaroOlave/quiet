@@ -6,4 +6,11 @@
 //  Copyright © 2018 surflabapps. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class ALASMRWireframe: ALASMRWireframeProtocol {
+    var view: (UIViewController & ALASMRViewProtocol)!
+    
+    func presentASMRViewIn(_ fromView: UIViewController) { fromView.present(view, animated: true) }
+    func dismiss() { view.dismiss(animated: true) }
+}
