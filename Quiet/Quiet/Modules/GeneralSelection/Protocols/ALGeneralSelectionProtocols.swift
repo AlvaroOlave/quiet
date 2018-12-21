@@ -38,6 +38,7 @@ protocol ALGeneralSelectionInteractorProtocol {
 protocol ALGeneralSelectionDataManagerProtocol {
     func getResourcesListOf(_ section: Section, completion: @escaping ([Any]?) -> Void)
     func getResource(_ name: String, completion: @escaping (Data?) -> Void)
+    func getResourceURL(_ name: String, completion: @escaping (Data?) -> Void)
     func dismiss()
 }
 

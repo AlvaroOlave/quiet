@@ -11,6 +11,7 @@ import UIKit
 protocol ALYogaViewProtocol {
     var presenter: ALYogaPresenterProtocol! {get set}
     
+    func setVideo(_ videoURL: URL)
 }
 
 protocol ALYogaPresenterProtocol {

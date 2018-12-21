@@ -6,6 +6,8 @@
 //  Copyright © 2018 surflabapps. All rights reserved.
 //
 
+import Foundation
+
 class ALYogaPresenter: ALYogaPresenterProtocol {
     var view: ALYogaViewProtocol!
     var wireframe: ALYogaWireframeProtocol!
@@ -14,6 +16,7 @@ class ALYogaPresenter: ALYogaPresenterProtocol {
     
     func viewDidLoad() {
         
+        if let data = elem.resource, let url = URL(dataRepresentation: data, relativeTo: nil) { view.setVideo(url) }
     }
     
     func backButtonPressed() { wireframe.dismiss() }

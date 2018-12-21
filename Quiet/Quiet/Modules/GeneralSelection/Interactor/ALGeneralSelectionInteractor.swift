@@ -25,6 +25,8 @@ class ALGeneralSelectionInteractor: ALGeneralSelectionInteractorProtocol {
             getSleepCastInfo(from: elem, completion: completion)
         case .Landscapes:
             getLandscapeInfo(from: elem, completion: completion)
+        case .YogaStretch:
+            getGeneralInfoURL(from: elem, completion: completion)
         default:
             getGeneralInfo(from: elem, completion: completion)
         }
@@ -85,9 +87,16 @@ class ALGeneralSelectionInteractor: ALGeneralSelectionInteractorProtocol {
     }
     
     private func getGeneralInfo(from elem: ALSectionElem, completion: @escaping (ALGeneralElem) -> Void) {
-        
         DispatchQueue.global(qos: .userInitiated).async {
             self.dataManager.getResource(elem.resourceURL as! String) { data in
+                DispatchQueue.main.async { completion(ALGeneralElem(baseSection: elem, resource: data)) }
+            }
+        }
+    }
+    
+    private func getGeneralInfoURL(from elem: ALSectionElem, completion: @escaping (ALGeneralElem) -> Void) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.dataManager.getResourceURL(elem.resourceURL as! String) { data in
                 DispatchQueue.main.async { completion(ALGeneralElem(baseSection: elem, resource: data)) }
             }
         }

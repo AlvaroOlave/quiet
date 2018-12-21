@@ -14,5 +14,11 @@ class ALYogaViewController: AVPlayerViewController, ALYogaViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        presenter.viewDidLoad()
+    }
+    
+    func setVideo(_ videoURL: URL) {
+        player = AVPlayer(url: videoURL)
+        
     }
 }

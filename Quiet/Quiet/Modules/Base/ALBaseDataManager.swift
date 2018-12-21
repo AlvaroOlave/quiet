@@ -49,6 +49,14 @@ class ALStorageClient {
         }
     }
     
+    func URLFromDownloadedFile(fileName: String, completion: @escaping (Data?) -> Void) {
+        downloadFile(fileName: fileName) { data in
+            guard data != nil else { completion(nil); return }
+            let fileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+            completion(fileURL.dataRepresentation)
+        }
+    }
+    
     func downloadFile(fileName: String, completion: @escaping (Data?) -> Void) {
         
         let storageReference = Storage.storage().reference().child(fileName)

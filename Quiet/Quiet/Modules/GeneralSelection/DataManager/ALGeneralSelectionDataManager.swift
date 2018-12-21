@@ -20,5 +20,9 @@ class ALGeneralSelectionDataManager: ALRealtimeClient, ALGeneralSelectionDataMan
         ALStorageClient.shared.downloadFile(fileName: name, completion: completion)
     }
     
+    func getResourceURL(_ name: String, completion: @escaping (Data?) -> Void) {
+        ALStorageClient.shared.URLFromDownloadedFile(fileName: name, completion: completion)
+    }
+    
     func dismiss() { unobserveBlock?() }
 }

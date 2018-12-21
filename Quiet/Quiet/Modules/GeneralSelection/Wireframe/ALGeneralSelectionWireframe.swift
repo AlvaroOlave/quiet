@@ -29,6 +29,8 @@ class ALGeneralSelectionWireframe: ALGeneralSelectionViewWireframeProtocol {
             presentLandscapeInterface(elem as! ALLandscapeElem)
         case .ASMR:
             presentASMRInterface(elem as! ALGeneralElem)
+        case .YogaStretch:
+            presentYogaStretchInterface(elem as! ALGeneralElem)
         default:
             break
         }
@@ -52,5 +54,10 @@ class ALGeneralSelectionWireframe: ALGeneralSelectionViewWireframeProtocol {
     private func presentASMRInterface(_ elem: ALGeneralElem) {
         let wireframe = asmrFactory(with: elem)
         wireframe.presentASMRViewIn(view)
+    }
+    
+    private func presentYogaStretchInterface(_ elem: ALGeneralElem) {
+        let wireframe = yogaFactory(with: elem)
+        wireframe.presentYogaViewIn(view)
     }
 }
