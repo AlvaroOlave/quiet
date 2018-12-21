@@ -11,6 +11,7 @@ import UIKit
 protocol ALASMRViewProtocol {
     var presenter: ALASMRPresenterProtocol! {get set}
     
+    func setImage(_ img: String)
 }
 
 protocol ALASMRPresenterProtocol {
@@ -20,6 +21,7 @@ protocol ALASMRPresenterProtocol {
     var elem: ALGeneralElem! {get set}
     
     func viewDidLoad()
+    func viewDidAppear()
     func backButtonPressed()
 }
 

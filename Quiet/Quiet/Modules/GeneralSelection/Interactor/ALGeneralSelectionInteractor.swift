@@ -23,12 +23,10 @@ class ALGeneralSelectionInteractor: ALGeneralSelectionInteractorProtocol {
         switch elem.kindOfResource {
         case .SleepCast:
             getSleepCastInfo(from: elem, completion: completion)
-        case .Sleep:
-            getGeneralInfo(from: elem, completion: completion)
         case .Landscapes:
             getLandscapeInfo(from: elem, completion: completion)
         default:
-            break
+            getGeneralInfo(from: elem, completion: completion)
         }
         
     }

@@ -11,7 +11,12 @@ import UIKit
 class ALGeneralSelectionWireframe: ALGeneralSelectionViewWireframeProtocol {
     var view: (UIViewController & ALGeneralSelectionViewProtocol)!
     
-    func presentGeneralSelectionViewIn(_ fromView: UIViewController) { fromView.present(view, animated: true) }
+    func presentGeneralSelectionViewIn(_ fromView: UIViewController) {
+        fromView.definesPresentationContext = true
+        view.modalTransitionStyle = .crossDissolve
+        view.modalPresentationStyle = .overCurrentContext
+        fromView.present(view, animated: true)
+    }
     func dismiss() { view.dismiss(animated: true) }
     
     func presentSectionElem(_ elem: ALBaseElem) {
@@ -22,6 +27,8 @@ class ALGeneralSelectionWireframe: ALGeneralSelectionViewWireframeProtocol {
             presentSleepInterface(elem as! ALGeneralElem)
         case .Landscapes:
             presentLandscapeInterface(elem as! ALLandscapeElem)
+        case .ASMR:
+            presentASMRInterface(elem as! ALGeneralElem)
         default:
             break
         }
@@ -40,5 +47,10 @@ class ALGeneralSelectionWireframe: ALGeneralSelectionViewWireframeProtocol {
     private func presentLandscapeInterface(_ elem: ALLandscapeElem) {
         let wireframe = landscapeFactory(with: elem)
         wireframe.presentLandscapeViewIn(view)
+    }
+    
+    private func presentASMRInterface(_ elem: ALGeneralElem) {
+        let wireframe = asmrFactory(with: elem)
+        wireframe.presentASMRViewIn(view)
     }
 }

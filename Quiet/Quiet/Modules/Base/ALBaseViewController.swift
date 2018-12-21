@@ -12,9 +12,6 @@ class ALBaseViewController: UIViewController {
     
     @IBOutlet weak var backView: UIView?
     @IBOutlet weak var backIcon: UIImageView?
-    
-    override var shouldAutorotate: Bool { return false }
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return .portrait }
 
     override func viewDidLoad() {
         super.viewDidLoad()

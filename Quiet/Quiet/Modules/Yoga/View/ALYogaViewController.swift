@@ -6,11 +6,11 @@
 //  Copyright © 2018 surflabapps. All rights reserved.
 //
 
-import UIKit
+import AVKit
 
-class ALYogaViewController: ALBaseViewController, ALYogaViewProtocol {
+class ALYogaViewController: AVPlayerViewController, ALYogaViewProtocol {
     var presenter: ALYogaPresenterProtocol!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

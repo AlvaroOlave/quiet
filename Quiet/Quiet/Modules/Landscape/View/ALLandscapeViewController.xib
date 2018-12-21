@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="landscape">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,21 +21,21 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xKB-dY-LwA">
-                    <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2Y-ck-X7K">
-                    <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8X6-Ku-Sn2" userLabel="Back View">
-                    <rect key="frame" x="25" y="25" width="40" height="40"/>
+                    <rect key="frame" x="25" y="602" width="40" height="40"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cmc-Z6-fCb">
-                            <rect key="frame" x="7" y="8" width="24" height="24"/>
+                            <rect key="frame" x="8" y="9" width="24" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="24" id="Jli-Cp-wAY"/>
                                 <constraint firstAttribute="height" constant="24" id="zY2-Zg-Tm7"/>
@@ -46,8 +46,8 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="3dk-Ga-RTg"/>
                         <constraint firstAttribute="width" constant="40" id="LS4-nd-CIZ"/>
-                        <constraint firstItem="Cmc-Z6-fCb" firstAttribute="centerX" secondItem="8X6-Ku-Sn2" secondAttribute="centerX" constant="-1" id="rpn-Ac-xUz"/>
-                        <constraint firstItem="Cmc-Z6-fCb" firstAttribute="centerY" secondItem="8X6-Ku-Sn2" secondAttribute="centerY" id="sg8-ax-8qH"/>
+                        <constraint firstItem="Cmc-Z6-fCb" firstAttribute="centerX" secondItem="8X6-Ku-Sn2" secondAttribute="centerX" id="rpn-Ac-xUz"/>
+                        <constraint firstItem="Cmc-Z6-fCb" firstAttribute="centerY" secondItem="8X6-Ku-Sn2" secondAttribute="centerY" constant="1" id="sg8-ax-8qH"/>
                     </constraints>
                 </view>
             </subviews>
@@ -58,7 +58,7 @@
                 <constraint firstItem="Q2Y-ck-X7K" firstAttribute="centerY" secondItem="xKB-dY-LwA" secondAttribute="centerY" id="cDM-9y-Ug9"/>
                 <constraint firstAttribute="bottom" secondItem="xKB-dY-LwA" secondAttribute="bottom" id="dNF-CK-Bri"/>
                 <constraint firstAttribute="trailing" secondItem="xKB-dY-LwA" secondAttribute="trailing" id="faY-Pr-Ce6"/>
-                <constraint firstItem="8X6-Ku-Sn2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="g90-S6-MJI"/>
+                <constraint firstAttribute="bottom" secondItem="8X6-Ku-Sn2" secondAttribute="bottom" constant="25" id="g90-S6-MJI"/>
                 <constraint firstItem="Q2Y-ck-X7K" firstAttribute="centerX" secondItem="xKB-dY-LwA" secondAttribute="centerX" id="iDU-yb-nUW"/>
                 <constraint firstItem="xKB-dY-LwA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lDC-vb-qJC"/>
                 <constraint firstItem="xKB-dY-LwA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mWB-Dq-7dN"/>

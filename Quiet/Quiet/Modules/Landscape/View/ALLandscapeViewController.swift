@@ -10,16 +10,13 @@ import UIKit
 
 class ALLandscapeViewController: ALBaseViewController, ALLandscapeViewProtocol {
     
-    @IBOutlet weak var backgroundImage: UIImageView?
-    @IBOutlet weak var curtineView: UIView?
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var curtineView: UIView!
     
     var presenter: ALLandscapePresenterProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-        UIDevice.current.setValue(value, forKey: "orientation")
         
         commonInit()
         presenter.viewDidLoad()
@@ -30,40 +27,39 @@ class ALLandscapeViewController: ALBaseViewController, ALLandscapeViewProtocol {
         presenter.viewWillAppear()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in self?.curtinePressed() }
     }
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return .landscape }
-    override var shouldAutorotate: Bool { return true }
     
     override func backButtonPressed() { presenter.backButtonPressed() }
     
     func setImage(_ image: UIImage, animated: Bool) {
         if animated {
             UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseInOut, animations: {
-                self.curtineView?.layer.backgroundColor = WHITE.cgColor
+                self.curtineView.layer.backgroundColor = WHITE.cgColor
             }) { _ in
-                self.backgroundImage?.image = image
+                self.backgroundImage.image = UIImage(cgImage: image.cgImage!, scale: 1.0, orientation: .left)
                 UIView.animate(withDuration: 0.1, delay: 0.0, options: .curveEaseInOut, animations: {
-                    self.curtineView?.layer.backgroundColor = CLEAR_COLOR.cgColor
+                    self.curtineView.layer.backgroundColor = CLEAR_COLOR.cgColor
                 }) { _ in
                     
                 }
             }
         } else {
-            backgroundImage?.image = image
+            backgroundImage.image = UIImage(cgImage: image.cgImage!, scale: 1.0, orientation: .left)
         }
     }
     
     //MARK:- viewConfiguration
     
     private func commonInit() {
-        backgroundImage?.contentMode = .scaleAspectFill
+        backgroundImage.contentMode = .scaleAspectFill
         
-        curtineView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(curtinePressed)))
-        curtineView?.isUserInteractionEnabled = true
+        curtineView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(curtinePressed)))
+        curtineView.isUserInteractionEnabled = true
+        
+        backIcon?.image = UIImage(cgImage: UIImage(named: "icBack")!.cgImage!, scale: 1.0, orientation: .left)
     }
     
     @objc func curtinePressed() {

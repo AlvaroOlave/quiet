@@ -18,12 +18,16 @@ class ALLandscapePresenter: ALLandscapePresenterProtocol {
     var musicPlayer: AVAudioPlayer?
     var currentIndex = 0
     
+    var workItem: DispatchWorkItem!
+    
     func viewDidLoad() {
+        
         if let imgData = elem.images?.first, let img = UIImage(data: imgData) {
             view.setImage(img, animated: false)
             currentIndex = 1 % (elem.images ?? []).count
         }
         initPlayer()
+        initWorkItem()
     }
     
     func viewWillAppear() {
@@ -31,16 +35,10 @@ class ALLandscapePresenter: ALLandscapePresenterProtocol {
         playAudio()
     }
     
-    func backButtonPressed() { stopAudio(); wireframe.dismiss() }
+    func backButtonPressed() { stopAudio(); workItem.cancel(); wireframe.dismiss() }
     
     private func initCarousel() {
-        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 5.0) {
-            if let imgData = self.elem.images?[self.currentIndex], let img = UIImage(data: imgData) {
-                DispatchQueue.main.async { self.view.setImage(img, animated: true) }
-                self.currentIndex = (self.currentIndex + 1) % (self.elem.images ?? []).count
-                self.initCarousel()
-            }
-        }
+        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 15.0, execute: workItem)
     }
     
     private func initPlayer() {
@@ -53,6 +51,16 @@ class ALLandscapePresenter: ALLandscapePresenterProtocol {
             }
         } catch {
             //showError
+        }
+    }
+    
+    private func initWorkItem() {
+        workItem = DispatchWorkItem {
+            if let imgData = self.elem.images?[self.currentIndex], let img = UIImage(data: imgData) {
+                DispatchQueue.main.async { self.view.setImage(img, animated: true) }
+                self.currentIndex = (self.currentIndex + 1) % (self.elem.images ?? []).count
+                self.initCarousel()
+            }
         }
     }
     

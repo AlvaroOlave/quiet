@@ -36,6 +36,8 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
         collectionView.register(UINib(nibName: "ALResourceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ALResourceCollectionViewCell")
         
         backIcon?.image = UIImage(named: "icCancel")
+        
+        view.layer.backgroundColor = WARM_GREY.withAlphaComponent(0.5).cgColor
     }
     
     override func backButtonPressed() { presenter.backButtonPressed() }
