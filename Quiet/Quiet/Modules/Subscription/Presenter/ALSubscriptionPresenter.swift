@@ -6,34 +6,59 @@
 //  Copyright © 2018 surflabapps. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+enum SubscriptionMode: String {
+    case Normal
+    case Offer
+}
 
 class ALSubscriptionPresenter: ALSubscriptionPresenterProtocol, ALSubscriptionManagerDelegate {
     
     var view: ALSubscriptionViewProtocol!    
     var wireframe: ALSubscriptionWireframeProtocol!
     
+    var mode: SubscriptionMode!
+    
     func viewDidLoad() {
-        
+        mode == .Normal ? ALPurchaseManager.shared.loadSubscriptions() : ALPurchaseManager.shared.loadOfferedSubscriptions()
     }
     
     func backButtonPressed() { wireframe.dismiss() }
     
     //MARK:- ALSubscriptionManagerDelegate methods
     
-    func setWeeklySubscriptionPrice(_ price: NSDecimalNumber, units: String) { }
-    func setMonthlySubscriptionPrice(_ price: NSDecimalNumber, units: String) { }
-    func setYearlySubscriptionPrice(_ price: NSDecimalNumber, units: String) { }
+    func setWeeklySubscriptionPrice(_ price: NSDecimalNumber, units: String) {
+        let weeklyPrice = createPriceAttributedString(with: price.doubleValue, units: units, period: "Week")
+        view.setWeeklySubscriptionPrice(weeklyPrice)
+    }
+    func setMonthlySubscriptionPrice(_ price: NSDecimalNumber, units: String) {
+        let monthlyPrice = createPriceAttributedString(with: price.doubleValue, units: units, period: "Month")
+        view.setMonthlySubscriptionPrice(monthlyPrice)
+    }
+    func setYearlySubscriptionPrice(_ price: NSDecimalNumber, units: String) {
+        let yearlyPrice = createPriceAttributedString(with: price.doubleValue, units: units, period: "Year")
+        view.setYearlySubscriptionPrice(yearlyPrice)
+    }
     
-    func getAvailableProductsInProcess() { }
-    
-    func getAvailableProductsCompleted() { }
-    
+    func getAvailableProductsInProcess() { view.showLoading() }
+    func getAvailableProductsCompleted() { view.hideLoading() }
     func getAvailableProductsFailed() { }
-    
-    func purchaising() { }
-    
-    func endPurchase(_ purchased: Bool) { }
-    
+    func purchaising() { view.showLoading() }
+    func endPurchase(_ purchased: Bool) { view.hideLoading() }
     func showMessage(_ title: String, description: String) { }
+    
+    //MARK:- private methods
+    
+    private func createPriceAttributedString(with price: Double, units: String, period: String) -> String {
+        return String(format: "%.02f%@/ ", price, units) + period
+    }
+    
+    private func attributedText(_ text: String, color: UIColor, size: Float) -> NSAttributedString{
+        
+        let attrs : [NSAttributedString.Key : Any] = [ NSAttributedString.Key.font : FontSheet.FontRegularWith(size: size),
+                                                       NSAttributedString.Key.foregroundColor : color ]
+        
+        return NSAttributedString(string: text, attributes: attrs)
+    }
 }

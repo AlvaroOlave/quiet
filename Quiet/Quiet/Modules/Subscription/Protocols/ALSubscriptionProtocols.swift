@@ -22,6 +22,8 @@ protocol ALSubscriptionPresenterProtocol {
     var view: ALSubscriptionViewProtocol! {get set}
     var wireframe: ALSubscriptionWireframeProtocol! {get set}
     
+    var mode: SubscriptionMode! {get set}
+    
     func viewDidLoad()
     func backButtonPressed()
 }
