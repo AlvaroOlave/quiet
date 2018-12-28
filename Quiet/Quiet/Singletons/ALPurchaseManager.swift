@@ -8,6 +8,14 @@
 
 import StoreKit
 
+let WEEKLY = "com.quiet.subscription.weekly"
+let MONTHLY = "com.quiet.subscription.monthly"
+let YEARLY = "com.quiet.subscription.yearly"
+
+let WEEKLY_OFFER = "com.quiet.subscription.offer.weekly"
+let MONTHLY_OFFER = "com.quiet.subscription.offer.monthly"
+let YEARLY_OFFER = "com.quiet.subscription.offer.yearly"
+
 protocol ALStoreManagerDelegate {
     func getAvailableProductsInProcess()
     func getAvailableProductsCompleted()
@@ -20,6 +28,7 @@ protocol ALStoreManagerDelegate {
 protocol ALSubscriptionManagerDelegate: ALStoreManagerDelegate {
     func setYearlySubscriptionPrice(_ price: NSDecimalNumber, units: String)
     func setMonthlySubscriptionPrice(_ price: NSDecimalNumber, units: String)
+    func setWeeklySubscriptionPrice(_ price: NSDecimalNumber, units: String)
 }
 
 struct ALProduct {
@@ -37,20 +46,20 @@ class ALPurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
     
     fileprivate var availableOptions = [ALProduct]()
     
-    fileprivate override init() {
-        super.init()
-        
-        SKPaymentQueue.default().add(self)
+    func start() { SKPaymentQueue.default().add(self) }
+    
+    func loadSubscriptions() {
+        delegate?.getAvailableProductsInProcess()
+        startRequest([WEEKLY, MONTHLY, YEARLY])
     }
     
-    func loadAvailableSubscriptions() {
+    func loadOfferedSubscriptions() {
         delegate?.getAvailableProductsInProcess()
-        startRequest([".subscriptions.monthly", ".subscriptions.yearly"])
+        startRequest([WEEKLY_OFFER, MONTHLY_OFFER, YEARLY_OFFER])
     }
     
     private func startRequest(_ ids:[String]) {
-        
-        let request = SKProductsRequest(productIdentifiers: Set(ids.map { Bundle.main.bundleIdentifier! + $0 }))
+        let request = SKProductsRequest(productIdentifiers: Set(ids))
         
         request.delegate = self
         request.start()
@@ -60,12 +69,28 @@ class ALPurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
     
+    public func purchaseWeeklySubscription() -> Bool {
+        return purchaseProduct(WEEKLY)
+    }
+    
     public func purchaseMonthlySubscription() -> Bool {
-        return purchaseProduct(".subscriptions.monthly")
+        return purchaseProduct(MONTHLY)
     }
     
     public func purchaseYearlySubscription() -> Bool {
-        return purchaseProduct(".subscriptions.yearly")
+        return purchaseProduct(YEARLY)
+    }
+    
+    public func purchaseOfferedWeeklySubscription() -> Bool {
+        return purchaseProduct(WEEKLY_OFFER)
+    }
+    
+    public func purchaseOfferedMonthlySubscription() -> Bool {
+        return purchaseProduct(MONTHLY_OFFER)
+    }
+    
+    public func purchaseOfferedYearlySubscription() -> Bool {
+        return purchaseProduct(YEARLY_OFFER)
     }
     
     fileprivate func purchaseProduct(_ productId: String) -> Bool {
@@ -79,7 +104,7 @@ class ALPurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
     }
     
     fileprivate func productToPurchase(withId id: String) -> ALProduct? {
-        return (availableOptions.filter { $0.product.productIdentifier == Bundle.main.bundleIdentifier! + id }).first ?? nil
+        return (availableOptions.filter { $0.product.productIdentifier == id }).first
     }
     
     fileprivate func purchase(product: ALProduct) {
@@ -91,13 +116,23 @@ class ALPurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
     
     internal func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         availableOptions = response.products.map { [weak self] product -> ALProduct in
-            if product.productIdentifier == Bundle.main.bundleIdentifier! + ".subscriptions.monthly" {
+            if product.productIdentifier == WEEKLY {
+                (self?.delegate as? ALSubscriptionManagerDelegate)?.setWeeklySubscriptionPrice(product.price, units: product.priceLocale.currencySymbol ?? product.priceLocale.currencyCode ?? "")
+            }
+            else if product.productIdentifier == MONTHLY {
                 (self?.delegate as? ALSubscriptionManagerDelegate)?.setMonthlySubscriptionPrice(product.price, units: product.priceLocale.currencySymbol ?? product.priceLocale.currencyCode ?? "")
             }
-            else if product.productIdentifier == Bundle.main.bundleIdentifier! + ".subscriptions.yearly" {
+            else if product.productIdentifier == YEARLY {
+                (self?.delegate as? ALSubscriptionManagerDelegate)?.setYearlySubscriptionPrice(product.price, units: product.priceLocale.currencySymbol ?? product.priceLocale.currencyCode ?? "")
+            } else if product.productIdentifier == WEEKLY_OFFER {
+                (self?.delegate as? ALSubscriptionManagerDelegate)?.setWeeklySubscriptionPrice(product.price, units: product.priceLocale.currencySymbol ?? product.priceLocale.currencyCode ?? "")
+            }
+            else if product.productIdentifier == MONTHLY_OFFER {
+                (self?.delegate as? ALSubscriptionManagerDelegate)?.setMonthlySubscriptionPrice(product.price, units: product.priceLocale.currencySymbol ?? product.priceLocale.currencyCode ?? "")
+            }
+            else if product.productIdentifier == YEARLY_OFFER {
                 (self?.delegate as? ALSubscriptionManagerDelegate)?.setYearlySubscriptionPrice(product.price, units: product.priceLocale.currencySymbol ?? product.priceLocale.currencyCode ?? "")
             }
-            
             return ALProduct(withProduct: product)
         }
         productRequestCompleted(true)

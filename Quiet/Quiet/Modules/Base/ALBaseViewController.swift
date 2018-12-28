@@ -23,7 +23,7 @@ class ALBaseViewController: UIViewController {
     }
     
     private func configureBackButton() {
-        backView?.backgroundColor = MERCURY_GREY
+        backView?.backgroundColor = MERCURY_GREY.withAlphaComponent(0.9)
         backView?.layer.cornerRadius = (backView?.bounds.height ?? 0.0) / 2.0
         backView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backButtonPressed)))
         backView?.isUserInteractionEnabled = true

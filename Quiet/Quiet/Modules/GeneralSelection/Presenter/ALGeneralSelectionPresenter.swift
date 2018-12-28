@@ -20,13 +20,14 @@ class ALGeneralSelectionPresenter: NSObject, ALGeneralSelectionPresenterProtocol
     
     func viewDidLoad() { getResourcesList() }
     func viewWillDisappear() { interactor.dismiss() }
-    func backButtonPressed() { wireframe.dismiss() }
+    func backButtonPressed() {  view.stopLoading(); wireframe.dismiss() }
     
     
     //MARK:- private methods
     
     private func getResourcesList() {
-        interactor.getResourcesList { [weak self] elems in self?.resourceList = elems }
+        view.startLoading()
+        interactor.getResourcesList { [weak self] elems in self?.resourceList = elems; self?.view.stopLoading() }
     }
     
     //MARK:- UICollectionViewDataSource methods
@@ -46,7 +47,9 @@ class ALGeneralSelectionPresenter: NSObject, ALGeneralSelectionPresenterProtocol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        view.startLoading()
         interactor.getCompleteInfoOf(resourceList[indexPath.row]) { [weak self] elem in
+            self?.view.stopLoading()
             self?.wireframe.presentSectionElem(elem)
         }
         

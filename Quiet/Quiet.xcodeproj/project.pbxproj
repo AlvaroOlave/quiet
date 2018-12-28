@@ -31,6 +31,7 @@
 		3806EADF21AD9C8500C93662 /* ALBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EADE21AD9C8500C93662 /* ALBaseViewController.swift */; };
 		380A430121C6AB6800A04B2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380A430021C6AB6800A04B2C /* GoogleService-Info.plist */; };
 		380A430321C6AE9B00A04B2C /* ALBaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A430221C6AE9B00A04B2C /* ALBaseDataManager.swift */; };
+		380B0D9121CD198B0042C1E0 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 380B0D9021CD198A0042C1E0 /* bell.mp3 */; };
 		380C6CA321AB78FD00BF853C /* ALGeneralSelectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA221AB78FD00BF853C /* ALGeneralSelectionProtocols.swift */; };
 		380C6CA521AB790C00BF853C /* ALGeneralSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA421AB790C00BF853C /* ALGeneralSelectionPresenter.swift */; };
 		380C6CA721AB791700BF853C /* ALGeneralSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA621AB791700BF853C /* ALGeneralSelectionInteractor.swift */; };
@@ -96,6 +97,7 @@
 		3806EADE21AD9C8500C93662 /* ALBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBaseViewController.swift; sourceTree = "<group>"; };
 		380A430021C6AB6800A04B2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		380A430221C6AE9B00A04B2C /* ALBaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBaseDataManager.swift; sourceTree = "<group>"; };
+		380B0D9021CD198A0042C1E0 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
 		380C6CA221AB78FD00BF853C /* ALGeneralSelectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionProtocols.swift; sourceTree = "<group>"; };
 		380C6CA421AB790C00BF853C /* ALGeneralSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionPresenter.swift; sourceTree = "<group>"; };
 		380C6CA621AB791700BF853C /* ALGeneralSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionInteractor.swift; sourceTree = "<group>"; };
@@ -474,6 +476,7 @@
 			isa = PBXGroup;
 			children = (
 				38F4ABCA21C08FE700E3ACB5 /* waterfall.gif */,
+				380B0D9021CD198A0042C1E0 /* bell.mp3 */,
 				386137CE21A4780C000BD657 /* Style */,
 				386137B821A46BC4000BD657 /* Factory */,
 				380C6CB021AB8F8000BF853C /* Models */,
@@ -492,15 +495,16 @@
 		386137A621A463BB000BD657 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				38E2BDA921D5ABC400E9616C /* Subscription */,
 				3804B9B321CBC5DD00BFDB65 /* Yoga */,
 				3804B9A321CBC56200BFDB65 /* ASMR */,
 				3804B99421CBAB1C00BFDB65 /* Landscape */,
 				3866B30121C3BBCF0017A16E /* SleepCast */,
 				3806EADD21AD9C4800C93662 /* Base */,
 				3806EACE21AD99BD00C93662 /* Sleep */,
+				386137BB21A47266000BD657 /* Breathe */,
 				380C6C9B21AB784600BF853C /* GeneralSelection */,
 				386137AB21A463E0000BD657 /* Main */,
-				386137BB21A47266000BD657 /* Breathe */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -655,6 +659,45 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		38E2BDA921D5ABC400E9616C /* Subscription */ = {
+			isa = PBXGroup;
+			children = (
+				38E2BDAD21D5AC0100E9616C /* Protocols */,
+				38E2BDAC21D5ABF600E9616C /* View */,
+				38E2BDAB21D5ABEB00E9616C /* Presenter */,
+				38E2BDAA21D5ABE500E9616C /* Wireframe */,
+			);
+			path = Subscription;
+			sourceTree = "<group>";
+		};
+		38E2BDAA21D5ABE500E9616C /* Wireframe */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Wireframe;
+			sourceTree = "<group>";
+		};
+		38E2BDAB21D5ABEB00E9616C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		38E2BDAC21D5ABF600E9616C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		38E2BDAD21D5AC0100E9616C /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		422B922CC3D18F6B7FCF68D1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -742,6 +785,7 @@
 				381F2FEB21A82C6C00B573F8 /* ALMainCollectionViewCell.xib in Resources */,
 				386137CD21A473B0000BD657 /* ALBreatheViewController.xib in Resources */,
 				381FDA0421C0860600C782BF /* ALSubscriptionPopup.xib in Resources */,
+				380B0D9121CD198B0042C1E0 /* bell.mp3 in Resources */,
 				380C6CB721AB975A00BF853C /* ALResourceCollectionViewCell.xib in Resources */,
 				380A430121C6AB6800A04B2C /* GoogleService-Info.plist in Resources */,
 				3804B9A221CBABB000BFDB65 /* ALLandscapeViewController.xib in Resources */,

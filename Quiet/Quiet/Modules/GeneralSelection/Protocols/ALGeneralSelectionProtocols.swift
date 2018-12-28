@@ -14,6 +14,8 @@ protocol ALGeneralSelectionViewProtocol {
     var section: Section! {get set}
     
     func reloadCollectionView()
+    func startLoading()
+    func stopLoading()
 }
 
 protocol ALGeneralSelectionPresenterProtocol {

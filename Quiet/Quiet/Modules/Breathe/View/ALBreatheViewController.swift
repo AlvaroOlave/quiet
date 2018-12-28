@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AudioToolbox
+import AVFoundation
 
 class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
     
@@ -37,6 +37,8 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
     }
     var breathTime = 5.0
     
+    var bellPlayer: AVAudioPlayer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -50,7 +52,17 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
         configureLabels()
         configureButtons()
         configureBackground()
+        initPlayer()
         backView?.backgroundColor = WHITE.withAlphaComponent(0.7)
+    }
+    
+    private func initPlayer() {
+        do {
+            bellPlayer = try AVAudioPlayer(data: Data(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "bell", ofType: "mp3")!)))
+            bellPlayer?.prepareToPlay()
+        } catch {
+            //showError
+        }
     }
     
     private func configureBackground() {
@@ -192,15 +204,21 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
         UIView.animate(withDuration: self.breathTime, animations: {
             self.breathView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
         }) { _ in
-            AudioServicesPlayAlertSoundWithCompletion(1054) { }
+            self.playSound()
             UIView.animate(withDuration: self.breathTime, animations: {
                 self.breathLabel.text = "Expire"
                 self.breathView.transform = CGAffineTransform.identity
             }, completion: { _ in
-                AudioServicesPlayAlertSoundWithCompletion(1054) { }
+                self.playSound()
                 self.startBreathing(count - 1)
             })
         }
+    }
+    
+    private func playSound() {
+        bellPlayer?.volume = 0.5
+        bellPlayer?.play()
+        bellPlayer?.setVolume(0.0, fadeDuration: 2.0)
     }
     
     private func hideInnecesaryElemsAnimated(_ hide: Bool) {

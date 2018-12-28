@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             mainWireframe = mainFactory()
             mainWireframe.presentMainViewInWindow(window)
         }
-        
+        ALPurchaseManager.shared.start()
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
     }
