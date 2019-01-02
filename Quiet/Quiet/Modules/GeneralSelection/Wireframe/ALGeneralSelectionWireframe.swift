@@ -36,6 +36,11 @@ class ALGeneralSelectionWireframe: ALGeneralSelectionViewWireframeProtocol {
         }
     }
     
+    func presentSubscriptionInterface() {
+        let wireframe = subscriptionFactory(with: .Normal)
+        wireframe.presentSubscriptionViewIn(view)
+    }
+    
     private func presentSleepInterface(_ elem: ALGeneralElem) {
         let wireframe = sleepFactory(with: elem)
         wireframe.presentSleepViewIn(view)

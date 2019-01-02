@@ -21,6 +21,7 @@ class ALSubscriptionPresenter: ALSubscriptionPresenterProtocol, ALSubscriptionMa
     var mode: SubscriptionMode!
     
     func viewDidLoad() {
+        ALPurchaseManager.shared.delegate = self
         mode == .Normal ? ALPurchaseManager.shared.loadSubscriptions() : ALPurchaseManager.shared.loadOfferedSubscriptions()
     }
     

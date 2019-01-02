@@ -115,6 +115,7 @@ class ALPurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
     //MARK:- SKProductsRequestDelegate methods
     
     internal func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        print(response.products)
         availableOptions = response.products.map { [weak self] product -> ALProduct in
             if product.productIdentifier == WEEKLY {
                 (self?.delegate as? ALSubscriptionManagerDelegate)?.setWeeklySubscriptionPrice(product.price, units: product.priceLocale.currencySymbol ?? product.priceLocale.currencyCode ?? "")

@@ -51,5 +51,6 @@ protocol ALGeneralSelectionViewWireframeProtocol {
     
     func presentGeneralSelectionViewIn(_ view: UIViewController)
     func presentSectionElem(_ elem: ALBaseElem)
+    func presentSubscriptionInterface()
     func dismiss()
 }
