@@ -12,7 +12,9 @@ import Gifu
 class ALMainViewController: UIViewController, ALMainViewProtocol {
     
     @IBOutlet weak var backgroundImageView: GIFImageView!
+    @IBOutlet weak var titleImageView: UIImageView!
     @IBOutlet weak var mainCollectionView: UICollectionView!
+    @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     
     var presenter: (ALMainPresenterProtocol & UICollectionViewDataSource & UICollectionViewDelegate)!
     
@@ -43,8 +45,19 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
     }
     
     private func configureBackgroundImage() {
-        backgroundImageView.animate(withGIFNamed: "waterfall") {
-            print("Ready to animate!")
-        }
+        backgroundImageView.animate(withGIFNamed: "waterfall") { }
+        backgroundImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideCollectionView)))
+        backgroundImageView.isUserInteractionEnabled = true
+        
+        titleImageView.image = UIImage(named: "QuietBlackground")
+        titleImageView.backgroundColor = CLEAR_COLOR
+        titleImageView.contentMode = .scaleAspectFit
+    }
+    
+    @objc func hideCollectionView() {
+        collectionViewHeight.constant = (collectionViewHeight.constant == 0) ? 170 : 0
+        UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: {
+            self.view.layoutSubviews()
+        }, completion: nil)
     }
 }

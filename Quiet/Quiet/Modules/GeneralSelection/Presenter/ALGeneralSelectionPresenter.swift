@@ -46,16 +46,16 @@ class ALGeneralSelectionPresenter: NSObject, ALGeneralSelectionPresenterProtocol
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if resourceList[indexPath.row].isPremium {
-//            wireframe.presentSubscriptionInterface()
-//        } else {
-//            view.startLoading()
-//            interactor.getCompleteInfoOf(resourceList[indexPath.row]) { [weak self] elem in
-//                self?.view.stopLoading()
-//                self?.wireframe.presentSectionElem(elem)
-//            }
-//        }
-        wireframe.presentSubscriptionInterface()    
+        if resourceList[indexPath.row].isPremium {
+            wireframe.presentSubscriptionInterface()
+        } else {
+            view.startLoading()
+            interactor.getCompleteInfoOf(resourceList[indexPath.row]) { [weak self] elem in
+                self?.view.stopLoading()
+                self?.wireframe.presentSectionElem(elem)
+            }
+        }
+//        wireframe.presentSubscriptionInterface()
     }
     
     //MARK:- UICollectionViewDelegate methods

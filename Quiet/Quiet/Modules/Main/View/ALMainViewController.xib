@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +13,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ALMainViewController" customModule="Quiet" customModuleProvider="target">
             <connections>
                 <outlet property="backgroundImageView" destination="lwK-4z-Lnn" id="b8P-DL-lXu"/>
+                <outlet property="collectionViewHeight" destination="V0V-mM-Rmw" id="LSj-Fl-FW0"/>
                 <outlet property="mainCollectionView" destination="1sI-dW-3EA" id="Mxw-zV-Du7"/>
+                <outlet property="titleImageView" destination="qFe-bK-Xfz" id="Thb-hp-jEU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,6 +26,13 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lwK-4z-Lnn" customClass="GIFImageView" customModule="Gifu">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qFe-bK-Xfz">
+                    <rect key="frame" x="112.5" y="80" width="150" height="75"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="75" id="THo-Lh-PwI"/>
+                        <constraint firstAttribute="width" secondItem="qFe-bK-Xfz" secondAttribute="height" multiplier="2:1" id="dXi-ag-W4e"/>
+                    </constraints>
                 </imageView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1sI-dW-3EA">
                     <rect key="frame" x="0.0" y="497" width="375" height="170"/>
@@ -45,7 +54,9 @@
                 <constraint firstAttribute="trailing" secondItem="lwK-4z-Lnn" secondAttribute="trailing" id="81T-As-UWH"/>
                 <constraint firstItem="lwK-4z-Lnn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9jp-tf-nLj"/>
                 <constraint firstItem="lwK-4z-Lnn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FSf-az-7Hh"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1sI-dW-3EA" secondAttribute="bottom" id="V0V-mM-Rmw"/>
+                <constraint firstItem="qFe-bK-Xfz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="KBA-O3-cqc"/>
+                <constraint firstItem="1sI-dW-3EA" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="V0V-mM-Rmw"/>
+                <constraint firstItem="qFe-bK-Xfz" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="dHn-OE-p4w"/>
                 <constraint firstAttribute="bottom" secondItem="lwK-4z-Lnn" secondAttribute="bottom" id="kT4-PC-RKo"/>
                 <constraint firstItem="1sI-dW-3EA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yHU-wH-ZOr"/>
             </constraints>
