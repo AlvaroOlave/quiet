@@ -12,6 +12,7 @@ import JTMaterialSpinner
 class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelectionViewProtocol {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var backgroundView : UIView!
     @IBOutlet weak var backSpinnerView : UIView!
     @IBOutlet weak var shadowSpinnerView : UIView!
     @IBOutlet weak var spinnerView : JTMaterialSpinner!
@@ -53,6 +54,14 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
         
         backIcon?.image = UIImage(named: "icCancel")
         view.layer.backgroundColor = WARM_GREY.withAlphaComponent(0.5).cgColor
+    
+        backgroundView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backButtonPressed)))
+        backgroundView.isUserInteractionEnabled = true
+        backgroundView.backgroundColor = CLEAR_COLOR
+        collectionView.backgroundView = UIView(frame: collectionView.frame)
+        collectionView.backgroundView?.isUserInteractionEnabled = true
+        collectionView.backgroundView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backButtonPressed)))
+
     }
     
     private func configureLoadingView() {

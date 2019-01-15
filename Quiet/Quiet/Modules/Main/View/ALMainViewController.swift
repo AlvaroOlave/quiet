@@ -24,7 +24,11 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         commonInit()
         presenter.viewDidLoad()
     }
-
+    
+    func hideTitle(_ hide: Bool) { titleImageView.isHidden = hide }
+    
+    //MARK:- private methods
+    
     private func commonInit() {
         configureCollectionViewLayout()
         configureBackgroundImage()

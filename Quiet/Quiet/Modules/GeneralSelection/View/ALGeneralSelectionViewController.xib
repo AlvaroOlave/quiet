@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,6 +15,7 @@
                 <outlet property="backIcon" destination="OqE-Bw-Brx" id="jGk-fu-JAi"/>
                 <outlet property="backSpinnerView" destination="bgg-Ry-6v0" id="gty-eZ-XYm"/>
                 <outlet property="backView" destination="HrK-QW-8TN" id="dvW-8H-Kxr"/>
+                <outlet property="backgroundView" destination="nv8-Vl-Vhv" id="Wgi-zW-V1e"/>
                 <outlet property="collectionView" destination="9TD-cb-fUg" id="Keh-Nx-kOy"/>
                 <outlet property="shadowSpinnerView" destination="Xk6-9w-JmL" id="vc3-83-Ka8"/>
                 <outlet property="spinnerView" destination="Xaa-my-DC1" id="VYT-U1-4VW"/>
@@ -26,6 +27,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nv8-Vl-Vhv">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9TD-cb-fUg">
                     <rect key="frame" x="0.0" y="110" width="375" height="557"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,10 +90,14 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="9TD-cb-fUg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8Zl-G0-exW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nv8-Vl-Vhv" secondAttribute="bottom" id="8em-Bv-hKC"/>
+                <constraint firstItem="nv8-Vl-Vhv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="AAX-1Z-U1I"/>
                 <constraint firstAttribute="bottom" secondItem="bgg-Ry-6v0" secondAttribute="bottom" id="C8T-Tf-HY1"/>
                 <constraint firstAttribute="trailing" secondItem="bgg-Ry-6v0" secondAttribute="trailing" id="NsZ-rz-82T"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nv8-Vl-Vhv" secondAttribute="trailing" id="Rd1-ia-FcP"/>
                 <constraint firstItem="9TD-cb-fUg" firstAttribute="top" secondItem="HrK-QW-8TN" secondAttribute="bottom" constant="25" id="SLr-yI-8Wj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9TD-cb-fUg" secondAttribute="bottom" id="ey1-PM-Tj4"/>
+                <constraint firstItem="nv8-Vl-Vhv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="lcj-83-uGK"/>
                 <constraint firstItem="bgg-Ry-6v0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mTY-dl-ph9"/>
                 <constraint firstItem="HrK-QW-8TN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="mXv-lY-efK"/>
                 <constraint firstItem="bgg-Ry-6v0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pKd-cs-XuI"/>

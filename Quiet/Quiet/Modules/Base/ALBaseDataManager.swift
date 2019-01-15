@@ -86,9 +86,9 @@ class ALStorageClient {
 
         DispatchQueue.main.async {
             reference.write(toFile: fileURL) { (url, error) in
-                guard error == nil else { return }
+                guard error == nil else { completion?(nil); return }
                 
-                completion?(self.dataFromURL(url))
+                DispatchQueue.global(qos: .userInitiated).async { completion?(self.dataFromURL(url)) }
             }
         }
     }

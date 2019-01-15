@@ -49,8 +49,14 @@ protocol ALGeneralSelectionDataManagerProtocol {
 protocol ALGeneralSelectionViewWireframeProtocol {
     var view: (ALGeneralSelectionViewProtocol & UIViewController)! {get set}
     
+    var delegate: ALGeneralSelectionViewWireframeDelegate? {get set}
+    
     func presentGeneralSelectionViewIn(_ view: UIViewController)
     func presentSectionElem(_ elem: ALBaseElem)
     func presentSubscriptionInterface()
     func dismiss()
+}
+
+protocol ALGeneralSelectionViewWireframeDelegate {
+    func viewDidDissapear()
 }

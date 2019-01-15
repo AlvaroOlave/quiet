@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ALMainWireframe: ALMainViewWireframeProtocol {
+class ALMainWireframe: ALMainViewWireframeProtocol, ALGeneralSelectionViewWireframeDelegate {
     
     var view: (UIViewController & ALMainViewProtocol)!
     
@@ -34,7 +34,12 @@ class ALMainWireframe: ALMainViewWireframeProtocol {
     }
     
     private func presentGeneralSelection(_ section: Section) {
-        let wireframe = generalSelectionFactory(of: section)
+        var wireframe = generalSelectionFactory(of: section)
+        wireframe.delegate = self
         wireframe.presentGeneralSelectionViewIn(view)
     }
+    
+    //MARK:- ALGeneralSelectionViewWireframeDelegate methods
+    
+    func viewDidDissapear() { view.hideTitle(false) }
 }

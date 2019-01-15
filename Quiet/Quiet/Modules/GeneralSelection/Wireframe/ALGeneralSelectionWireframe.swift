@@ -10,6 +10,7 @@ import UIKit
 
 class ALGeneralSelectionWireframe: ALGeneralSelectionViewWireframeProtocol {
     var view: (UIViewController & ALGeneralSelectionViewProtocol)!
+    var delegate: ALGeneralSelectionViewWireframeDelegate?
     
     func presentGeneralSelectionViewIn(_ fromView: UIViewController) {
         fromView.definesPresentationContext = true
@@ -17,7 +18,7 @@ class ALGeneralSelectionWireframe: ALGeneralSelectionViewWireframeProtocol {
         view.modalPresentationStyle = .overCurrentContext
         fromView.present(view, animated: true)
     }
-    func dismiss() { view.dismiss(animated: true) }
+    func dismiss() { self.delegate?.viewDidDissapear(); view.dismiss(animated: true) }
     
     func presentSectionElem(_ elem: ALBaseElem) {
         switch elem.baseSection.kindOfResource {

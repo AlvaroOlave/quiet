@@ -44,6 +44,7 @@
 		380C6CB721AB975A00BF853C /* ALResourceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380C6CB521AB975A00BF853C /* ALResourceCollectionViewCell.xib */; };
 		381F2FEA21A82C6C00B573F8 /* ALMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F2FE821A82C6C00B573F8 /* ALMainCollectionViewCell.swift */; };
 		381F2FEB21A82C6C00B573F8 /* ALMainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381F2FE921A82C6C00B573F8 /* ALMainCollectionViewCell.xib */; };
+		382CA5C221EC19D600207CA7 /* ALMainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CA5C121EC19D600207CA7 /* ALMainDataManager.swift */; };
 		384C20D321C07BFE00025D24 /* ALPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C20D221C07BFE00025D24 /* ALPurchaseManager.swift */; };
 		384C20D521C07EF800025D24 /* ALUserTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C20D421C07EF800025D24 /* ALUserTokenManager.swift */; };
 		3861379521A41AEC000BD657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861379421A41AEC000BD657 /* AppDelegate.swift */; };
@@ -113,6 +114,7 @@
 		380C6CB521AB975A00BF853C /* ALResourceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALResourceCollectionViewCell.xib; sourceTree = "<group>"; };
 		381F2FE821A82C6C00B573F8 /* ALMainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALMainCollectionViewCell.swift; sourceTree = "<group>"; };
 		381F2FE921A82C6C00B573F8 /* ALMainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALMainCollectionViewCell.xib; sourceTree = "<group>"; };
+		382CA5C121EC19D600207CA7 /* ALMainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALMainDataManager.swift; sourceTree = "<group>"; };
 		384C20D221C07BFE00025D24 /* ALPurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALPurchaseManager.swift; sourceTree = "<group>"; };
 		384C20D421C07EF800025D24 /* ALUserTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALUserTokenManager.swift; sourceTree = "<group>"; };
 		3861379121A41AEC000BD657 /* Quiet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -441,6 +443,14 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		382CA5C021EC195800207CA7 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				382CA5C121EC19D600207CA7 /* ALMainDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		384C20D121C07BD900025D24 /* Singletons */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +521,7 @@
 				386137AF21A46431000BD657 /* Protocols */,
 				386137AE21A4642A000BD657 /* View */,
 				386137AD21A463EE000BD657 /* Presenter */,
+				382CA5C021EC195800207CA7 /* DataManager */,
 				386137AC21A463E6000BD657 /* Wireframe */,
 			);
 			path = Main;
@@ -881,6 +892,7 @@
 				3804B99E21CBAB9E00BFDB65 /* ALLandscapeWireframe.swift in Sources */,
 				3804B99A21CBAB7A00BFDB65 /* ALLandscapeProtocols.swift in Sources */,
 				386137D221A47832000BD657 /* ALStyleSheet.swift in Sources */,
+				382CA5C221EC19D600207CA7 /* ALMainDataManager.swift in Sources */,
 				3804B9C021CBC62A00BFDB65 /* ALYogaViewController.swift in Sources */,
 				380C6CA521AB790C00BF853C /* ALGeneralSelectionPresenter.swift in Sources */,
 				386137B521A46461000BD657 /* ALMainWireframe.swift in Sources */,

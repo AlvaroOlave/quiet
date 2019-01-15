@@ -10,13 +10,14 @@ import UIKit
 class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var view: ALMainViewProtocol!
+    var dataManager: ALMainDataManagerProtocol!
     var wireframe: ALMainViewWireframeProtocol!
     
     let cells: [Section] = [.SleepCast, .Breathe, .Sleep, .Landscapes, .ASMR, .YogaStretch]
     let cellIcons: [String] = ["sleepCastIcon", "breatheIcon", "sleepIcon", "ladscapeIcon", "asmrIcon", "yogaIcon"]
     
     func viewDidLoad() {
-        
+        dataManager.getAllResourceLists()
     }
     
     //MARK:- UICollectionViewDataSource methods
@@ -34,6 +35,7 @@ class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        view.hideTitle(true)
         wireframe.goTo(cells[indexPath.row])
     }
     

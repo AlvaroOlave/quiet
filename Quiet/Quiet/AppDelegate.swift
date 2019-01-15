@@ -48,13 +48,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK:- privateMethods
     
     private func startApp() {
+        FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
+        
         if let window = createWindow() {
             mainWireframe = mainFactory()
             mainWireframe.presentMainViewInWindow(window)
         }
         ALPurchaseManager.shared.start()
-        FirebaseApp.configure()
-        Database.database().isPersistenceEnabled = true
+        
     }
 
     private func createWindow() -> UIWindow? {

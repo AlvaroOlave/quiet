@@ -10,13 +10,20 @@ import UIKit
 
 protocol ALMainViewProtocol {
     var presenter: (ALMainPresenterProtocol & UICollectionViewDelegate & UICollectionViewDataSource)! {get set}
+    
+    func hideTitle(_ hide: Bool)
 }
 
 protocol ALMainPresenterProtocol {
     var view: ALMainViewProtocol! {get set}
+    var dataManager: ALMainDataManagerProtocol! {get set}
     var wireframe: ALMainViewWireframeProtocol! {get set}
     
     func viewDidLoad()
+}
+
+protocol ALMainDataManagerProtocol {
+    func getAllResourceLists()
 }
 
 protocol ALMainViewWireframeProtocol {
