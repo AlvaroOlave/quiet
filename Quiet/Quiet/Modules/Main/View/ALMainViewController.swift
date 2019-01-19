@@ -15,6 +15,9 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
     @IBOutlet weak var titleImageView: UIImageView!
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var adviceFrame: UIView!
+    @IBOutlet weak var adviceLabel: UILabel!
+    @IBOutlet weak var adviceViewTop: NSLayoutConstraint!
     
     var presenter: (ALMainPresenterProtocol & UICollectionViewDataSource & UICollectionViewDelegate)!
     
@@ -25,6 +28,21 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         presenter.viewDidLoad()
     }
     
+    func setAdvice(_ advice: String) {
+        
+        var attrs : [NSAttributedString.Key : Any] = [ NSAttributedString.Key.font : FontSheet.FontBoldWith(size: BIG_FONT_SIZE),
+                                                       NSAttributedString.Key.foregroundColor : WHITE,
+                                                       NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue]
+        let str = NSMutableAttributedString(string: "Daily advice\n\n", attributes: attrs)
+        
+        attrs = [ NSAttributedString.Key.font : FontSheet.FontRegularWith(size: NORMAL_FONT_SIZE),
+                  NSAttributedString.Key.foregroundColor : WHITE]
+        
+        str.append(NSAttributedString(string: advice, attributes: attrs))
+        
+        adviceLabel.attributedText = str
+    }
+    
     func hideTitle(_ hide: Bool) { titleImageView.isHidden = hide }
     
     //MARK:- private methods
@@ -32,6 +50,7 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
     private func commonInit() {
         configureCollectionViewLayout()
         configureBackgroundImage()
+        configureAdviseLabel()
         mainCollectionView.dataSource = presenter
         mainCollectionView.delegate = presenter
         mainCollectionView.register(UINib(nibName: "ALMainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ALMainCollectionViewCell")
@@ -58,8 +77,19 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         titleImageView.contentMode = .scaleAspectFit
     }
     
+    private func configureAdviseLabel() {
+        adviceFrame.layer.cornerRadius = 16.0
+        adviceFrame.layer.borderColor = WARM_GREY.withAlphaComponent(0.7).cgColor
+        adviceFrame.layer.borderWidth = 2.0
+        adviceFrame.backgroundColor = MERCURY_GREY.withAlphaComponent(0.8)
+        adviceLabel.textColor = WHITE
+        adviceLabel.font = FontSheet.FontLightWith(size: NORMAL_FONT_SIZE)
+    }
+    
     @objc func hideCollectionView() {
         collectionViewHeight.constant = (collectionViewHeight.constant == 0) ? 170 : 0
+        adviceViewTop.constant = adviceViewTop.constant == 60 ? -view.frame.height : 60
+        
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: {
             self.view.layoutSubviews()
         }, completion: nil)

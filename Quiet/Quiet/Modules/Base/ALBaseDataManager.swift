@@ -17,8 +17,9 @@ class ALRealtimeClient {
     let completionBlock: (DataSnapshot, (([Any]?) -> Void)) -> Void = { snapshot, success in
         guard snapshot.exists() else { success(nil); return }
         
-        success(snapshot.children.compactMap({ item -> [AnyHashable : Any]? in
-            return (item as! DataSnapshot).value as? [AnyHashable : Any] ?? nil
+        success(snapshot.children.compactMap({ item -> Any? in
+            let val = (item as! DataSnapshot).value
+            return val
         }))
     }
     

@@ -15,7 +15,8 @@ func mainFactory() -> ALMainViewWireframeProtocol {
     
     wireframe.view.presenter = ALMainPresenter()
     wireframe.view.presenter.view = wireframe.view
-    wireframe.view.presenter.dataManager = ALMainDataManager()
+    wireframe.view.presenter.interactor = ALMainInteractor()
+    wireframe.view.presenter.interactor.dataManager = ALMainDataManager()
     wireframe.view.presenter.wireframe = wireframe
     
     return wireframe

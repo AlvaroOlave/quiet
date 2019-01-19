@@ -10,14 +10,17 @@ import UIKit
 class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var view: ALMainViewProtocol!
-    var dataManager: ALMainDataManagerProtocol!
+    var interactor: ALMainInteractorProtocol!
     var wireframe: ALMainViewWireframeProtocol!
     
     let cells: [Section] = [.SleepCast, .Breathe, .Sleep, .Landscapes, .ASMR, .YogaStretch]
     let cellIcons: [String] = ["sleepCastIcon", "breatheIcon", "sleepIcon", "ladscapeIcon", "asmrIcon", "yogaIcon"]
     
     func viewDidLoad() {
-        dataManager.getAllResourceLists()
+        interactor.getAllResourceLists()
+        interactor.getDailyAdvise { (advice) in
+            if let adv = advice { self.view.setAdvice(adv) }
+        }
     }
     
     //MARK:- UICollectionViewDataSource methods

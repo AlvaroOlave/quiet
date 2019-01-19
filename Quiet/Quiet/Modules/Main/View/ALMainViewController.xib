@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ALMainViewController" customModule="Quiet" customModuleProvider="target">
             <connections>
+                <outlet property="adviceFrame" destination="oJ6-xD-V1a" id="VQS-br-Tbf"/>
+                <outlet property="adviceLabel" destination="wgo-4W-CiN" id="nhU-ow-YuS"/>
+                <outlet property="adviceViewTop" destination="KBA-O3-cqc" id="udN-Y1-Neb"/>
                 <outlet property="backgroundImageView" destination="lwK-4z-Lnn" id="b8P-DL-lXu"/>
                 <outlet property="collectionViewHeight" destination="V0V-mM-Rmw" id="LSj-Fl-FW0"/>
                 <outlet property="mainCollectionView" destination="1sI-dW-3EA" id="Mxw-zV-Du7"/>
@@ -34,6 +37,24 @@
                         <constraint firstAttribute="width" secondItem="qFe-bK-Xfz" secondAttribute="height" multiplier="2:1" id="dXi-ag-W4e"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJ6-xD-V1a">
+                    <rect key="frame" x="40" y="205" width="295" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgo-4W-CiN">
+                            <rect key="frame" x="20" y="15" width="255" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="wgo-4W-CiN" firstAttribute="leading" secondItem="oJ6-xD-V1a" secondAttribute="leading" constant="20" id="0gS-dH-bLY"/>
+                        <constraint firstItem="wgo-4W-CiN" firstAttribute="top" secondItem="oJ6-xD-V1a" secondAttribute="top" constant="15" id="1th-Ax-7yv"/>
+                        <constraint firstAttribute="bottom" secondItem="wgo-4W-CiN" secondAttribute="bottom" constant="15" id="fFd-pA-Kmc"/>
+                        <constraint firstAttribute="trailing" secondItem="wgo-4W-CiN" secondAttribute="trailing" constant="20" id="gcq-x8-lMs"/>
+                    </constraints>
+                </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1sI-dW-3EA">
                     <rect key="frame" x="0.0" y="497" width="375" height="170"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -51,13 +72,16 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1sI-dW-3EA" secondAttribute="trailing" id="1o6-UX-ogf"/>
+                <constraint firstItem="oJ6-xD-V1a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="3hH-64-HFd"/>
                 <constraint firstAttribute="trailing" secondItem="lwK-4z-Lnn" secondAttribute="trailing" id="81T-As-UWH"/>
                 <constraint firstItem="lwK-4z-Lnn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9jp-tf-nLj"/>
+                <constraint firstItem="oJ6-xD-V1a" firstAttribute="centerX" secondItem="qFe-bK-Xfz" secondAttribute="centerX" id="DMP-Ed-Atm"/>
                 <constraint firstItem="lwK-4z-Lnn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FSf-az-7Hh"/>
                 <constraint firstItem="qFe-bK-Xfz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="KBA-O3-cqc"/>
                 <constraint firstItem="1sI-dW-3EA" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="V0V-mM-Rmw"/>
                 <constraint firstItem="qFe-bK-Xfz" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="dHn-OE-p4w"/>
                 <constraint firstAttribute="bottom" secondItem="lwK-4z-Lnn" secondAttribute="bottom" id="kT4-PC-RKo"/>
+                <constraint firstItem="oJ6-xD-V1a" firstAttribute="top" secondItem="qFe-bK-Xfz" secondAttribute="bottom" constant="50" id="tS3-4M-llY"/>
                 <constraint firstItem="1sI-dW-3EA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yHU-wH-ZOr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

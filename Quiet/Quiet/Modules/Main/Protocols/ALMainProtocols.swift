@@ -11,19 +11,28 @@ import UIKit
 protocol ALMainViewProtocol {
     var presenter: (ALMainPresenterProtocol & UICollectionViewDelegate & UICollectionViewDataSource)! {get set}
     
+    func setAdvice(_ advice: String)
     func hideTitle(_ hide: Bool)
 }
 
 protocol ALMainPresenterProtocol {
     var view: ALMainViewProtocol! {get set}
-    var dataManager: ALMainDataManagerProtocol! {get set}
+    var interactor: ALMainInteractorProtocol! {get set}
     var wireframe: ALMainViewWireframeProtocol! {get set}
     
     func viewDidLoad()
 }
 
+protocol ALMainInteractorProtocol {
+    var dataManager: ALMainDataManagerProtocol! {get set}
+    
+    func getAllResourceLists()
+    func getDailyAdvise(_ completion: @escaping (String?) -> Void)
+}
+
 protocol ALMainDataManagerProtocol {
     func getAllResourceLists()
+    func getAllDailyAdvices(_ completion: @escaping ([String]?) -> Void)
 }
 
 protocol ALMainViewWireframeProtocol {
