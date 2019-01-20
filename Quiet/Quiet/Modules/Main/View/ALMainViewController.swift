@@ -33,7 +33,7 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         var attrs : [NSAttributedString.Key : Any] = [ NSAttributedString.Key.font : FontSheet.FontBoldWith(size: BIG_FONT_SIZE),
                                                        NSAttributedString.Key.foregroundColor : WHITE,
                                                        NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue]
-        let str = NSMutableAttributedString(string: "Daily advice\n\n", attributes: attrs)
+        let str = NSMutableAttributedString(string: "Daily advice!\n\n", attributes: attrs)
         
         attrs = [ NSAttributedString.Key.font : FontSheet.FontRegularWith(size: NORMAL_FONT_SIZE),
                   NSAttributedString.Key.foregroundColor : WHITE]
@@ -41,9 +41,14 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         str.append(NSAttributedString(string: advice, attributes: attrs))
         
         adviceLabel.attributedText = str
+        adviceFrame.alpha = 0.0
+        adviceFrame.isHidden = false
+        UIView.animate(withDuration: 0.1, delay: 0.5, options: .curveEaseInOut, animations: {
+            self.adviceFrame.alpha = 1.0
+        }, completion: nil)
     }
     
-    func hideTitle(_ hide: Bool) { titleImageView.isHidden = hide }
+    func hideTitle(_ hide: Bool) { titleImageView.isHidden = hide; adviceFrame.isHidden = hide }
     
     //MARK:- private methods
     
@@ -84,11 +89,13 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         adviceFrame.backgroundColor = MERCURY_GREY.withAlphaComponent(0.8)
         adviceLabel.textColor = WHITE
         adviceLabel.font = FontSheet.FontLightWith(size: NORMAL_FONT_SIZE)
+        adviceFrame.isHidden = true
     }
     
     @objc func hideCollectionView() {
         collectionViewHeight.constant = (collectionViewHeight.constant == 0) ? 170 : 0
-        adviceViewTop.constant = adviceViewTop.constant == 60 ? -view.frame.height : 60
+        
+        adviceViewTop.constant = adviceViewTop.constant == 60 ? -(adviceFrame.frame.origin.y + adviceFrame.frame.height) : 60
         
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: {
             self.view.layoutSubviews()
