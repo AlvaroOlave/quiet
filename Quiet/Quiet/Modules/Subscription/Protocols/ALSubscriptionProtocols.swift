@@ -32,5 +32,6 @@ protocol ALSubscriptionWireframeProtocol {
     var view: (ALSubscriptionViewProtocol & UIViewController)! {get set}
     
     func presentSubscriptionViewIn(_ view: UIViewController)
+    func presentSubscriptionOverViewIn(_ fromView: UIViewController)
     func dismiss()
 }

@@ -14,5 +14,10 @@ class ALBreatheWireframe: ALBreatheViewWireframeProtocol {
     
     func presentBreatheViewIn(_ fromView: UIViewController) { fromView.present(view, animated: true) }
     
+    func presentSubscriptionInterface() {
+        let wireframe = subscriptionFactory(with: .Normal)
+        wireframe.presentSubscriptionOverViewIn(view)
+    }
+    
     func dismiss() { view.dismiss(animated: true) }
 }

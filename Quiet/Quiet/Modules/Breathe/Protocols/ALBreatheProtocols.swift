@@ -18,6 +18,7 @@ protocol ALBreathePresenterProtocol {
     
     func viewDidLoad()
     func backButtonPressed()
+    func presentSubscriptionInterface()
     func getLastBreatheTime() -> Double
     func setLastBreatheTime(_ time: Double)
 }
@@ -26,5 +27,6 @@ protocol ALBreatheViewWireframeProtocol {
     var view: (ALBreatheViewProtocol & UIViewController)! {get set}
     
     func presentBreatheViewIn(_ view: UIViewController)
+    func presentSubscriptionInterface()
     func dismiss()
 }

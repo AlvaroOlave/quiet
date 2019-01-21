@@ -17,14 +17,14 @@ class ALMainDataManager: ALRealtimeClient, ALMainDataManagerProtocol {
     var yogaBlock:(() -> Void)?
     
     func getAllResourceLists() {
-//        asmrBlock = GET(URLString: Section.ASMR.rawValue) { resp in self.asmrBlock?() }
-//        sleepCastBlock = GET(URLString: Section.SleepCast.rawValue) { resp in self.sleepCastBlock?() }
-//        sleepBlock = GET(URLString: Section.Sleep.rawValue) { resp in self.sleepBlock?() }
-//        landscapeBlock = GET(URLString: Section.Landscapes.rawValue) { resp in self.landscapeBlock?() }
-//        yogaBlock = GET(URLString: Section.YogaStretch.rawValue) { resp in self.yogaBlock?() }
+        asmrBlock = GET(URLString: Section.ASMR.rawValue) { resp in self.asmrBlock?() }
+        sleepCastBlock = GET(URLString: Section.SleepCast.rawValue) { resp in self.sleepCastBlock?() }
+        sleepBlock = GET(URLString: Section.Sleep.rawValue) { resp in self.sleepBlock?() }
+        landscapeBlock = GET(URLString: Section.Landscapes.rawValue) { resp in self.landscapeBlock?() }
+        yogaBlock = GET(URLString: Section.YogaStretch.rawValue) { resp in self.yogaBlock?() }
     }
     
     func getAllDailyAdvices(_ completion: @escaping ([String]?) -> Void) {
-        GET(URLString: "dailyAdvice") { completion($0 as? [String]) }
+        _ = GET(URLString: "dailyAdvice") { completion($0 as? [String]) }
     }
 }

@@ -30,6 +30,8 @@ class ALASMRPresenter: NSObject, ALASMRPresenterProtocol, AVAudioPlayerDelegate 
     private func initPlayer() {
         do {
             if let sound = elem.resource {
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers])
+                try AVAudioSession.sharedInstance().setActive(true)
                 musicPlayer = try AVAudioPlayer(data: sound)
                 musicPlayer?.prepareToPlay()
                 musicPlayer?.delegate = self
@@ -41,12 +43,8 @@ class ALASMRPresenter: NSObject, ALASMRPresenterProtocol, AVAudioPlayerDelegate 
     }
     
     private func playAudio() {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
-            try AVAudioSession.sharedInstance().setActive(true)
-            musicPlayer?.play()
-            musicPlayer?.setVolume(0.7, fadeDuration: 2.5)
-        } catch { }
+        musicPlayer?.play()
+        musicPlayer?.setVolume(0.7, fadeDuration: 2.5)
     }
     
     private func stopAudio() { musicPlayer?.stop() }

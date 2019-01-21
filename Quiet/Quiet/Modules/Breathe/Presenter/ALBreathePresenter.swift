@@ -15,9 +15,11 @@ class ALBreathePresenter: ALBreathePresenterProtocol {
         
     }
     
+    func presentSubscriptionInterface() { wireframe.presentSubscriptionInterface() }
+    
     func getLastBreatheTime() -> Double {
         let lastTime = UserDefaults.standard.double(forKey: "al_last_breathe_time")
-        return lastTime == 0 ? 60.0 : lastTime
+        return lastTime == 0 ? 30.0 : lastTime
     }
     
     func setLastBreatheTime(_ time: Double) {

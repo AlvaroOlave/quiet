@@ -13,6 +13,7 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var backgroundView : UIView!
+    @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var backSpinnerView : UIView!
     @IBOutlet weak var shadowSpinnerView : UIView!
     @IBOutlet weak var spinnerView : JTMaterialSpinner!
@@ -30,6 +31,11 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         presenter.viewWillDisappear()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        configureCollectionViewLayout()
     }
     
     override func backButtonPressed() { presenter.backButtonPressed() }
@@ -51,6 +57,10 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
     private func commonInit() {
         configureCollectionView()
         configureLoadingView()
+        
+        titleLabel.textColor = MERCURY_GREY.withAlphaComponent(0.9)
+        titleLabel.text = section.rawValue
+        titleLabel.font = FontSheet.FontSemiBoldWith(size: MEGA_FONT_SIZE)
         
         backIcon?.image = UIImage(named: "icCancel")
         view.layer.backgroundColor = WARM_GREY.withAlphaComponent(0.5).cgColor
@@ -78,7 +88,7 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
     }
     
     private func configureCollectionView() {
-        configureCollectionViewLayout()
+        
         collectionView.dataSource = presenter
         collectionView.delegate = presenter
         collectionView.register(UINib(nibName: "ALResourceCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ALResourceCollectionViewCell")

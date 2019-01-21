@@ -25,6 +25,8 @@ class ALSleepCastPresenter: NSObject, ALSleepCastPresenterProtocol, AVAudioPlaye
     
     func initPlayers() {
         do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers])
+            try AVAudioSession.sharedInstance().setActive(true)
             if let prim = elem.primarySound {
                 voicePlayer = try AVAudioPlayer(data: prim)
                 voicePlayer?.prepareToPlay()
@@ -53,14 +55,8 @@ class ALSleepCastPresenter: NSObject, ALSleepCastPresenterProtocol, AVAudioPlaye
     func voiceVolume(_ volume: Float) { voicePlayer?.setVolume(volume, fadeDuration: 0.1) }
     
     private func playAudio() {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
-            try AVAudioSession.sharedInstance().setActive(true)
-            musicPlayer?.play()
-            voicePlayer?.play()
-        } catch {
-            
-        }
+        musicPlayer?.play()
+        voicePlayer?.play()
     }
     
     private func stopAudio() { musicPlayer?.stop(); voicePlayer?.stop() }
@@ -68,4 +64,5 @@ class ALSleepCastPresenter: NSObject, ALSleepCastPresenterProtocol, AVAudioPlaye
     //MARK:- AVAudioPlayerDelegate methods
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) { musicPlayer?.stop(); view.restorePlayButton() }
+    
 }

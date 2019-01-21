@@ -44,6 +44,8 @@ class ALLandscapePresenter: ALLandscapePresenterProtocol {
     private func initPlayer() {
         do {
             if let sound = elem.sound {
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers])
+                try AVAudioSession.sharedInstance().setActive(true)
                 musicPlayer = try AVAudioPlayer(data: sound)
                 musicPlayer?.prepareToPlay()
                 musicPlayer?.numberOfLoops = -1
@@ -65,12 +67,8 @@ class ALLandscapePresenter: ALLandscapePresenterProtocol {
     }
     
     private func playAudio() {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
-            try AVAudioSession.sharedInstance().setActive(true)
-            musicPlayer?.play()
-            musicPlayer?.setVolume(0.7, fadeDuration: 2.5)
-        } catch { }
+        musicPlayer?.play()
+        musicPlayer?.setVolume(0.7, fadeDuration: 2.5)
     }
     
     private func stopAudio() { musicPlayer?.stop() }

@@ -22,7 +22,13 @@ class ALResourceCollectionViewCell: UICollectionViewCell {
     
     func setTitle(_ title: String, backgroundImg: String, isPremium: Bool) {
         titleLabel.text = title
-        backgroungImage.sd_setImage(with: URL(string: backgroundImg), placeholderImage: nil)
+        
+        backgroungImage.sd_setImage(with: URL(string: backgroundImg)) { [weak self](img, error, origin, url) in
+            self?.backgroungImage.image = img
+            if error == nil {
+                self?.layer.borderColor = CLEAR_COLOR.cgColor
+            }
+        }        
         lockImage.isHidden = !isPremium
     }
     

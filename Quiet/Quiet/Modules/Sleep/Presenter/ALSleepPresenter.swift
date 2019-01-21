@@ -30,8 +30,9 @@ class ALSleepPresenter: ALSleepPresenterProtocol {
     
     private func initPlayer() {
         do {
-            
             if let sec = elem.resource {
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers])
+                try AVAudioSession.sharedInstance().setActive(true)
                 musicPlayer = try AVAudioPlayer(data: sec)
                 musicPlayer?.prepareToPlay()
                 musicPlayer?.numberOfLoops = -1
@@ -49,13 +50,7 @@ class ALSleepPresenter: ALSleepPresenterProtocol {
     func pauseButtonDidPressed() { cancelTimer() }
     func loopSeconds(_ secs: Double) { sleepTimer = secs }
     
-    private func playAudio() {
-        do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
-            try AVAudioSession.sharedInstance().setActive(true)
-            musicPlayer?.play()
-        } catch { }
-    }
+    private func playAudio() { musicPlayer?.play() }
     
     private func stop() {
         self.stopAudio()
