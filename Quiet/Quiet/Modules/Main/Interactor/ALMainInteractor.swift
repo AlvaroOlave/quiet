@@ -10,6 +10,8 @@ import Foundation
 
 let LAST_ADVICE_INDEX = "LAST_ADVICE_INDEX"
 let LAST_ADVICE_DATE = "LAST_ADVICE_DATE"
+let NEXT_BACKGROUND_NAME = "NEXT_BACKGROUND_NAME"
+let NEXT_BACKGROUND_SOUND = "NEXT_BACKGROUND_SOUND"
 
 class ALMainInteractor: ALMainInteractorProtocol {
     var dataManager: ALMainDataManagerProtocol!
@@ -27,6 +29,55 @@ class ALMainInteractor: ALMainInteractorProtocol {
                 self.refreshLastDateReaded()
                 completion(advices[idx])
             }
+        }
+    }
+    
+    func getNextBackground(_ completion: @escaping (Data?, Data?) -> Void) {
+        if let nextName = UserDefaults.standard.object(forKey: NEXT_BACKGROUND_NAME) as? String,
+            let nextSound = UserDefaults.standard.object(forKey: NEXT_BACKGROUND_SOUND) as? String {
+            dataManager.getLocalFile(nextName) { [weak self] data in
+                self?.dataManager.getLocalFile(nextSound, { (soundData) in
+                    completion(data ?? self?.defaultBackground(), soundData)
+                })
+                
+            }
+        } else {
+            completion(defaultBackground(), nil)
+        }
+        setNextBackground()
+    }
+    
+    private func setNextBackground() {
+        dataManager.getAllAvailableBackgrounds { [weak self] (elems) in
+            let names = ALBackgroundElem.backgroundElemsFrom(dict: elems)
+            if names.count > 0 {
+                if let nextName = UserDefaults.standard.object(forKey: NEXT_BACKGROUND_NAME) as? String,
+                    let idx = names.firstIndex(where: { return $0.gifURL == nextName }), idx % names.count < names.count {
+                    self?.downloadBackgroundGIF(names[idx % names.count].gifURL)
+                    self?.downloadBackgroundSound(names[idx % names.count].soundURL)
+                } else {
+                    self?.downloadBackgroundGIF(names.first?.gifURL)
+                    self?.downloadBackgroundSound(names.first?.soundURL)
+                }
+            }
+        }
+    }
+    
+    private func downloadBackgroundGIF(_ named: String?) {
+        guard let named = named else { return }
+        dataManager.downloadbackground(named, { if $0 { UserDefaults.standard.set(named, forKey: NEXT_BACKGROUND_NAME) } })
+    }
+    
+    private func downloadBackgroundSound(_ named: String?) {
+        guard let named = named else { return }
+        dataManager.downloadbackground(named, { if $0 { UserDefaults.standard.set(named, forKey: NEXT_BACKGROUND_SOUND) } })
+    }
+    
+    private func defaultBackground() -> Data? {
+        do {
+            return try Data(contentsOf: Bundle.main.url(forResource: "waterfall", withExtension: "gif")!)
+        } catch  {
+            return nil
         }
     }
 

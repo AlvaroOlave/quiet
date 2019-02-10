@@ -6,6 +6,7 @@
 //  Copyright © 2018 surflabapps. All rights reserved.
 //
 import UIKit
+import AVFoundation
 
 class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -13,15 +14,39 @@ class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSo
     var interactor: ALMainInteractorProtocol!
     var wireframe: ALMainViewWireframeProtocol!
     
+    var musicPlayer: AVAudioPlayer?
+    
     let cells: [Section] = [.SleepCast, .Breathe, .Sleep, .Landscapes, .ASMR, .YogaStretch]
     let cellIcons: [String] = ["sleepCastIcon", "breatheIcon", "sleepIcon", "ladscapeIcon", "asmrIcon", "yogaIcon"]
     
     func viewDidLoad() {
         interactor.getAllResourceLists()
+        interactor.getNextBackground {
+            if let data = $0 { self.view.setBackgroung(data) }
+            if let sound = $1 { self.initPlayer(sound) }
+        }
         interactor.getDailyAdvise { (advice) in
             if let adv = advice { self.view.setAdvice(adv) }
         }
     }
+    
+    func viewDidAppear() { playAudio() }
+    func viewWillDisappear() { stopAudio() }
+    
+    private func initPlayer(_ data: Data) {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers])
+            try AVAudioSession.sharedInstance().setActive(true)
+            musicPlayer = try AVAudioPlayer(data: data)
+            musicPlayer?.prepareToPlay()
+            musicPlayer?.numberOfLoops = -1
+        } catch {
+            //showError
+        }
+    }
+    
+    private func playAudio() { musicPlayer?.play() }
+    private func stopAudio() { musicPlayer?.stop(); musicPlayer?.currentTime = 0.0 }
     
     //MARK:- UICollectionViewDataSource methods
     

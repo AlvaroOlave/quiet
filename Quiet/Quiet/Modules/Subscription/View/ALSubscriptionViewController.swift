@@ -39,7 +39,6 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
     
     private func configureView() {
         backIcon?.image = UIImage(named: "icCancel")
-        frameView.layer.cornerRadius = 24
         frameView.backgroundColor = WHITE
         crownImageView.image = UIImage(named: "crown")
     }

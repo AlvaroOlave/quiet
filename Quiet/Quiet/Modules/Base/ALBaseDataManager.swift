@@ -58,14 +58,20 @@ class ALStorageClient {
         }
     }
     
+    func getLocalFile(_ name: String, completion: @escaping (Data?) -> Void) {
+        let fileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(name)
+        if FileManager.default.fileExists(atPath: fileURL.path) {
+            completion(self.dataFromURL(fileURL))
+        } else {
+            completion(nil)
+        }
+    }
+    
     func downloadFile(fileName: String, completion: @escaping (Data?) -> Void) {
-        
         let storageReference = Storage.storage().reference().child(fileName)
         let fileURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
         if FileManager.default.fileExists(atPath: fileURL.path) {
-            
             completion(self.dataFromURL(fileURL))
-            
             storageReference.getMetadata { [weak self] metadata, error in
                 guard error == nil else { return }
                 do{

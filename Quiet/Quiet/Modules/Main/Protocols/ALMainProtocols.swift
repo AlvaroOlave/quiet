@@ -13,6 +13,7 @@ protocol ALMainViewProtocol {
     
     func setAdvice(_ advice: String)
     func hideTitle(_ hide: Bool)
+    func setBackgroung(_ data: Data)
 }
 
 protocol ALMainPresenterProtocol {
@@ -21,6 +22,8 @@ protocol ALMainPresenterProtocol {
     var wireframe: ALMainViewWireframeProtocol! {get set}
     
     func viewDidLoad()
+    func viewDidAppear()
+    func viewWillDisappear()
 }
 
 protocol ALMainInteractorProtocol {
@@ -28,11 +31,15 @@ protocol ALMainInteractorProtocol {
     
     func getAllResourceLists()
     func getDailyAdvise(_ completion: @escaping (String?) -> Void)
+    func getNextBackground(_ completion: @escaping (Data?, Data?) -> Void)
 }
 
 protocol ALMainDataManagerProtocol {
     func getAllResourceLists()
     func getAllDailyAdvices(_ completion: @escaping ([String]?) -> Void)
+    func getAllAvailableBackgrounds(_ completion: @escaping ([Any]?) -> Void)
+    func downloadbackground(_ name: String, _ completion: @escaping (Bool) -> Void)
+    func getLocalFile(_ named: String, _ completion: @escaping (Data?) -> Void)
 }
 
 protocol ALMainViewWireframeProtocol {

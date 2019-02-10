@@ -27,4 +27,16 @@ class ALMainDataManager: ALRealtimeClient, ALMainDataManagerProtocol {
     func getAllDailyAdvices(_ completion: @escaping ([String]?) -> Void) {
         _ = GET(URLString: "dailyAdvice") { completion($0 as? [String]) }
     }
+    
+    func getAllAvailableBackgrounds(_ completion: @escaping ([Any]?) -> Void) {
+        _ = GET(URLString: "background") { completion($0) }
+    }
+    
+    func downloadbackground(_ name: String, _ completion: @escaping (Bool) -> Void) {
+        ALStorageClient.shared.downloadFile(fileName: name) { completion($0 != nil) }
+    }
+    
+    func getLocalFile(_ named: String, _ completion: @escaping (Data?) -> Void) {
+        ALStorageClient.shared.getLocalFile(named, completion: completion)
+    }
 }

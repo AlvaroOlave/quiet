@@ -74,3 +74,17 @@ class ALLandscapeElem: ALBaseElem {
         self.sound = sound
     }
 }
+
+struct ALBackgroundElem {
+    let gifURL: String?
+    let soundURL: String?
+    
+    static func backgroundElemsFrom(dict: [Any]?) -> [ALBackgroundElem] {
+        return (dict ?? []).compactMap {
+            guard let elem = $0 as? [AnyHashable: Any] else { return nil }
+            
+            return ALBackgroundElem(gifURL: elem["gif"] as? String,
+                                    soundURL: elem["sound"] as? String)
+        }
+    }
+}

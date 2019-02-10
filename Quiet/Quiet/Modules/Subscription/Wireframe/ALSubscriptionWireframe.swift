@@ -13,9 +13,6 @@ class ALSubscriptionWireframe: ALSubscriptionWireframeProtocol {
     
     func presentSubscriptionViewIn(_ fromView: UIViewController) { fromView.present(view, animated: true) }
     func presentSubscriptionOverViewIn(_ fromView: UIViewController) {
-        fromView.definesPresentationContext = true
-        view.modalTransitionStyle = .crossDissolve
-        view.modalPresentationStyle = .overCurrentContext
         fromView.present(view, animated: true)
     }
     func dismiss() { view.dismiss(animated: true) }

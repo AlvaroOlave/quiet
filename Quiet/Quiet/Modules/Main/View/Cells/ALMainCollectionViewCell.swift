@@ -32,7 +32,7 @@ class ALMainCollectionViewCell: UICollectionViewCell {
         iconView.backgroundColor = WHITE.withAlphaComponent(0.7)
         iconView.layer.cornerRadius = iconView.bounds.height / 2.0
         iconView.layer.borderColor = WARM_GREY.cgColor
-        iconView.layer.borderWidth = 2.0
+        iconView.layer.borderWidth = 0.0
         
         self.icon.contentMode = .scaleAspectFill
         self.icon.tintColor = BROWNISH_GREY

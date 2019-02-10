@@ -16,6 +16,7 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var adviceFrame: UIView!
+    @IBOutlet weak var happySunImage: UIImageView!
     @IBOutlet weak var adviceLabel: UILabel!
     @IBOutlet weak var adviceViewTop: NSLayoutConstraint!
     
@@ -28,17 +29,21 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         presenter.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter.viewDidAppear()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter.viewWillDisappear()
+    }
+    
     func setAdvice(_ advice: String) {
         
-        var attrs : [NSAttributedString.Key : Any] = [ NSAttributedString.Key.font : FontSheet.FontBoldWith(size: BIG_FONT_SIZE),
-                                                       NSAttributedString.Key.foregroundColor : WHITE,
-                                                       NSAttributedString.Key.underlineStyle : NSUnderlineStyle.single.rawValue]
-        let str = NSMutableAttributedString(string: "Daily advice!\n\n", attributes: attrs)
-        
-        attrs = [ NSAttributedString.Key.font : FontSheet.FontRegularWith(size: NORMAL_FONT_SIZE),
-                  NSAttributedString.Key.foregroundColor : WHITE]
-        
-        str.append(NSAttributedString(string: advice, attributes: attrs))
+        let attrs = [ NSAttributedString.Key.font : FontSheet.FontRegularWith(size: NORMAL_FONT_SIZE),
+                  NSAttributedString.Key.foregroundColor : BROWNISH_GREY]
+        let str = NSMutableAttributedString(string: advice, attributes: attrs)
         
         adviceLabel.attributedText = str
         adviceFrame.alpha = 0.0
@@ -50,11 +55,15 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
     
     func hideTitle(_ hide: Bool) { titleImageView.isHidden = hide; adviceFrame.isHidden = hide }
     
+    func setBackgroung(_ data: Data) {
+        backgroundImageView.animate(withGIFData: data)
+    }
+    
     //MARK:- private methods
     
     private func commonInit() {
         configureCollectionViewLayout()
-        configureBackgroundImage()
+        configureBackgroundImage() 
         configureAdviseLabel()
         mainCollectionView.dataSource = presenter
         mainCollectionView.delegate = presenter
@@ -73,7 +82,7 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
     }
     
     private func configureBackgroundImage() {
-        backgroundImageView.animate(withGIFNamed: "waterfall") { }
+//        backgroundImageView.animate(withGIFNamed: "waterfall") { }
         backgroundImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideCollectionView)))
         backgroundImageView.isUserInteractionEnabled = true
         
@@ -85,11 +94,12 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
     private func configureAdviseLabel() {
         adviceFrame.layer.cornerRadius = 16.0
         adviceFrame.layer.borderColor = WARM_GREY.withAlphaComponent(0.7).cgColor
-        adviceFrame.layer.borderWidth = 2.0
-        adviceFrame.backgroundColor = MERCURY_GREY.withAlphaComponent(0.8)
-        adviceLabel.textColor = WHITE
+        adviceFrame.backgroundColor = WHITE_TWO.withAlphaComponent(0.8)
+        adviceLabel.textColor = BROWNISH_GREY
         adviceLabel.font = FontSheet.FontLightWith(size: NORMAL_FONT_SIZE)
         adviceFrame.isHidden = true
+        happySunImage.image = UIImage(named: "happySun")?.withRenderingMode(.alwaysTemplate)
+        happySunImage.tintColor = BROWNISH_GREY
     }
     
     @objc func hideCollectionView() {
