@@ -18,7 +18,7 @@ class ALGeneralSelectionWireframe: ALGeneralSelectionViewWireframeProtocol {
         view.modalPresentationStyle = .overCurrentContext
         fromView.present(view, animated: true)
     }
-    func dismiss() { self.delegate?.viewDidDissapear(); view.dismiss(animated: true) }
+    func dismiss() { delegate?.viewDidDissapear(); view.dismiss(animated: true) }
     
     func presentSectionElem(_ elem: ALBaseElem) {
         switch elem.baseSection.kindOfResource {

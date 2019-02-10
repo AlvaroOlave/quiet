@@ -26,6 +26,8 @@ protocol ALBreathePresenterProtocol {
 protocol ALBreatheViewWireframeProtocol {
     var view: (ALBreatheViewProtocol & UIViewController)! {get set}
     
+    var delegate: ALGeneralSelectionViewWireframeDelegate? {get set}
+    
     func presentBreatheViewIn(_ view: UIViewController)
     func presentSubscriptionInterface()
     func dismiss()

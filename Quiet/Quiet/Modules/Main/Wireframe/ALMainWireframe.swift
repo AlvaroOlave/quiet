@@ -29,7 +29,8 @@ class ALMainWireframe: ALMainViewWireframeProtocol, ALGeneralSelectionViewWirefr
     //MARK:- privateMethods
     
     private func presentBreatheSection() {
-        let breatheWireframe = breatheFactory()
+        var breatheWireframe = breatheFactory()
+        breatheWireframe.delegate = self
         breatheWireframe.presentBreatheViewIn(view)
     }
     

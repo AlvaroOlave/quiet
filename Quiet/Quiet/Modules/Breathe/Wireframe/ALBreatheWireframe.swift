@@ -12,6 +12,8 @@ class ALBreatheWireframe: ALBreatheViewWireframeProtocol {
     
     var view: (UIViewController & ALBreatheViewProtocol)!
     
+    var delegate: ALGeneralSelectionViewWireframeDelegate?
+    
     func presentBreatheViewIn(_ fromView: UIViewController) { fromView.present(view, animated: true) }
     
     func presentSubscriptionInterface() {
@@ -19,5 +21,5 @@ class ALBreatheWireframe: ALBreatheViewWireframeProtocol {
         wireframe.presentSubscriptionOverViewIn(view)
     }
     
-    func dismiss() { view.dismiss(animated: true) }
+    func dismiss() { delegate?.viewDidDissapear(); view.dismiss(animated: true) }
 }
