@@ -95,11 +95,12 @@ class ALGeneralSelectionInteractor: ALGeneralSelectionInteractorProtocol {
     }
     
     private func getGeneralInfoURL(from elem: ALSectionElem, completion: @escaping (ALGeneralElem) -> Void) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.dataManager.getResourceURL(elem.resourceURL as! String) { data in
-                DispatchQueue.main.async { completion(ALGeneralElem(baseSection: elem, resource: data)) }
-            }
-        }
+        completion(ALGeneralElem(baseSection: elem, resource: nil))
+//        DispatchQueue.global(qos: .userInitiated).async {
+//            self.dataManager.getResourceURL(elem.resourceURL as! String) { data in
+//                DispatchQueue.main.async { completion(ALGeneralElem(baseSection: elem, resource: data)) }
+//            }
+//        }
     }
     
     

@@ -15,8 +15,7 @@ class ALYogaPresenter: ALYogaPresenterProtocol {
     var elem: ALGeneralElem!
     
     func viewDidLoad() {
-        
-        if let data = elem.resource, let url = URL(dataRepresentation: data, relativeTo: nil) { view.setVideo(url) }
+        if let urlString = elem.baseSection.resourceURL as? String, let url = URL(string: urlString) { view.setVideo(url) }
     }
     
     func backButtonPressed() { wireframe.dismiss() }
