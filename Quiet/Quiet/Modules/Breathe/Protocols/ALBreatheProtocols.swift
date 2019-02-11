@@ -10,10 +10,14 @@ import UIKit
 
 protocol ALBreatheViewProtocol {
     var presenter: ALBreathePresenterProtocol! {get set}
+    
+    func setSoundList()
+    func selectElem(_ elem: String)
 }
 
 protocol ALBreathePresenterProtocol {
     var view: ALBreatheViewProtocol! {get set}
+    var dataManager: ALBreatheDataManagerProtocol! {get set}
     var wireframe: ALBreatheViewWireframeProtocol! {get set}
     
     func viewDidLoad()
@@ -21,6 +25,14 @@ protocol ALBreathePresenterProtocol {
     func presentSubscriptionInterface()
     func getLastBreatheTime() -> Double
     func setLastBreatheTime(_ time: Double)
+    func playAudio()
+    func stopAudio()
+}
+
+protocol ALBreatheDataManagerProtocol {
+    func getResourcesList(completion: @escaping ([Any]?) -> Void)
+    func getResource(_ name: String, completion: @escaping (Data?) -> Void)
+    func dismiss()
 }
 
 protocol ALBreatheViewWireframeProtocol {

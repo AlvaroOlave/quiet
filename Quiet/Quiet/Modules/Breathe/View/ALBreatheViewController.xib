@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,6 +25,7 @@
                 <outlet property="inspireLabel" destination="RYe-R9-7vI" id="mc3-aI-WJN"/>
                 <outlet property="inspireTimeLabel" destination="hm8-Tp-Bga" id="7mu-RX-yck"/>
                 <outlet property="separationView" destination="n1k-bl-gob" id="wat-AI-Sy5"/>
+                <outlet property="soundTextField" destination="3Tv-sI-SVg" id="VJo-ge-cV9"/>
                 <outlet property="subtButton" destination="2lX-hB-jv9" id="jGw-md-esc"/>
                 <outlet property="timeLabel" destination="0b4-o9-imQ" id="pas-d3-Xgh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -151,6 +152,12 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                 </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Tv-sI-SVg">
+                    <rect key="frame" x="49" y="443.5" width="277.5" height="50"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -163,6 +170,9 @@
                 <constraint firstItem="RYe-R9-7vI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="BTH-tH-eFE"/>
                 <constraint firstItem="n1k-bl-gob" firstAttribute="top" secondItem="hm8-Tp-Bga" secondAttribute="top" id="Efp-0x-j9f"/>
                 <constraint firstItem="hm8-Tp-Bga" firstAttribute="top" secondItem="bpB-SZ-d4V" secondAttribute="top" constant="20" id="FSf-Kj-3oy"/>
+                <constraint firstItem="3Tv-sI-SVg" firstAttribute="leading" secondItem="2lX-hB-jv9" secondAttribute="leading" id="Imt-nU-m2n"/>
+                <constraint firstItem="3Tv-sI-SVg" firstAttribute="centerY" secondItem="7We-bD-gY0" secondAttribute="centerY" id="J7F-gT-oit"/>
+                <constraint firstItem="3Tv-sI-SVg" firstAttribute="trailing" secondItem="r7b-v5-4Ig" secondAttribute="trailing" id="J7y-2E-dEF"/>
                 <constraint firstItem="hm8-Tp-Bga" firstAttribute="top" secondItem="a4n-8z-Xij" secondAttribute="top" constant="5" id="Jed-U7-9DD"/>
                 <constraint firstItem="0b4-o9-imQ" firstAttribute="width" secondItem="ELL-yf-HmR" secondAttribute="width" multiplier="0.7" id="Kfc-N1-PP3"/>
                 <constraint firstItem="cq6-hR-GnL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="L4E-Af-AG4"/>
@@ -183,6 +193,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bpB-SZ-d4V" secondAttribute="trailing" id="aQo-oX-hmj"/>
                 <constraint firstItem="7We-bD-gY0" firstAttribute="centerX" secondItem="0b4-o9-imQ" secondAttribute="centerX" id="dnx-Lr-vKw"/>
                 <constraint firstItem="RYe-R9-7vI" firstAttribute="top" secondItem="hm8-Tp-Bga" secondAttribute="bottom" id="dxd-Qd-sPM"/>
+                <constraint firstItem="3Tv-sI-SVg" firstAttribute="height" secondItem="7We-bD-gY0" secondAttribute="height" id="eLH-ld-uoM"/>
                 <constraint firstItem="n1k-bl-gob" firstAttribute="bottom" secondItem="RYe-R9-7vI" secondAttribute="bottom" id="eQy-e1-8wl"/>
                 <constraint firstItem="a4n-8z-Xij" firstAttribute="bottom" secondItem="RYe-R9-7vI" secondAttribute="bottom" constant="5" id="fEc-IJ-41a"/>
                 <constraint firstItem="bpB-SZ-d4V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fYe-5V-ntD"/>
@@ -199,6 +210,7 @@
                 <constraint firstItem="0b4-o9-imQ" firstAttribute="top" secondItem="ELL-yf-HmR" secondAttribute="bottom" constant="40" id="tmd-ao-FZC"/>
                 <constraint firstItem="ELL-yf-HmR" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="xQe-M1-y4r"/>
                 <constraint firstItem="2lX-hB-jv9" firstAttribute="height" secondItem="0b4-o9-imQ" secondAttribute="height" id="xpK-rQ-YkN"/>
+                <constraint firstItem="3Tv-sI-SVg" firstAttribute="centerX" secondItem="7We-bD-gY0" secondAttribute="centerX" id="y64-CN-JMO"/>
                 <constraint firstItem="ELL-yf-HmR" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.6" id="z0z-M7-Jay"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bpB-SZ-d4V" secondAttribute="bottom" id="zaA-8X-fif"/>
             </constraints>

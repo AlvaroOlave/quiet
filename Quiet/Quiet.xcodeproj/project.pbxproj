@@ -31,6 +31,7 @@
 		3806EADF21AD9C8500C93662 /* ALBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EADE21AD9C8500C93662 /* ALBaseViewController.swift */; };
 		380A430121C6AB6800A04B2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380A430021C6AB6800A04B2C /* GoogleService-Info.plist */; };
 		380A430321C6AE9B00A04B2C /* ALBaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A430221C6AE9B00A04B2C /* ALBaseDataManager.swift */; };
+		380AC9122210F39800380BA5 /* ALBreatheDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380AC9112210F39800380BA5 /* ALBreatheDataManager.swift */; };
 		380B0D9121CD198B0042C1E0 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 380B0D9021CD198A0042C1E0 /* bell.mp3 */; };
 		380BE1E921F34B7F00EA3B5E /* ALMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380BE1E821F34B7F00EA3B5E /* ALMainInteractor.swift */; };
 		380C6CA321AB78FD00BF853C /* ALGeneralSelectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA221AB78FD00BF853C /* ALGeneralSelectionProtocols.swift */; };
@@ -102,6 +103,7 @@
 		3806EADE21AD9C8500C93662 /* ALBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBaseViewController.swift; sourceTree = "<group>"; };
 		380A430021C6AB6800A04B2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		380A430221C6AE9B00A04B2C /* ALBaseDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBaseDataManager.swift; sourceTree = "<group>"; };
+		380AC9112210F39800380BA5 /* ALBreatheDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBreatheDataManager.swift; sourceTree = "<group>"; };
 		380B0D9021CD198A0042C1E0 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
 		380BE1E821F34B7F00EA3B5E /* ALMainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALMainInteractor.swift; sourceTree = "<group>"; };
 		380C6CA221AB78FD00BF853C /* ALGeneralSelectionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALGeneralSelectionProtocols.swift; sourceTree = "<group>"; };
@@ -349,6 +351,14 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		380AC9102210F35D00380BA5 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				380AC9112210F39800380BA5 /* ALBreatheDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
 		380BE1E721F34B5700EA3B5E /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,6 +596,7 @@
 				386137BF21A4729A000BD657 /* Protocols */,
 				386137BE21A47296000BD657 /* View */,
 				386137BD21A4728D000BD657 /* Presenter */,
+				380AC9102210F35D00380BA5 /* DataManager */,
 				386137BC21A47281000BD657 /* Wireframe */,
 			);
 			path = Breathe;
@@ -940,6 +951,7 @@
 				386137CC21A473B0000BD657 /* ALBreatheViewController.swift in Sources */,
 				380C6CB221AB8FF900BF853C /* ALSectionElem.swift in Sources */,
 				384C20D521C07EF800025D24 /* ALUserTokenManager.swift in Sources */,
+				380AC9122210F39800380BA5 /* ALBreatheDataManager.swift in Sources */,
 				381F2FEA21A82C6C00B573F8 /* ALMainCollectionViewCell.swift in Sources */,
 				3804B9B021CBC5C300BFDB65 /* ALASMRViewController.swift in Sources */,
 				380C6CA721AB791700BF853C /* ALGeneralSelectionInteractor.swift in Sources */,

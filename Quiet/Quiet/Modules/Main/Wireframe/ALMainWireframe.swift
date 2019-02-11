@@ -42,5 +42,5 @@ class ALMainWireframe: ALMainViewWireframeProtocol, ALGeneralSelectionViewWirefr
     
     //MARK:- ALGeneralSelectionViewWireframeDelegate methods
     
-    func viewDidDissapear() { view.hideTitle(false) }
+    func viewDidDissapear() { view.hideTitle(false); view.presenter.viewDidAppear() }
 }

@@ -19,6 +19,7 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
     @IBOutlet weak var subtButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var soundTextField: UITextField!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var inspExpAreaView: UIView!
     @IBOutlet weak var inspireTimeLabel: UILabel!
@@ -42,8 +43,15 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        presenter.viewDidLoad()
         commonInit()
     }
+    
+    func setSoundList() {
+        (soundTextField.inputView as? UIPickerView)?.reloadAllComponents()
+    }
+    
+    func selectElem(_ elem: String) { soundTextField.text = elem }
     
     //MARK:- viewConfiguration
     
@@ -52,6 +60,7 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
         configureLabels()
         configureButtons()
         configureBackground()
+        configureTextField()
         initPlayer()
         backView?.backgroundColor = WHITE.withAlphaComponent(0.7)
     }
@@ -118,6 +127,40 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
         cancelButton.addTarget(self, action: #selector(cancelBreath), for: .touchUpInside)
         cancelButton.isHidden = true
     }
+    
+    private func configureTextField() {
+        soundTextField.font = FontSheet.FontRegularWith(size: BIG_FONT_SIZE)
+        soundTextField.textColor = WHITE
+        soundTextField.inputAccessoryView = getAccessoryView()
+        soundTextField.inputView = configurePicker()
+        
+        soundTextField.backgroundColor = WHITE.withAlphaComponent(0.5)
+        soundTextField.layer.cornerRadius = 4.0
+    }
+    
+    func getAccessoryView() -> UIToolbar {
+        let toolBar = UIToolbar()
+        let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector (doneKeyboardButtonPressed))
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.setItems([doneButton, space], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        toolBar.sizeToFit()
+        
+        return toolBar
+    }
+    
+    private func configurePicker() -> UIPickerView {
+        let picker = UIPickerView()
+        picker.dataSource = presenter as? UIPickerViewDataSource
+        picker.delegate = presenter as? UIPickerViewDelegate
+        picker.backgroundColor = WHITE
+
+        return picker
+    }
+    
+    @objc func doneKeyboardButtonPressed() { soundTextField.endEditing(true) }
     
     override func backButtonPressed() { presenter.backButtonPressed() }
     
@@ -202,6 +245,7 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
     }
     
     private func startBreathing() {
+        presenter.playAudio()
         breathLabel.font = FontSheet.FontRegularWith(size: MEGA_FONT_SIZE)
         startBreathing(Int(currentTimeSecs / (2 * breathTime)))
         hideInnecesaryElemsAnimated(true)
@@ -226,7 +270,7 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
     }
     
     private func playSound() {
-        bellPlayer?.volume = 0.5
+        bellPlayer?.volume = 1.0
         bellPlayer?.play()
         bellPlayer?.setVolume(0.0, fadeDuration: 2.0)
     }
@@ -249,6 +293,7 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
         expireTimeLabel.isHidden = hide
         expireLabel.isHidden = hide
         separationView.isHidden = hide
+        soundTextField.isHidden = hide
         cancelButton.isHidden = !hide
     }
     
@@ -261,11 +306,13 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
         expireTimeLabel.alpha = value
         expireLabel.alpha = value
         separationView.alpha = value
+        soundTextField.alpha = value
     }
     
     @objc private func cancelBreath() { presenter.backButtonPressed() }
     
     private func endBreathing() {
+        presenter.stopAudio()
         currentTimeSecs = presenter.getLastBreatheTime()
         hideInnecesaryElems(false)
         breathLabel.text = "Start"

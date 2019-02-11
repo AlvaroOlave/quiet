@@ -46,6 +46,7 @@ func breatheFactory() -> ALBreatheViewWireframeProtocol {
     
     wireframe.view.presenter = ALBreathePresenter()
     wireframe.view.presenter.view = wireframe.view
+    wireframe.view.presenter.dataManager = ALBreatheDataManager()
     wireframe.view.presenter.wireframe = wireframe
     
     return wireframe

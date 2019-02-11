@@ -64,6 +64,7 @@ class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         view.hideTitle(true)
+        stopAudio()
         wireframe.goTo(cells[indexPath.row])
     }
     
