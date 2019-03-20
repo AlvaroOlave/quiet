@@ -16,6 +16,7 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var adviceFrame: UIView!
+    @IBOutlet weak var gradientView: ALGradientView!
     @IBOutlet weak var happySunImage: UIImageView!
     @IBOutlet weak var adviceLabel: UILabel!
     @IBOutlet weak var adviceViewTop: NSLayoutConstraint!
@@ -110,5 +111,33 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         UIView.animate(withDuration: 0.3, delay: 0.0, options: .curveEaseIn, animations: {
             self.view.layoutSubviews()
         }, completion: nil)
+    }
+}
+
+class ALGradientView: UIView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        configureGradient()
+    }
+    
+    private func configureGradient() {
+        
+        let gradient: CAGradientLayer = CAGradientLayer()
+        
+        gradient.name = "QUOBackgroundSmallGradient"
+        
+        gradient.colors = [CLEAR_COLOR.cgColor,
+                           BLACK.cgColor]
+        
+        gradient.locations = [0.0 , 1.1]
+        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 1.0)
+        
+        gradient.frame = bounds
+        
+        layer.sublayers?.forEach({
+            if $0.name == "QUOBackgroundSmallGradient" { $0.removeFromSuperlayer() }
+        })
+        layer.insertSublayer(gradient, at: 0)
     }
 }

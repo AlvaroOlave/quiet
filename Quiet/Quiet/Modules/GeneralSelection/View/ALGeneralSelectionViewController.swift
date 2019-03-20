@@ -8,8 +8,9 @@
 
 import UIKit
 import JTMaterialSpinner
+import FBAudienceNetwork
 
-class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelectionViewProtocol {
+class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelectionViewProtocol, FBInterstitialAdDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var backgroundView : UIView!
@@ -18,6 +19,7 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
     @IBOutlet weak var shadowSpinnerView : UIView!
     @IBOutlet weak var spinnerView : JTMaterialSpinner!
     
+    var interstitialAd: FBInterstitialAd?
     var section: Section!
     
     var presenter: (ALGeneralSelectionPresenterProtocol & UICollectionViewDataSource & UICollectionViewDelegate)!
@@ -26,6 +28,10 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
         super.viewDidLoad()
         commonInit()
         presenter.viewDidLoad()
+        
+        interstitialAd = FBInterstitialAd(placementID: "810898249287725_810899832620900")
+        interstitialAd?.delegate = self
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -53,6 +59,12 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
         backSpinnerView.isHidden = true
         spinnerView.endRefreshing()
     }
+    
+    func showAd() {
+        interstitialAd?.load()
+    }
+    
+    //MARK:- private methods
     
     private func commonInit() {
         configureCollectionView()
@@ -126,5 +138,13 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
         let horizontalEdge = CGFloat((section == .Sleep || section == .ASMR) ? 20 : 0)
         
         return UIEdgeInsets(top: 50, left: horizontalEdge, bottom: 20, right: horizontalEdge)
+    }
+    
+    //MARK:- FBInterstitialAdDelegate methods
+    
+    func interstitialAdDidLoad(_ interstitialAd: FBInterstitialAd) {
+        if interstitialAd.isAdValid {
+            interstitialAd.show(fromRootViewController: self)
+        }
     }
 }

@@ -35,7 +35,7 @@ class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSo
     
     private func initPlayer(_ data: Data) {
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers])
+            try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default, options: [.mixWithOthers])
             try AVAudioSession.sharedInstance().setActive(true)
             musicPlayer = try AVAudioPlayer(data: data)
             musicPlayer?.prepareToPlay()

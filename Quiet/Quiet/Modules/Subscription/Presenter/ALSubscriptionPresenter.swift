@@ -27,18 +27,30 @@ class ALSubscriptionPresenter: ALSubscriptionPresenterProtocol, ALSubscriptionMa
     
     func backButtonPressed() { wireframe.dismiss() }
     
+    func weekDidPressed() {
+        
+    }
+    
+    func monthDidPressed() {
+        
+    }
+    
+    func yearDidPressed() {
+        
+    }
+    
     //MARK:- ALSubscriptionManagerDelegate methods
     
     func setWeeklySubscriptionPrice(_ price: NSDecimalNumber, units: String) {
-        let weeklyPrice = createPriceAttributedString(with: price.doubleValue, units: units, period: "Week")
+        let weeklyPrice = createPriceAttributedString(with: price.doubleValue, units: units)
         view.setWeeklySubscriptionPrice(weeklyPrice)
     }
     func setMonthlySubscriptionPrice(_ price: NSDecimalNumber, units: String) {
-        let monthlyPrice = createPriceAttributedString(with: price.doubleValue, units: units, period: "Month")
+        let monthlyPrice = createPriceAttributedString(with: price.doubleValue, units: units)
         view.setMonthlySubscriptionPrice(monthlyPrice)
     }
     func setYearlySubscriptionPrice(_ price: NSDecimalNumber, units: String) {
-        let yearlyPrice = createPriceAttributedString(with: price.doubleValue, units: units, period: "Year")
+        let yearlyPrice = createPriceAttributedString(with: price.doubleValue, units: units)
         view.setYearlySubscriptionPrice(yearlyPrice)
     }
     
@@ -51,8 +63,8 @@ class ALSubscriptionPresenter: ALSubscriptionPresenterProtocol, ALSubscriptionMa
     
     //MARK:- private methods
     
-    private func createPriceAttributedString(with price: Double, units: String, period: String) -> String {
-        return String(format: "%.02f%@/ ", price, units) + period
+    private func createPriceAttributedString(with price: Double, units: String) -> String {
+        return String(format: "%.02f%@", price, units)
     }
     
     private func attributedText(_ text: String, color: UIColor, size: Float) -> NSAttributedString{

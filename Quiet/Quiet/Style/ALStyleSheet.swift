@@ -23,7 +23,7 @@ let BOLUS_COLOR : UIColor = #colorLiteral(red: 0.7294117647, green: 0.4666666667
 let BASAL_COLOR: UIColor = #colorLiteral(red: 0.8901960784, green: 0.7843137255, blue: 1, alpha: 1)
 
 let PDF_BlUE_COLOR : UIColor = #colorLiteral(red: 0.1490196078, green: 0.6588235294, blue: 0.6509803922, alpha: 1)
-let OUT_OF_RANGE_COLOR : UIColor = #colorLiteral(red: 0.937254902, green: 0.7490196078, blue: 0, alpha: 1)
+let YELLOW_COLOR : UIColor = #colorLiteral(red: 0.937254902, green: 0.7490196078, blue: 0, alpha: 1)
 
 let SLATE_BLUE : UIColor = #colorLiteral(red: 0.3333333333, green: 0.3607843137, blue: 0.4705882353, alpha: 1)
 
@@ -38,6 +38,7 @@ let GREENY_BLUE : UIColor = #colorLiteral(red: 0.2745098039, green: 0.6705882353
 let LIGHT_GREY_BLUE : UIColor = #colorLiteral(red: 0.6352941176, green: 0.8352941176, blue: 0.8588235294, alpha: 1)
 var DARK_SKY_BLUE : UIColor = #colorLiteral(red: 0.2274509804, green: 0.6470588235, blue: 0.8235294118, alpha: 1)
 
+var BLACK : UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 var BROWNISH_GREY : UIColor = #colorLiteral(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)
 var WARM_GREY : UIColor = #colorLiteral(red: 0.5921568627, green: 0.5921568627, blue: 0.5921568627, alpha: 1)
 var MERCURY_GREY : UIColor = #colorLiteral(red: 0.8941176471, green: 0.8941176471, blue: 0.8941176471, alpha: 1)

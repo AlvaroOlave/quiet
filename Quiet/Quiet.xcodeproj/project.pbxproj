@@ -44,6 +44,8 @@
 		380C6CB221AB8FF900BF853C /* ALSectionElem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CB121AB8FF900BF853C /* ALSectionElem.swift */; };
 		380C6CB621AB975A00BF853C /* ALResourceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CB421AB975A00BF853C /* ALResourceCollectionViewCell.swift */; };
 		380C6CB721AB975A00BF853C /* ALResourceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380C6CB521AB975A00BF853C /* ALResourceCollectionViewCell.xib */; };
+		381A1F3B223DAD2600D32CC6 /* ALAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A1F39223DAD2600D32CC6 /* ALAdViewController.swift */; };
+		381A1F3C223DAD2600D32CC6 /* ALAdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381A1F3A223DAD2600D32CC6 /* ALAdViewController.xib */; };
 		381F2FEA21A82C6C00B573F8 /* ALMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F2FE821A82C6C00B573F8 /* ALMainCollectionViewCell.swift */; };
 		381F2FEB21A82C6C00B573F8 /* ALMainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381F2FE921A82C6C00B573F8 /* ALMainCollectionViewCell.xib */; };
 		382CA5C221EC19D600207CA7 /* ALMainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CA5C121EC19D600207CA7 /* ALMainDataManager.swift */; };
@@ -116,6 +118,8 @@
 		380C6CB121AB8FF900BF853C /* ALSectionElem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSectionElem.swift; sourceTree = "<group>"; };
 		380C6CB421AB975A00BF853C /* ALResourceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALResourceCollectionViewCell.swift; sourceTree = "<group>"; };
 		380C6CB521AB975A00BF853C /* ALResourceCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALResourceCollectionViewCell.xib; sourceTree = "<group>"; };
+		381A1F39223DAD2600D32CC6 /* ALAdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALAdViewController.swift; sourceTree = "<group>"; };
+		381A1F3A223DAD2600D32CC6 /* ALAdViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALAdViewController.xib; sourceTree = "<group>"; };
 		381F2FE821A82C6C00B573F8 /* ALMainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALMainCollectionViewCell.swift; sourceTree = "<group>"; };
 		381F2FE921A82C6C00B573F8 /* ALMainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALMainCollectionViewCell.xib; sourceTree = "<group>"; };
 		382CA5C121EC19D600207CA7 /* ALMainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALMainDataManager.swift; sourceTree = "<group>"; };
@@ -447,6 +451,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		381A1F38223DAD0100D32CC6 /* Ad */ = {
+			isa = PBXGroup;
+			children = (
+				381A1F39223DAD2600D32CC6 /* ALAdViewController.swift */,
+				381A1F3A223DAD2600D32CC6 /* ALAdViewController.xib */,
+			);
+			path = Ad;
+			sourceTree = "<group>";
+		};
 		381F2FE721A82C3B00B573F8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -521,6 +534,7 @@
 		386137A621A463BB000BD657 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				381A1F38223DAD0100D32CC6 /* Ad */,
 				38E2BDA921D5ABC400E9616C /* Subscription */,
 				3804B9B321CBC5DD00BFDB65 /* Yoga */,
 				3804B9A321CBC56200BFDB65 /* ASMR */,
@@ -824,6 +838,7 @@
 				3804B9A221CBABB000BFDB65 /* ALLandscapeViewController.xib in Resources */,
 				3861379F21A41AED000BD657 /* LaunchScreen.storyboard in Resources */,
 				3861379C21A41AED000BD657 /* Assets.xcassets in Resources */,
+				381A1F3C223DAD2600D32CC6 /* ALAdViewController.xib in Resources */,
 				38F4ABCB21C08FE700E3ACB5 /* waterfall.gif in Resources */,
 				3804B9B121CBC5C300BFDB65 /* ALASMRViewController.xib in Resources */,
 				380C6CAF21AB794700BF853C /* ALGeneralSelectionViewController.xib in Resources */,
@@ -938,6 +953,7 @@
 				3866B30921C3BC150017A16E /* ALSleepCastWireframe.swift in Sources */,
 				3866B30721C3BC080017A16E /* ALSleepCastProtocols.swift in Sources */,
 				386137C721A472EF000BD657 /* ALBreathePresenter.swift in Sources */,
+				381A1F3B223DAD2600D32CC6 /* ALAdViewController.swift in Sources */,
 				386137B321A46457000BD657 /* ALMainPresenter.swift in Sources */,
 				380C6CB621AB975A00BF853C /* ALResourceCollectionViewCell.swift in Sources */,
 				380C6CAB21AB792B00BF853C /* ALGeneralSelectionWireframe.swift in Sources */,

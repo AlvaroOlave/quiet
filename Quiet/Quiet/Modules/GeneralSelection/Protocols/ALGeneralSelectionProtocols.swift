@@ -16,6 +16,7 @@ protocol ALGeneralSelectionViewProtocol {
     func reloadCollectionView()
     func startLoading()
     func stopLoading()
+    func showAd()
 }
 
 protocol ALGeneralSelectionPresenterProtocol {

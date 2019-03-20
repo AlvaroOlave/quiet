@@ -17,4 +17,5 @@ target 'Quiet' do
   pod 'Firebase/Storage'
   pod 'Firebase/Crash'
   pod 'Firebase/Performance'
+  pod 'FBAudienceNetwork'
 end

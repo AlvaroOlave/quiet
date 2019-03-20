@@ -55,6 +55,7 @@ class ALGeneralSelectionPresenter: NSObject, ALGeneralSelectionPresenterProtocol
                 self?.wireframe.presentSectionElem(elem)
             }
         }
+//        view.showAd()
 //        wireframe.presentSubscriptionInterface()
     }
     

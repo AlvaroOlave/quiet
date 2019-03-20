@@ -17,6 +17,7 @@
                 <outlet property="adviceViewTop" destination="KBA-O3-cqc" id="udN-Y1-Neb"/>
                 <outlet property="backgroundImageView" destination="lwK-4z-Lnn" id="b8P-DL-lXu"/>
                 <outlet property="collectionViewHeight" destination="V0V-mM-Rmw" id="LSj-Fl-FW0"/>
+                <outlet property="gradientView" destination="MGV-gP-opV" id="Zb1-mv-Toj"/>
                 <outlet property="happySunImage" destination="fqO-aX-DTO" id="84a-18-3Sp"/>
                 <outlet property="mainCollectionView" destination="1sI-dW-3EA" id="Mxw-zV-Du7"/>
                 <outlet property="titleImageView" destination="qFe-bK-Xfz" id="Thb-hp-jEU"/>
@@ -67,6 +68,10 @@
                         <constraint firstItem="fqO-aX-DTO" firstAttribute="leading" secondItem="oJ6-xD-V1a" secondAttribute="leading" constant="15" id="xAT-Cl-dkz"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGV-gP-opV" customClass="ALGradientView" customModule="Quiet" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="497" width="375" height="170"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1sI-dW-3EA">
                     <rect key="frame" x="0.0" y="497" width="375" height="170"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -84,13 +89,17 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1sI-dW-3EA" secondAttribute="trailing" id="1o6-UX-ogf"/>
+                <constraint firstItem="MGV-gP-opV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2hy-uf-jvM"/>
                 <constraint firstItem="oJ6-xD-V1a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="3hH-64-HFd"/>
                 <constraint firstAttribute="trailing" secondItem="lwK-4z-Lnn" secondAttribute="trailing" id="81T-As-UWH"/>
                 <constraint firstItem="lwK-4z-Lnn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9jp-tf-nLj"/>
                 <constraint firstItem="oJ6-xD-V1a" firstAttribute="centerX" secondItem="qFe-bK-Xfz" secondAttribute="centerX" id="DMP-Ed-Atm"/>
                 <constraint firstItem="lwK-4z-Lnn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FSf-az-7Hh"/>
+                <constraint firstAttribute="bottom" secondItem="MGV-gP-opV" secondAttribute="bottom" id="JsN-lK-d0E"/>
                 <constraint firstItem="qFe-bK-Xfz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="KBA-O3-cqc"/>
                 <constraint firstItem="1sI-dW-3EA" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="V0V-mM-Rmw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MGV-gP-opV" secondAttribute="trailing" id="VQM-Og-YoF"/>
+                <constraint firstItem="MGV-gP-opV" firstAttribute="top" secondItem="1sI-dW-3EA" secondAttribute="top" id="cDH-aE-IcI"/>
                 <constraint firstItem="qFe-bK-Xfz" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="dHn-OE-p4w"/>
                 <constraint firstAttribute="bottom" secondItem="lwK-4z-Lnn" secondAttribute="bottom" id="kT4-PC-RKo"/>
                 <constraint firstItem="oJ6-xD-V1a" firstAttribute="top" secondItem="qFe-bK-Xfz" secondAttribute="bottom" constant="50" id="tS3-4M-llY"/>
