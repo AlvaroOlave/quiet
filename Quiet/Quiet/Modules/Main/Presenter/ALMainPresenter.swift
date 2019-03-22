@@ -15,9 +15,9 @@ class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSo
     var wireframe: ALMainViewWireframeProtocol!
     
     var musicPlayer: AVAudioPlayer?
-    
-    let cells: [Section] = [.SleepCast, .Breathe, .Sleep, .Landscapes, .ASMR, .YogaStretch]
-    let cellIcons: [String] = ["sleepCastIcon", "breatheIcon", "sleepIcon", "ladscapeIcon", "asmrIcon", "yogaIcon"]
+    //.SleepCast,  "sleepCastIcon",
+    let cells: [Section] = [.Breathe, .Sleep, .Landscapes, .ASMR, .YogaStretch]
+    let cellIcons: [String] = [ "breatheIcon", "sleepIcon", "ladscapeIcon", "asmrIcon", "yogaIcon"]
     
     func viewDidLoad() {
         interactor.getAllResourceLists()

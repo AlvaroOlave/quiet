@@ -10,16 +10,13 @@ import UIKit
 
 class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var resourceImage: UIImageView!
     @IBOutlet weak var resourceTitle: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var separationView1: UIView!
     @IBOutlet weak var dateTextField: UITextField!
-    @IBOutlet weak var separationView2: UIView!
     @IBOutlet weak var playView: UIView!
     @IBOutlet weak var playIcon: UIImageView!
-    @IBOutlet weak var curtainView: UIView!
     
     @IBOutlet weak var keyboardConstraint: NSLayoutConstraint!
     
@@ -61,6 +58,12 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     func restorePlayButton() {
         playIcon.image = UIImage(named: "icPlay")?.withRenderingMode(.alwaysTemplate)
         playView.addGestureRecognizer(playGesture)
+        UIView.animate(withDuration: 0.2) {
+            self.playView.alpha = 1.0
+            self.descriptionLabel.alpha = 1.0
+            self.separationView1.alpha = 1.0
+            self.dateTextField.alpha = 1.0
+        }
     }
     
     //MARK:- viewConfiguration
@@ -68,16 +71,11 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     private func commonInit() {
         dateFormatter.dateFormat = "HH:mm"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
-        configureBackground()
         configurePlayButton()
         configureResourceInfo()
         configureTimeView()
         backView?.backgroundColor = WHITE.withAlphaComponent(0.7)
-    }
-    
-    private func configureBackground() {
-        backgroundImageView.image = UIImage(named: "sleepLandscape")
-        backgroundImageView.contentMode = .scaleAspectFill
+        view.backgroundColor = BLACK
     }
     
     private func configurePlayButton() {
@@ -98,9 +96,6 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     
     private func configureResourceInfo() {
         resourceImage.contentMode = .scaleAspectFit
-        resourceImage.layer.borderColor = WARM_GREY.withAlphaComponent(0.6).cgColor
-        resourceImage.layer.borderWidth = 2.0
-        resourceImage.layer.cornerRadius = 4.0
         
         resourceTitle.text = "ResourceTitleAux "
         resourceTitle.textColor = WHITE_TWO
@@ -108,18 +103,15 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     }
     
     private func configureTimeView() {
-        separationView1.backgroundColor = BROWNISH_GREY
-        separationView2.backgroundColor = BROWNISH_GREY
+        separationView1.backgroundColor = WHITE.withAlphaComponent(0.8)
         
         descriptionLabel.font = FontSheet.FontRegularWith(size: SMALL_FONT_SIZE)
-        descriptionLabel.textColor = BROWNISH_GREY
+        descriptionLabel.textColor = WHITE.withAlphaComponent(0.8)
         
         dateTextField.font = FontSheet.FontRegularWith(size: BIG_FONT_SIZE)
-        dateTextField.textColor = BROWNISH_GREY
+        dateTextField.textColor = WHITE.withAlphaComponent(0.8)
         dateTextField.inputAccessoryView = getAccessoryView()
         dateTextField.inputView = configureDatePicker()
-        
-        curtainView.backgroundColor = WHITE.withAlphaComponent(0.8)
     }
     
     private func configureDatePicker() -> UIDatePicker {
@@ -156,10 +148,16 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     
     @objc func playButtonPressed() {
         presenter.playButtonDidPressed()
-        if pauseGesture == nil { pauseGesture = UITapGestureRecognizer(target: self, action: #selector(pauseButtonPressed))}
-        playView.removeGestureRecognizer(playGesture)
-        playView.addGestureRecognizer(pauseGesture)
-        playIcon.image = UIImage(named: "icStop")?.withRenderingMode(.alwaysTemplate)
+        UIView.animate(withDuration: 0.2) {
+            self.playView.alpha = 0.0
+            self.descriptionLabel.alpha = 0.0
+            self.separationView1.alpha = 0.0
+            self.dateTextField.alpha = 0.0
+        }
+//        if pauseGesture == nil { pauseGesture = UITapGestureRecognizer(target: self, action: #selector(pauseButtonPressed))}
+//        playView.removeGestureRecognizer(playGesture)
+//        playView.addGestureRecognizer(pauseGesture)
+//        playIcon.image = UIImage(named: "icStop")?.withRenderingMode(.alwaysTemplate)
     }
     
     @objc func pauseButtonPressed() {
@@ -175,14 +173,14 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let info = notification.userInfo else { return }
         let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        self.keyboardConstraint.constant = keyboardFrame.height + 10
+        self.keyboardConstraint.constant = keyboardFrame.height - 54
         UIView.animate(withDuration: (notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! Double)) {
             self.view.layoutIfNeeded()
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        self.keyboardConstraint.constant = 142
+        self.keyboardConstraint.constant = 8
         UIView.animate(withDuration: (notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! Double)) {
             self.view.layoutIfNeeded()
         }
