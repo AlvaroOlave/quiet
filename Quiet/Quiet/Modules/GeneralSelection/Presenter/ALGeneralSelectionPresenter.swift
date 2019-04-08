@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ALGeneralSelectionPresenter: NSObject, ALGeneralSelectionPresenterProtocol, UICollectionViewDataSource, UICollectionViewDelegate {
+class ALGeneralSelectionPresenter: NSObject, ALGeneralSelectionPresenterProtocol, ALSubscriptionWireframeDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var view: ALGeneralSelectionViewProtocol!
     var interactor: ALGeneralSelectionInteractorProtocol!
@@ -27,7 +27,19 @@ class ALGeneralSelectionPresenter: NSObject, ALGeneralSelectionPresenterProtocol
     
     private func getResourcesList() {
         view.startLoading()
-        interactor.getResourcesList { [weak self] elems in self?.resourceList = elems; self?.view.stopLoading() }
+        interactor.getResourcesList { [weak self] elems in self?.filterIfPremium(elems); self?.view.stopLoading() }
+    }
+    
+    private func filterIfPremium(_ list: [ALSectionElem]) {
+        if ALUserTokenManager.shared.currentUser.isPremium() {
+            self.resourceList = list.map({
+                var copy = $0
+                copy.isPremium = false
+                return copy
+            })
+        } else {
+            self.resourceList = list
+        }
     }
     
     //MARK:- UICollectionViewDataSource methods
@@ -60,5 +72,8 @@ class ALGeneralSelectionPresenter: NSObject, ALGeneralSelectionPresenterProtocol
     }
     
     //MARK:- UICollectionViewDelegate methods
-
+    
+    //MARK:- ALSubscriptionWireframeDelegate methods
+    
+    func subscribed() { filterIfPremium(resourceList) }
 }

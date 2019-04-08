@@ -10,6 +10,7 @@ import UIKit
 
 class ALSubscriptionWireframe: ALSubscriptionWireframeProtocol {
     var view: (UIViewController & ALSubscriptionViewProtocol)!
+    var delegate: ALSubscriptionWireframeDelegate?
     
     func presentSubscriptionViewIn(_ fromView: UIViewController) { fromView.present(view, animated: true) }
     func presentSubscriptionOverViewIn(_ fromView: UIViewController) {

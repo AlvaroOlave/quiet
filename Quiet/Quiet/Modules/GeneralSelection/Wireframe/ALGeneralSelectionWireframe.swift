@@ -38,8 +38,9 @@ class ALGeneralSelectionWireframe: ALGeneralSelectionViewWireframeProtocol {
     }
     
     func presentSubscriptionInterface() {
-        let wireframe = subscriptionFactory(with: .Normal)
+        var wireframe = subscriptionFactory(with: .Normal)
         wireframe.presentSubscriptionViewIn(view)
+        wireframe.delegate = view.presenter as? ALSubscriptionWireframeDelegate
     }
     
     private func presentSleepInterface(_ elem: ALGeneralElem) {

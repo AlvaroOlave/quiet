@@ -46,7 +46,7 @@ class ALPurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
     
     fileprivate var availableOptions = [ALProduct]()
     
-    func start() { SKPaymentQueue.default().add(self) }
+    func start() { SKPaymentQueue.default().add(self); receiptValidation() }
     
     func loadSubscriptions() {
         delegate?.getAvailableProductsInProcess()
@@ -181,21 +181,20 @@ class ALPurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
     fileprivate func handlePurchasedState(for transaction: SKPaymentTransaction, in queue: SKPaymentQueue) {
         queue.finishTransaction(transaction)
         
-        guard let receiptData = loadReceipt(), let transactionDate = transaction.transactionDate,
+        guard let transactionDate = transaction.transactionDate,
             let subscriptionTime = subscriptionTime(from: transaction.payment.productIdentifier) else { return }
 
-        if let expireDate = Calendar.current.date(byAdding: ((subscriptionTime == "1") ? .month : .year), value: 1, to: transactionDate) {
-            let newToken = ALUserToken(with: expireDate, data: receiptData)
-            ALUserTokenManager.shared.setUserToken(newToken)
+        if let expireDate = Calendar.current.date(byAdding: subscriptionTime.0, value: subscriptionTime.1, to: transactionDate) {
+            ALUserTokenManager.shared.setExpireDate(expireDate.timeIntervalSince1970 * 1000)
         }
-
-        
-//        let token = receiptData.base64EncodedString() + "@IOS@" + DateFormatter(withDateFormat: .FIREBASE).string(from: expireDate!) + "@" + subscriptionTime
+        delegate?.endPurchase(true)
+        receiptValidation()
     }
     
     fileprivate func handleRestoredState(for transaction: SKPaymentTransaction, in queue: SKPaymentQueue) {
         queue.finishTransaction(transaction)
         delegate?.endPurchase(true)
+        receiptValidation()
     }
     
     fileprivate func handleFailedState(for transaction: SKPaymentTransaction, in queue: SKPaymentQueue) {
@@ -220,8 +219,71 @@ class ALPurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
         }
     }
     
-    private func subscriptionTime(from productIdentifier: String) -> String? {
-        return productIdentifier == Bundle.main.bundleIdentifier! + ".subscriptions.monthly" ? "1" :
-            (productIdentifier == Bundle.main.bundleIdentifier! + ".subscriptions.yearly") ? "12" : nil
+    private func subscriptionTime(from productIdentifier: String) -> (Calendar.Component, Int)? {
+        return productIdentifier == WEEKLY ? (.day, 7) :
+            productIdentifier == MONTHLY ? (.month, 1) :
+            productIdentifier == YEARLY ? (.year, 1) : nil
+    }
+    
+    func receiptValidation() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let SUBSCRIPTION_SECRET = "049ea300898d44fd94dc98761349093a"
+            let receiptPath = Bundle.main.appStoreReceiptURL?.path
+            if FileManager.default.fileExists(atPath: receiptPath!){
+                var receiptData:NSData?
+                do{
+                    receiptData = try NSData(contentsOf: Bundle.main.appStoreReceiptURL!, options: NSData.ReadingOptions.alwaysMapped)
+                }
+                catch{
+                    print("ERROR: " + error.localizedDescription)
+                }
+                let base64encodedReceipt = receiptData?.base64EncodedString(options: NSData.Base64EncodingOptions.endLineWithCarriageReturn)
+                
+                let requestDictionary = ["receipt-data":base64encodedReceipt!,"password":SUBSCRIPTION_SECRET]
+                
+                guard JSONSerialization.isValidJSONObject(requestDictionary) else {  print("requestDictionary is not valid JSON");  return }
+                do {
+                    let requestData = try JSONSerialization.data(withJSONObject: requestDictionary)
+                    let validationURLString = "https://sandbox.itunes.apple.com/verifyReceipt"  // this works but as noted above it's best to use your own trusted server
+                    guard let validationURL = URL(string: validationURLString) else { print("the validation url could not be created, unlikely error"); return }
+                    let session = URLSession(configuration: URLSessionConfiguration.default)
+                    var request = URLRequest(url: validationURL)
+                    request.httpMethod = "POST"
+                    request.cachePolicy = URLRequest.CachePolicy.reloadIgnoringCacheData
+                    let task = session.uploadTask(with: request, from: requestData) { [weak self] (data, response, error) in
+                        if let data = data , error == nil {
+                            do {
+                                let appReceiptJSON = try JSONSerialization.jsonObject(with: data)
+                                if let receipt = appReceiptJSON as? [AnyHashable: Any] {
+                                    self?.parseReceiptJSON(receipt)
+                                }
+                            } catch let error as NSError {
+                                print("json serialization failed with error: \(error)")
+                            }
+                        } else {
+                            print("the upload task returned an error: \(String(describing: error))")
+                        }
+                    }
+                    task.resume()
+                } catch let error as NSError {
+                    print("json serialization failed with error: \(error)")
+                }
+            }
+        }
+    }
+    
+    private func parseReceiptJSON(_ json: [AnyHashable: Any]) {
+        var expiresDate: Double? = nil
+        let currentDateMs = Date().timeIntervalSince1970 * 1000
+        if let lastesReceipt = json["latest_receipt_info"] as? [[AnyHashable: Any]] {
+            lastesReceipt.forEach { register in
+                if let expireMs = register["expires_date_ms"] as? String, let expireMsDouble = Double(expireMs), expireMsDouble > currentDateMs {
+                    expiresDate = (expireMsDouble > (expiresDate ?? 0.0)) ? expireMsDouble : expiresDate
+                }
+            }
+        }
+        if let expiresDate = expiresDate {
+            ALUserTokenManager.shared.setExpireDate(expiresDate)
+        }
     }
 }

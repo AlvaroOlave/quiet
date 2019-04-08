@@ -28,15 +28,15 @@ class ALSubscriptionPresenter: ALSubscriptionPresenterProtocol, ALSubscriptionMa
     func backButtonPressed() { wireframe.dismiss() }
     
     func weekDidPressed() {
-        
+        ALPurchaseManager.shared.purchaseWeeklySubscription()
     }
     
     func monthDidPressed() {
-        
+        ALPurchaseManager.shared.purchaseMonthlySubscription()
     }
     
     func yearDidPressed() {
-        
+        ALPurchaseManager.shared.purchaseYearlySubscription()
     }
     
     //MARK:- ALSubscriptionManagerDelegate methods
@@ -58,7 +58,7 @@ class ALSubscriptionPresenter: ALSubscriptionPresenterProtocol, ALSubscriptionMa
     func getAvailableProductsCompleted() { view.hideLoading() }
     func getAvailableProductsFailed() { }
     func purchaising() { view.showLoading() }
-    func endPurchase(_ purchased: Bool) { view.hideLoading() }
+    func endPurchase(_ purchased: Bool) { view.hideLoading(); if purchased { wireframe.dismiss(); wireframe.delegate?.subscribed() } }
     func showMessage(_ title: String, description: String) { }
     
     //MARK:- private methods

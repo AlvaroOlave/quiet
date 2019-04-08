@@ -11,7 +11,7 @@ struct ALSectionElem {
     let title: String
     let imgURL: String
     let resourceURL: Any?
-    let isPremium: Bool
+    var isPremium: Bool
     let kindOfResource: Section
     
     static func sectionElemsFrom(dict: [Any], of section: Section) -> [ALSectionElem] {

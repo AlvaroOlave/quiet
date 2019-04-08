@@ -52,9 +52,9 @@ class ALMainInteractor: ALMainInteractorProtocol {
             let names = ALBackgroundElem.backgroundElemsFrom(dict: elems)
             if names.count > 0 {
                 if let nextName = UserDefaults.standard.object(forKey: NEXT_BACKGROUND_NAME) as? String,
-                    let idx = names.firstIndex(where: { return $0.gifURL == nextName }), idx % names.count < names.count {
-                    self?.downloadBackgroundGIF(names[idx % names.count].gifURL)
-                    self?.downloadBackgroundSound(names[idx % names.count].soundURL)
+                    let idx = names.firstIndex(where: { return $0.gifURL == nextName }), (idx + 1) % names.count < names.count {
+                    self?.downloadBackgroundGIF(names[(idx + 1) % names.count].gifURL)
+                    self?.downloadBackgroundSound(names[(idx + 1) % names.count].soundURL)
                 } else {
                     self?.downloadBackgroundGIF(names.first?.gifURL)
                     self?.downloadBackgroundSound(names.first?.soundURL)

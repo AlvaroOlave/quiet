@@ -9,13 +9,10 @@
 import KeychainSwift
 
 struct ALUserToken {
-    var expireDate: Date
-    var data: Data?
+    var expireDate: Double
     
-    init(with expireDate: Date, data: Data?) {
-        
+    init(with expireDate: Double) {
         self.expireDate = expireDate
-        self.data = data
     }
     
     static func archive(_ w: ALUserToken) -> Data {
@@ -32,25 +29,44 @@ struct ALUserToken {
         })
         return userToken!
     }
+    
+    func isPremium() -> Bool { return expireDate > Date().timeIntervalSince1970 }
 }
 
 class ALUserTokenManager {
-    
     static let shared = ALUserTokenManager()
+    var currentUser: ALUserToken {
+        didSet {
+            if self.currentUser.expireDate > 0 && !self.currentUser.isPremium() {
+                ALPurchaseManager.shared.receiptValidation()
+            }
+        }
+    }
+    
+    init() { currentUser = ALUserTokenManager.getUserToken() }
+    
+    func setExpireDate(_ date: Double) { setUserToken(ALUserToken(with: date)) }
     
     func setUserToken(_ userToken: ALUserToken) {
         let keychain = KeychainSwift()
         keychain.synchronizable = true
         keychain.set(ALUserToken.archive(userToken), forKey: "AL_USER_TOKEN_PURCHASED")
+        currentUser = userToken
     }
     
-    func getUserToken() -> ALUserToken? {
+    static func getUserToken() -> ALUserToken {
         let keychain = KeychainSwift()
         keychain.synchronizable = true
         
         if let pass = keychain.getData("AL_USER_TOKEN_PURCHASED") {
             return ALUserToken.unarchive(d: pass)
         }
-        return nil
+        return ALUserToken(with: 0)
+    }
+    
+    static func removeUser() {
+        let keychain = KeychainSwift()
+        keychain.synchronizable = true
+        keychain.delete("AL_USER_TOKEN_PURCHASED")
     }
 }

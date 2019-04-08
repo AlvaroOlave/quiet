@@ -84,6 +84,7 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
     
     private func configureBackgroundImage() {
 //        backgroundImageView.animate(withGIFNamed: "waterfall") { }
+        backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideCollectionView)))
         backgroundImageView.isUserInteractionEnabled = true
         

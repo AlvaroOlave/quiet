@@ -33,8 +33,13 @@ protocol ALSubscriptionPresenterProtocol {
 
 protocol ALSubscriptionWireframeProtocol {
     var view: (ALSubscriptionViewProtocol & UIViewController)! {get set}
+    var delegate: ALSubscriptionWireframeDelegate? {get set}
     
     func presentSubscriptionViewIn(_ view: UIViewController)
     func presentSubscriptionOverViewIn(_ fromView: UIViewController)
     func dismiss()
+}
+
+protocol ALSubscriptionWireframeDelegate {
+    func subscribed()
 }

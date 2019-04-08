@@ -52,13 +52,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func startApp() {
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
-        
         if let window = createWindow() {
             mainWireframe = mainFactory()
             mainWireframe.presentMainViewInWindow(window)
         }
         ALPurchaseManager.shared.start()
-        
     }
 
     private func createWindow() -> UIWindow? {

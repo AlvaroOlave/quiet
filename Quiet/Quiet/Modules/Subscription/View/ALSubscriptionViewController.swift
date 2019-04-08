@@ -13,7 +13,7 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
     var presenter: ALSubscriptionPresenterProtocol!
 
     @IBOutlet weak var frameView: UIView!
-    @IBOutlet weak var crownImageView: UIImageView!
+    @IBOutlet weak var quietImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var weeklyTitle: UILabel!
@@ -97,6 +97,8 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
         weeklyArea.backgroundColor = DARK_SKY_BLUE
         weeklyArea.layer.borderWidth = 1.0
         weeklyArea.layer.borderColor = WHITE.withAlphaComponent(0.5).cgColor
+        weeklyArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(weekDidPressed)))
+        weeklyArea.isUserInteractionEnabled = true
         
         monthlyTitle.text = "Monthly"
         monthlyTitle.font = FontSheet.FontRegularWith(size: BIG_FONT_SIZE)
@@ -118,6 +120,8 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
         monthlyArea.backgroundColor = BORING_GREEN
         monthlyArea.layer.borderWidth = 1.0
         monthlyArea.layer.borderColor = WHITE.withAlphaComponent(0.5).cgColor
+        monthlyArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(monthDidPressed)))
+        monthlyArea.isUserInteractionEnabled = true
         
         yearlyTitle.text = "Yearly"
         yearlyTitle.font = FontSheet.FontRegularWith(size: BIG_FONT_SIZE)
@@ -139,6 +143,8 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
         yearlyArea.backgroundColor = YELLOW_COLOR
         yearlyArea.layer.borderWidth = 1.0
         yearlyArea.layer.borderColor = WHITE.withAlphaComponent(0.5).cgColor
+        yearlyArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(yearDidPressed)))
+        yearlyArea.isUserInteractionEnabled = true
     }
     
     private func configurePromoLabels() {
