@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,6 +24,8 @@
                 <outlet property="inspExpAreaView" destination="bpB-SZ-d4V" id="wN2-JQ-PCb"/>
                 <outlet property="inspireLabel" destination="RYe-R9-7vI" id="mc3-aI-WJN"/>
                 <outlet property="inspireTimeLabel" destination="hm8-Tp-Bga" id="7mu-RX-yck"/>
+                <outlet property="muteIcon" destination="aPe-fF-p4m" id="8GH-VR-Vrp"/>
+                <outlet property="muteView" destination="2i4-9a-VDo" id="GwQ-5N-qVc"/>
                 <outlet property="separationView" destination="n1k-bl-gob" id="wat-AI-Sy5"/>
                 <outlet property="soundTextField" destination="3Tv-sI-SVg" id="VJo-ge-cV9"/>
                 <outlet property="subtButton" destination="2lX-hB-jv9" id="jGw-md-esc"/>
@@ -56,6 +58,25 @@
                         <constraint firstItem="RUY-fO-GSb" firstAttribute="centerY" secondItem="cq6-hR-GnL" secondAttribute="centerY" id="GnF-FZ-Zoo"/>
                         <constraint firstItem="RUY-fO-GSb" firstAttribute="centerX" secondItem="cq6-hR-GnL" secondAttribute="centerX" constant="-1" id="s3A-qV-Mag"/>
                         <constraint firstAttribute="height" constant="40" id="wYt-hW-hIi"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2i4-9a-VDo" userLabel="Mute View">
+                    <rect key="frame" x="310" y="45" width="40" height="40"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aPe-fF-p4m">
+                            <rect key="frame" x="8" y="8" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="aox-7h-928"/>
+                                <constraint firstAttribute="width" constant="24" id="g8V-na-vfz"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="aPe-fF-p4m" firstAttribute="centerX" secondItem="2i4-9a-VDo" secondAttribute="centerX" id="WUQ-Rz-xdw"/>
+                        <constraint firstAttribute="height" constant="40" id="bcX-9f-NMA"/>
+                        <constraint firstAttribute="width" constant="40" id="cEi-wQ-K3z"/>
+                        <constraint firstItem="aPe-fF-p4m" firstAttribute="centerY" secondItem="2i4-9a-VDo" secondAttribute="centerY" id="r8s-wt-8oy"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ELL-yf-HmR" customClass="ALBreathView" customModule="Quiet" customModuleProvider="target">
@@ -190,6 +211,7 @@
                 <constraint firstItem="ETV-Q4-vXp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="centerX" constant="20" id="YML-5t-BHq"/>
                 <constraint firstItem="n1k-bl-gob" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="YT8-qb-9e3"/>
                 <constraint firstItem="a4n-8z-Xij" firstAttribute="trailing" secondItem="RYe-R9-7vI" secondAttribute="trailing" constant="5" id="Yda-rW-7g9"/>
+                <constraint firstItem="2i4-9a-VDo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="a3g-sb-oEh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bpB-SZ-d4V" secondAttribute="trailing" id="aQo-oX-hmj"/>
                 <constraint firstItem="7We-bD-gY0" firstAttribute="centerX" secondItem="0b4-o9-imQ" secondAttribute="centerX" id="dnx-Lr-vKw"/>
                 <constraint firstItem="RYe-R9-7vI" firstAttribute="top" secondItem="hm8-Tp-Bga" secondAttribute="bottom" id="dxd-Qd-sPM"/>
@@ -208,6 +230,7 @@
                 <constraint firstItem="7We-bD-gY0" firstAttribute="width" secondItem="ELL-yf-HmR" secondAttribute="width" id="qcO-PO-v7C"/>
                 <constraint firstItem="RYe-R9-7vI" firstAttribute="leading" secondItem="a4n-8z-Xij" secondAttribute="leading" constant="5" id="sAR-Yb-LAn"/>
                 <constraint firstItem="0b4-o9-imQ" firstAttribute="top" secondItem="ELL-yf-HmR" secondAttribute="bottom" constant="40" id="tmd-ao-FZC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2i4-9a-VDo" secondAttribute="trailing" constant="25" id="wnN-du-ojb"/>
                 <constraint firstItem="ELL-yf-HmR" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="xQe-M1-y4r"/>
                 <constraint firstItem="2lX-hB-jv9" firstAttribute="height" secondItem="0b4-o9-imQ" secondAttribute="height" id="xpK-rQ-YkN"/>
                 <constraint firstItem="3Tv-sI-SVg" firstAttribute="centerX" secondItem="7We-bD-gY0" secondAttribute="centerX" id="y64-CN-JMO"/>

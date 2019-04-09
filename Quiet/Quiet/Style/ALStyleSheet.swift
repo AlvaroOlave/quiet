@@ -27,16 +27,18 @@ let YELLOW_COLOR : UIColor = #colorLiteral(red: 0.937254902, green: 0.7490196078
 
 let SLATE_BLUE : UIColor = #colorLiteral(red: 0.3333333333, green: 0.3607843137, blue: 0.4705882353, alpha: 1)
 
-let LIGHT_ORANGE : UIColor = #colorLiteral(red: 0.9882352941, green: 0.6705882353, blue: 0.3254901961, alpha: 1)
+let LIGHT_ORANGE : UIColor = #colorLiteral(red: 1, green: 0.631372549, blue: 0.2196078431, alpha: 1)
 let SEAFOAM_BLUE : UIColor = #colorLiteral(red: 0.3137254902, green: 0.8235294118, blue: 0.7607843137, alpha: 1)
 let EASTER_PURPLE : UIColor = #colorLiteral(red: 0.7294117647, green: 0.4666666667, blue: 1, alpha: 1)
 let PALE_PURPLE : UIColor = #colorLiteral(red: 0.8196078431, green: 0.7176470588, blue: 0.8980392157, alpha: 1)
+let WINE_RED : UIColor = #colorLiteral(red: 0.6470588235, green: 0.3882352941, blue: 0.5215686275, alpha: 1)
 
 var BORING_GREEN : UIColor = #colorLiteral(red: 0.3803921569, green: 0.7176470588, blue: 0.4705882353, alpha: 1)
 let LIGHT_GREY_GREEN : UIColor = #colorLiteral(red: 0.6901960784, green: 0.8588235294, blue: 0.7333333333, alpha: 1)
-let GREENY_BLUE : UIColor = #colorLiteral(red: 0.2745098039, green: 0.6705882353, blue: 0.7176470588, alpha: 1)
+let GREENY_BLUE : UIColor = #colorLiteral(red: 0, green: 0.6274509804, blue: 0.7098039216, alpha: 1)
 let LIGHT_GREY_BLUE : UIColor = #colorLiteral(red: 0.6352941176, green: 0.8352941176, blue: 0.8588235294, alpha: 1)
 var DARK_SKY_BLUE : UIColor = #colorLiteral(red: 0.2274509804, green: 0.6470588235, blue: 0.8235294118, alpha: 1)
+var BLUE_BLUE : UIColor = #colorLiteral(red: 0, green: 0.5490196078, blue: 0.8862745098, alpha: 1)
 
 var BLACK : UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 var BROWNISH_GREY : UIColor = #colorLiteral(red: 0.4, green: 0.4, blue: 0.4, alpha: 1)

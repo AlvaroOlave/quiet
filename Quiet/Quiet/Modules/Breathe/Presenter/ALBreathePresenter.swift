@@ -51,7 +51,7 @@ class ALBreathePresenter: NSObject, ALBreathePresenterProtocol, UIPickerViewData
             musicPlayer = try AVAudioPlayer(data: data)
             musicPlayer?.prepareToPlay()
             musicPlayer?.numberOfLoops = -1
-            musicPlayer?.volume = 0.05
+            musicPlayer?.volume = 0.5
         } catch {
             //showError
         }

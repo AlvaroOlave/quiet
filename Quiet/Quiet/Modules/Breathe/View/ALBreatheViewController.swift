@@ -27,6 +27,8 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
     @IBOutlet weak var expireTimeLabel: UILabel!
     @IBOutlet weak var expireLabel: UILabel!
     @IBOutlet weak var separationView: UIView!
+    @IBOutlet weak var muteView: UIView!
+    @IBOutlet weak var muteIcon: UIImageView!
     
     var currentTimeSecs: Double {
         get {
@@ -37,7 +39,7 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
         }
     }
     var breathTime = 5.0
-    
+    var muted = false
     var bellPlayer: AVAudioPlayer?
     
     override func viewDidLoad() {
@@ -63,6 +65,12 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
         configureTextField()
         initPlayer()
         backView?.backgroundColor = WHITE.withAlphaComponent(0.7)
+        muteView.backgroundColor = WHITE.withAlphaComponent(0.7)
+        muteIcon.image = UIImage(named: muted ? "mute" : "sound")?.withRenderingMode(.alwaysTemplate)
+        muteIcon.tintColor = WHITE
+        muteView?.layer.cornerRadius = (muteView?.bounds.height ?? 0.0) / 2.0
+        muteView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(muteButtonPressed)))
+        muteView?.isUserInteractionEnabled = true
     }
     
     private func initPlayer() {
@@ -161,7 +169,7 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
     }
     
     @objc func doneKeyboardButtonPressed() { soundTextField.endEditing(true) }
-    
+    @objc func muteButtonPressed() { muted = !muted; muteIcon.image = UIImage(named: muted ? "mute" : "sound")?.withRenderingMode(.alwaysTemplate) }
     override func backButtonPressed() { presenter.backButtonPressed() }
     
     @objc func addSecs() {
@@ -270,9 +278,11 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
     }
     
     private func playSound() {
-        bellPlayer?.volume = 1.0
-        bellPlayer?.play()
-        bellPlayer?.setVolume(0.0, fadeDuration: 2.0)
+        if !muted {
+            bellPlayer?.volume = 0.5
+            bellPlayer?.play()
+            bellPlayer?.setVolume(0.0, fadeDuration: 2.0)
+        }
     }
     
     private func hideInnecesaryElemsAnimated(_ hide: Bool) {

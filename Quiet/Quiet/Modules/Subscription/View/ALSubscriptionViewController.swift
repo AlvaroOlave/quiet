@@ -14,29 +14,31 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
 
     @IBOutlet weak var frameView: UIView!
     @IBOutlet weak var quietImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var weeklyTitle: UILabel!
     @IBOutlet weak var weeklyPrice: UILabel!
-    @IBOutlet weak var weeklyPeriod: UILabel!
     @IBOutlet weak var weeklyDescription: UILabel!
     @IBOutlet weak var weeklyArea: UIView!
     @IBOutlet weak var monthlyTitle: UILabel!
     @IBOutlet weak var monthlyPrice: UILabel!
-    @IBOutlet weak var monthlyPeriod: UILabel!
     @IBOutlet weak var monthlyDescription: UILabel!
     @IBOutlet weak var monthlyArea: UIView!
     @IBOutlet weak var yearlyTitle: UILabel!
     @IBOutlet weak var yearlyPrice: UILabel!
-    @IBOutlet weak var yearlyPeriod: UILabel!
     @IBOutlet weak var yearlyDescription: UILabel!
     @IBOutlet weak var yearlyArea: UIView!
     @IBOutlet var promoDescriptions: [UILabel]!
     @IBOutlet weak var backSpinnerView : UIView!
     @IBOutlet weak var shadowSpinnerView : UIView!
     @IBOutlet weak var spinnerView : JTMaterialSpinner!
-    
     @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionTextHeight: NSLayoutConstraint!
+    
+    var prices = ("-", "-", "-") {
+        didSet {
+            setDescriptionText(priceWeek: prices.0, priceMonth: prices.1, priceYear: prices.2)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,19 +62,14 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
     private func configureView() {
         backIcon?.image = UIImage(named: "icCancel")
         frameView.backgroundColor = WHITE
-        crownImageView.image = UIImage(named: "crown")
     }
     
     private func configureLabels() {
-        titleLabel.text = "Go Premium!"
-        titleLabel.textColor = WARM_GREY
-        titleLabel.font = FontSheet.FontBoldWith(size: MEGA_FONT_SIZE + 10)
-        
-        subtitleLabel.text = "And enjoy all the content"
-        subtitleLabel.textColor = WARM_GREY
+        subtitleLabel.text = "Get premium!"
+        subtitleLabel.textColor = WHITE
         subtitleLabel.font = FontSheet.FontBoldWith(size: MEGA_FONT_SIZE)
         
-        setDescriptionText(priceWeek: "-", priceMonth: "-", priceYear: "-")
+        setDescriptionText(priceWeek: prices.0, priceMonth: prices.1, priceYear: prices.2)
     }
     
     private func configureButtons() {
@@ -85,16 +82,12 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
         weeklyPrice.font = FontSheet.FontRegularWith(size: BIG_FONT_SIZE)
         weeklyPrice.textColor = WHITE
         
-        weeklyPeriod.text = "per week"
-        weeklyPeriod.font = FontSheet.FontRegularWith(size: SMALLEST_FONT_SIZE - 2)
-        weeklyPeriod.textColor = WHITE
-        
         weeklyDescription.text = "billed weekly"
         weeklyDescription.font = FontSheet.FontLightWith(size: SMALL_FONT_SIZE)
         weeklyDescription.textColor = WHITE
 
         weeklyArea.layer.cornerRadius = 8.0
-        weeklyArea.backgroundColor = DARK_SKY_BLUE
+        weeklyArea.backgroundColor = GREENY_BLUE
         weeklyArea.layer.borderWidth = 1.0
         weeklyArea.layer.borderColor = WHITE.withAlphaComponent(0.5).cgColor
         weeklyArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(weekDidPressed)))
@@ -108,18 +101,14 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
         monthlyPrice.font = FontSheet.FontRegularWith(size: BIG_FONT_SIZE)
         monthlyPrice.textColor = WHITE
         
-        monthlyPeriod.text = "per month"
-        monthlyPeriod.font = FontSheet.FontRegularWith(size: SMALLEST_FONT_SIZE - 2)
-        monthlyPeriod.textColor = WHITE
-        
         monthlyDescription.text = "billed monthly"
         monthlyDescription.font = FontSheet.FontLightWith(size: SMALL_FONT_SIZE)
         monthlyDescription.textColor = WHITE
         
         monthlyArea.layer.cornerRadius = 8.0
-        monthlyArea.backgroundColor = BORING_GREEN
-        monthlyArea.layer.borderWidth = 1.0
-        monthlyArea.layer.borderColor = WHITE.withAlphaComponent(0.5).cgColor
+        monthlyArea.backgroundColor = BLUE_BLUE
+        monthlyArea.layer.borderWidth = 4.0
+        monthlyArea.layer.borderColor = LIGHT_ORANGE.cgColor
         monthlyArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(monthDidPressed)))
         monthlyArea.isUserInteractionEnabled = true
         
@@ -131,16 +120,12 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
         yearlyPrice.font = FontSheet.FontRegularWith(size: BIG_FONT_SIZE)
         yearlyPrice.textColor = WHITE
         
-        yearlyPeriod.text = "per year"
-        yearlyPeriod.font = FontSheet.FontRegularWith(size: SMALLEST_FONT_SIZE - 2)
-        yearlyPeriod.textColor = WHITE
-        
         yearlyDescription.text = "billed yearly"
         yearlyDescription.font = FontSheet.FontLightWith(size: SMALL_FONT_SIZE)
         yearlyDescription.textColor = WHITE
         
         yearlyArea.layer.cornerRadius = 8.0
-        yearlyArea.backgroundColor = YELLOW_COLOR
+        yearlyArea.backgroundColor = WINE_RED
         yearlyArea.layer.borderWidth = 1.0
         yearlyArea.layer.borderColor = WHITE.withAlphaComponent(0.5).cgColor
         yearlyArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(yearDidPressed)))
@@ -148,34 +133,33 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
     }
     
     private func configurePromoLabels() {
-        let descriptions = ["Complete access to all content, relax and enjoy everything.",
-                            "Remove ads.",
-                            "Breathe without time limits and with background music."]
+        let descriptions = ["●  Unlock Yoga Trainings.",
+                            "●  Breathe without Limits.",
+                            "●  Access to all content.",
+                            "●  Remove Ads."]
         promoDescriptions.enumerated().forEach {
             $1.text = descriptions[$0]
-            $1.textColor = WARM_GREY
+            $1.textColor = WHITE
             $1.font = FontSheet.FontRegularWith(size: BIG_FONT_SIZE)
         }
     }
     
     private func setDescriptionText(priceWeek: String, priceMonth: String, priceYear: String) {
         
-        let normalAttributes = [NSAttributedString.Key.font: FontSheet.FontRegularWith(size: SMALLEST_FONT_SIZE), NSAttributedString.Key.foregroundColor: WARM_GREY ]
+        let normalAttributes = [NSAttributedString.Key.font: FontSheet.FontRegularWith(size: SMALLEST_FONT_SIZE - 4),
+                                NSAttributedString.Key.foregroundColor: WHITE ]
+        //Subscription for a period of (%@/week), (%@/month) or (%@/year).
+        let description = NSMutableAttributedString(string: String(format: "Payment will be charged to iTunes Account at confirmation of purchase.Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period.Account will be charged for renewal within 24-hours prior to the end of the current period with (%@/week), (%@/month) or (%@/year) .Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase.", priceWeek, priceMonth, priceYear, priceWeek, priceMonth, priceYear), attributes: normalAttributes)
+        let attributes = [NSAttributedString.Key.font: FontSheet.FontMediumWith(size: SMALLEST_FONT_SIZE - 4),
+                          NSAttributedString.Key.foregroundColor: WHITE ]
         
-        let description = NSMutableAttributedString(string: String(format: "Subscription for a period of (%@), (%@) or (%@).\nPayment will be charged to iTunes Account at confirmation of purchase.\nSubscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period.\nAccount will be charged for renewal within 24-hours prior to the end of the current period with (%@), (%@) or (%@) .\nSubscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase.", priceWeek, priceMonth, priceYear, priceWeek, priceMonth, priceYear), attributes: normalAttributes)
-        let attributes = [NSAttributedString.Key.font: FontSheet.FontMediumWith(size: NORMAL_FONT_SIZE), NSAttributedString.Key.foregroundColor: BROWNISH_GREY ]
-        
-        let firstText = NSMutableAttributedString(string: "\n\n" + "Terms of use" + "\n", attributes: attributes)
-        let firstLink = NSMutableAttributedString(string: "https://www.quiet.com/terms-of-use.html", attributes: normalAttributes)
-        let secondText = NSMutableAttributedString(string: "\n\n" + "Privacy policy" + "\n", attributes: attributes)
-        let secondLink = NSMutableAttributedString(string: "https://www.quiet.com/privacy-policy.html", attributes: normalAttributes)
-        
-        description.append(firstText)
-        description.append(firstLink)
-        description.append(secondText)
-        description.append(secondLink)
+        description.append(NSMutableAttributedString(string: " Terms of use ", attributes: attributes))
+        description.append(NSMutableAttributedString(string: "https://www.quiet.com/terms-of-use.html", attributes: normalAttributes))
+        description.append(NSMutableAttributedString(string: " Privacy policy ", attributes: attributes))
+        description.append(NSMutableAttributedString(string: "https://www.quiet.com/privacy-policy.html", attributes: normalAttributes))
         
         descriptionTextView.attributedText = description
+        descriptionTextHeight.constant = height(for: description.string, width: descriptionTextView.bounds.width, font: FontSheet.FontRegularWith(size: SMALLEST_FONT_SIZE - 4))
     }
     
     private func configureLoadingView() {
@@ -197,9 +181,9 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
     
     //MARK:-
     
-    func setWeeklySubscriptionPrice(_ price: String) { weeklyPrice.text = price }
-    func setMonthlySubscriptionPrice(_ price: String) { monthlyPrice.text = price }
-    func setYearlySubscriptionPrice(_ price: String) { yearlyPrice.text = price }
+    func setWeeklySubscriptionPrice(_ price: String) { weeklyPrice.text = price; prices.0 = price }
+    func setMonthlySubscriptionPrice(_ price: String) { monthlyPrice.text = price; prices.1 = price }
+    func setYearlySubscriptionPrice(_ price: String) { yearlyPrice.text = price; prices.2 = price }
     
     func showLoading() {
         spinnerView.beginRefreshing()
@@ -211,5 +195,15 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
     func hideLoading() {
         backSpinnerView.isHidden = true
         spinnerView.endRefreshing()
+    }
+    
+    func height(for text: String, width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = text.boundingRect(with: constraintRect,
+                                          options: .usesLineFragmentOrigin,
+                                          attributes: [NSAttributedString.Key.font: font],
+                                          context: nil)
+        
+        return ceil(boundingBox.height) + 20
     }
 }
