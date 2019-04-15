@@ -797,6 +797,7 @@
 				TargetAttributes = {
 					3861379021A41AEC000BD657 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1126,7 +1127,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.surflabappsios.Quiet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = development_provisioning_profile;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1148,7 +1149,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.surflabappsios.Quiet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = distribution_quiet;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

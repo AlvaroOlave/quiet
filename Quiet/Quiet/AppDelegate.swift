@@ -57,6 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             mainWireframe.presentMainViewInWindow(window)
         }
         ALPurchaseManager.shared.start()
+        if (UserDefaults.standard.object(forKey: "AL_FIRST_APP_LOAD") == nil) {
+            UserDefaults.standard.set(Date(), forKey: "AL_FIRST_APP_LOAD")
+        }
     }
 
     private func createWindow() -> UIWindow? {

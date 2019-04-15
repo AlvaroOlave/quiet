@@ -33,6 +33,8 @@ class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSo
     func viewDidAppear() { playAudio() }
     func viewWillDisappear() { stopAudio() }
     
+    //MARK:- private methods
+    
     private func initPlayer(_ data: Data) {
         do {
             try AVAudioSession.sharedInstance().setCategory(.ambient, mode: .default, options: [.mixWithOthers])
@@ -47,6 +49,13 @@ class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSo
     
     private func playAudio() { musicPlayer?.play() }
     private func stopAudio() { musicPlayer?.stop(); musicPlayer?.currentTime = 0.0 }
+    
+    private func checkPromo() {
+        if let date = UserDefaults.standard.object(forKey: "AL_FIRST_APP_LOAD") as? Date, date.timeIntervalSinceNow > 604800 {
+            //show popup
+            UserDefaults.standard.removeObject(forKey: "AL_FIRST_APP_LOAD")
+        }
+    }
     
     //MARK:- UICollectionViewDataSource methods
     
