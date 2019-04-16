@@ -22,6 +22,7 @@
                 <outlet property="monthlyDescription" destination="Fks-hY-YNz" id="Yvf-i0-gam"/>
                 <outlet property="monthlyPrice" destination="SU4-FR-vOM" id="zl2-hE-9Fp"/>
                 <outlet property="monthlyTitle" destination="Wwb-C8-KDC" id="suR-ur-BJ0"/>
+                <outlet property="popularLabel" destination="smd-ti-tlW" id="0Vi-HI-wpY"/>
                 <outlet property="quietImageView" destination="l1c-XJ-e5p" id="HH6-vP-aS7"/>
                 <outlet property="shadowSpinnerView" destination="hLY-Mf-7on" id="v9B-OK-p2d"/>
                 <outlet property="spinnerView" destination="iDu-Ds-yTT" id="KJy-hx-Egf"/>
@@ -274,9 +275,19 @@
                                         <constraint firstItem="Jp1-do-yvp" firstAttribute="leading" secondItem="Wvr-gE-Zce" secondAttribute="leading" constant="6" id="Tdf-OI-ybN"/>
                                     </constraints>
                                 </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="smd-ti-tlW">
+                                    <rect key="frame" x="166.5" y="-2" width="42" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="oc5-ti-ccf"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="smd-ti-tlW" firstAttribute="centerX" secondItem="oXW-XT-1N9" secondAttribute="centerX" id="1Xv-4O-fJB"/>
                                 <constraint firstItem="P8d-5O-QoU" firstAttribute="leading" secondItem="VGv-Ud-gsb" secondAttribute="leading" id="4ZZ-FH-uXk"/>
                                 <constraint firstItem="P8d-5O-QoU" firstAttribute="width" secondItem="VGv-Ud-gsb" secondAttribute="width" multiplier="1:3" id="8Pk-bh-GUd"/>
                                 <constraint firstAttribute="height" secondItem="P8d-5O-QoU" secondAttribute="height" id="9Kd-zp-wer"/>
@@ -289,6 +300,7 @@
                                 <constraint firstAttribute="trailing" secondItem="Wvr-gE-Zce" secondAttribute="trailing" id="gVf-L8-Zs2"/>
                                 <constraint firstItem="Wvr-gE-Zce" firstAttribute="centerY" secondItem="oXW-XT-1N9" secondAttribute="centerY" id="vKh-93-7Wy"/>
                                 <constraint firstItem="P8d-5O-QoU" firstAttribute="top" secondItem="VGv-Ud-gsb" secondAttribute="top" id="wJe-82-dVQ"/>
+                                <constraint firstItem="smd-ti-tlW" firstAttribute="centerY" secondItem="oXW-XT-1N9" secondAttribute="top" constant="10" id="z0v-Tl-juT"/>
                             </constraints>
                         </view>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tFW-WP-TKX">

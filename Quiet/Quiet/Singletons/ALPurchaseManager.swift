@@ -168,6 +168,7 @@ class ALPurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
                 handleFailedState(for: transaction, in: queue)
             case .deferred:
                 handleDeferredState(for: transaction, in: queue)
+             
             }
         }
     }

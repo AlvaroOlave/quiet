@@ -15,6 +15,7 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
     @IBOutlet weak var frameView: UIView!
     @IBOutlet weak var quietImageView: UIImageView!
     @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var popularLabel: UILabel!
     @IBOutlet weak var weeklyTitle: UILabel!
     @IBOutlet weak var weeklyPrice: UILabel!
     @IBOutlet weak var weeklyDescription: UILabel!
@@ -111,6 +112,13 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
         monthlyArea.layer.borderColor = LIGHT_ORANGE.cgColor
         monthlyArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(monthDidPressed)))
         monthlyArea.isUserInteractionEnabled = true
+        
+        popularLabel.text = "  Most Popular  "
+        popularLabel.font = FontSheet.FontRegularWith(size: NORMAL_FONT_SIZE)
+        popularLabel.layer.cornerRadius = popularLabel.bounds.height / 2.0
+        popularLabel.backgroundColor = LIGHT_ORANGE
+        popularLabel.textColor = WHITE
+        popularLabel.clipsToBounds = true
         
         yearlyTitle.text = "Yearly"
         yearlyTitle.font = FontSheet.FontRegularWith(size: BIG_FONT_SIZE)

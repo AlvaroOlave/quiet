@@ -47,7 +47,7 @@ class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSo
         }
     }
     
-    private func playAudio() { musicPlayer?.play() }
+    private func playAudio() { if !(musicPlayer?.isPlaying ?? false) { musicPlayer?.play() } }
     private func stopAudio() { musicPlayer?.stop(); musicPlayer?.currentTime = 0.0 }
     
     private func checkPromo() {
