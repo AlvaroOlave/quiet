@@ -8,6 +8,7 @@
 
 import UIKit
 import JTMaterialSpinner
+import AudioToolbox
 
 class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProtocol {
     var presenter: ALSubscriptionPresenterProtocol!
@@ -183,9 +184,11 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
         backSpinnerView.isHidden = true
     }
     
-    @objc func weekDidPressed() { presenter.weekDidPressed() }
-    @objc func monthDidPressed() { presenter.monthDidPressed() }
-    @objc func yearDidPressed() { presenter.yearDidPressed() }
+    private func vibrate() { UIImpactFeedbackGenerator(style: .light).impactOccurred() }
+    
+    @objc func weekDidPressed() { vibrate(); presenter.weekDidPressed() }
+    @objc func monthDidPressed() { vibrate(); presenter.monthDidPressed() }
+    @objc func yearDidPressed() { vibrate(); presenter.yearDidPressed() }
     
     //MARK:-
     
