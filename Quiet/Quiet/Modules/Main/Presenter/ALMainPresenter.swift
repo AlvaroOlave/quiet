@@ -28,10 +28,12 @@ class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSo
         interactor.getDailyAdvise { (advice) in
             if let adv = advice { self.view.setAdvice(adv) }
         }
+        checkPromo()
     }
     
     func viewDidAppear() { playAudio() }
     func viewWillDisappear() { stopAudio() }
+    func promoDidPressed() { wireframe.presentSubscriptionInterface() }
     
     //MARK:- private methods
     
@@ -51,9 +53,11 @@ class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSo
     private func stopAudio() { musicPlayer?.stop(); musicPlayer?.currentTime = 0.0 }
     
     private func checkPromo() {
-        if let date = UserDefaults.standard.object(forKey: "AL_FIRST_APP_LOAD") as? Date, date.timeIntervalSinceNow > 604800 {
-            //show popup
-            UserDefaults.standard.removeObject(forKey: "AL_FIRST_APP_LOAD")
+        if let date = UserDefaults.standard.object(forKey: "AL_FIRST_APP_LOAD") as? Date, date.timeIntervalSinceNow < -604800 {
+            if !ALUserTokenManager.shared.currentUser.isPremium() {
+                view.showPromoIcon()
+            }
+//            UserDefaults.standard.removeObject(forKey: "AL_FIRST_APP_LOAD")
         }
     }
     

@@ -26,6 +26,12 @@ class ALMainWireframe: ALMainViewWireframeProtocol, ALGeneralSelectionViewWirefr
         }
     }
     
+    func presentSubscriptionInterface() {
+        var wireframe = subscriptionFactory(with: .Offer)
+        wireframe.presentSubscriptionViewIn(view)
+        wireframe.delegate = view.presenter as? ALSubscriptionWireframeDelegate
+    }
+    
     //MARK:- privateMethods
     
     private func presentBreatheSection() {

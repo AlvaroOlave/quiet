@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,6 +20,7 @@
                 <outlet property="gradientView" destination="MGV-gP-opV" id="Zb1-mv-Toj"/>
                 <outlet property="happySunImage" destination="fqO-aX-DTO" id="84a-18-3Sp"/>
                 <outlet property="mainCollectionView" destination="1sI-dW-3EA" id="Mxw-zV-Du7"/>
+                <outlet property="promoImage" destination="ocp-E6-62g" id="0ki-fo-aYc"/>
                 <outlet property="titleImageView" destination="qFe-bK-Xfz" id="Thb-hp-jEU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,6 +32,13 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lwK-4z-Lnn" customClass="GIFImageView" customModule="Gifu">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ocp-E6-62g">
+                    <rect key="frame" x="319" y="40" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="VzV-av-cVS"/>
+                        <constraint firstAttribute="width" constant="40" id="rvf-hx-ci5"/>
+                    </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qFe-bK-Xfz">
                     <rect key="frame" x="112.5" y="80" width="150" height="75"/>
@@ -99,8 +107,10 @@
                 <constraint firstItem="qFe-bK-Xfz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="KBA-O3-cqc"/>
                 <constraint firstItem="1sI-dW-3EA" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="V0V-mM-Rmw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MGV-gP-opV" secondAttribute="trailing" id="VQM-Og-YoF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ocp-E6-62g" secondAttribute="trailing" constant="16" id="YJQ-pM-fjD"/>
                 <constraint firstItem="MGV-gP-opV" firstAttribute="top" secondItem="1sI-dW-3EA" secondAttribute="top" id="cDH-aE-IcI"/>
                 <constraint firstItem="qFe-bK-Xfz" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="dHn-OE-p4w"/>
+                <constraint firstItem="ocp-E6-62g" firstAttribute="bottom" secondItem="qFe-bK-Xfz" secondAttribute="top" id="fCf-o8-VHL"/>
                 <constraint firstAttribute="bottom" secondItem="lwK-4z-Lnn" secondAttribute="bottom" id="kT4-PC-RKo"/>
                 <constraint firstItem="oJ6-xD-V1a" firstAttribute="top" secondItem="qFe-bK-Xfz" secondAttribute="bottom" constant="50" id="tS3-4M-llY"/>
                 <constraint firstItem="1sI-dW-3EA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yHU-wH-ZOr"/>

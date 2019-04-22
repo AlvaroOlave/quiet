@@ -13,6 +13,7 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
     
     @IBOutlet weak var backgroundImageView: GIFImageView!
     @IBOutlet weak var titleImageView: UIImageView!
+    @IBOutlet weak var promoImage: UIImageView!
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
     @IBOutlet weak var adviceFrame: UIView!
@@ -54,6 +55,10 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         }, completion: nil)
     }
     
+    func showPromoIcon() {
+        promoImage.isHidden = false
+    }
+    
     func hideTitle(_ hide: Bool) { titleImageView.isHidden = hide; adviceFrame.isHidden = hide }
     
     func setBackgroung(_ data: Data) {
@@ -66,6 +71,7 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         configureCollectionViewLayout()
         configureBackgroundImage() 
         configureAdviseLabel()
+        configurePromoImage()
         mainCollectionView.dataSource = presenter
         mainCollectionView.delegate = presenter
         mainCollectionView.register(UINib(nibName: "ALMainCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ALMainCollectionViewCell")
@@ -83,7 +89,6 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
     }
     
     private func configureBackgroundImage() {
-//        backgroundImageView.animate(withGIFNamed: "waterfall") { }
         backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideCollectionView)))
         backgroundImageView.isUserInteractionEnabled = true
@@ -91,6 +96,16 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         titleImageView.image = UIImage(named: "QuietBlackground")
         titleImageView.backgroundColor = CLEAR_COLOR
         titleImageView.contentMode = .scaleAspectFit
+    }
+    
+    private func configurePromoImage() {
+        promoImage.image = UIImage(named: "promo")?.withRenderingMode(.alwaysTemplate)
+        promoImage.tintColor = WHITE
+        promoImage.backgroundColor = MERCURY_GREY.withAlphaComponent(0.9)
+        promoImage.layer.cornerRadius = (promoImage.bounds.height) / 2.0
+        promoImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(promoButtonDidPressed)))
+        promoImage.isUserInteractionEnabled = true
+        promoImage.isHidden = true
     }
     
     private func configureAdviseLabel() {
@@ -103,6 +118,8 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         happySunImage.image = UIImage(named: "happySun")?.withRenderingMode(.alwaysTemplate)
         happySunImage.tintColor = BROWNISH_GREY
     }
+    
+    @objc func promoButtonDidPressed() { presenter.promoDidPressed() }
     
     @objc func hideCollectionView() {
         collectionViewHeight.constant = (collectionViewHeight.constant == 0) ? 170 : 0

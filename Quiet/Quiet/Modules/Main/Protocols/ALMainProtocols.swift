@@ -12,6 +12,7 @@ protocol ALMainViewProtocol {
     var presenter: (ALMainPresenterProtocol & UICollectionViewDelegate & UICollectionViewDataSource)! {get set}
     
     func setAdvice(_ advice: String)
+    func showPromoIcon()
     func hideTitle(_ hide: Bool)
     func setBackgroung(_ data: Data)
 }
@@ -24,6 +25,7 @@ protocol ALMainPresenterProtocol {
     func viewDidLoad()
     func viewDidAppear()
     func viewWillDisappear()
+    func promoDidPressed()
 }
 
 protocol ALMainInteractorProtocol {
@@ -47,6 +49,7 @@ protocol ALMainViewWireframeProtocol {
     
     func presentMainViewInWindow(_ window: UIWindow)
     func goTo(_ section: Section)
+    func presentSubscriptionInterface()
 }
 
 enum Section: String {
