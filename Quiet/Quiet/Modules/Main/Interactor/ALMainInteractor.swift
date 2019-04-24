@@ -37,12 +37,12 @@ class ALMainInteractor: ALMainInteractorProtocol {
             let nextSound = UserDefaults.standard.object(forKey: NEXT_BACKGROUND_SOUND) as? String {
             dataManager.getLocalFile(nextName) { [weak self] data in
                 self?.dataManager.getLocalFile(nextSound, { (soundData) in
-                    completion(data ?? self?.defaultBackground(), soundData)
+                    completion(data ?? self?.defaultBackground(), soundData ?? self?.defaultSound())
                 })
                 
             }
         } else {
-            completion(defaultBackground(), nil)
+            completion(defaultBackground(), defaultSound())
         }
         setNextBackground()
     }
@@ -75,7 +75,14 @@ class ALMainInteractor: ALMainInteractorProtocol {
     
     private func defaultBackground() -> Data? {
         do {
-            return try Data(contentsOf: Bundle.main.url(forResource: "waterfall", withExtension: "gif")!)
+            return try Data(contentsOf: Bundle.main.url(forResource: "woodHouse", withExtension: "gif")!)
+        } catch  {
+            return nil
+        }
+    }
+    private func defaultSound() -> Data? {
+        do {
+            return try Data(contentsOf: Bundle.main.url(forResource: "house", withExtension: "mp3")!)
         } catch  {
             return nil
         }

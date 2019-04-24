@@ -72,6 +72,8 @@
 		3866B30B21C3BC1E0017A16E /* ALSleepCastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3866B30A21C3BC1E0017A16E /* ALSleepCastPresenter.swift */; };
 		3866B30E21C3BC310017A16E /* ALSleepCastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3866B30C21C3BC310017A16E /* ALSleepCastViewController.swift */; };
 		3866B30F21C3BC310017A16E /* ALSleepCastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3866B30D21C3BC310017A16E /* ALSleepCastViewController.xib */; };
+		387574672271138C00DB1A58 /* woodHouse.gif in Resources */ = {isa = PBXBuildFile; fileRef = 387574652271138B00DB1A58 /* woodHouse.gif */; };
+		387574682271138C00DB1A58 /* house.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 387574662271138C00DB1A58 /* house.mp3 */; };
 		38E2BDAF21D5AD7200E9616C /* ALSubscriptionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2BDAE21D5AD7200E9616C /* ALSubscriptionProtocols.swift */; };
 		38E2BDB121D5AD8000E9616C /* ALSubscriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2BDB021D5AD8000E9616C /* ALSubscriptionPresenter.swift */; };
 		38E2BDB321D5AD8800E9616C /* ALSubscriptionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2BDB221D5AD8800E9616C /* ALSubscriptionWireframe.swift */; };
@@ -148,6 +150,8 @@
 		3866B30A21C3BC1E0017A16E /* ALSleepCastPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSleepCastPresenter.swift; sourceTree = "<group>"; };
 		3866B30C21C3BC310017A16E /* ALSleepCastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSleepCastViewController.swift; sourceTree = "<group>"; };
 		3866B30D21C3BC310017A16E /* ALSleepCastViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALSleepCastViewController.xib; sourceTree = "<group>"; };
+		387574652271138B00DB1A58 /* woodHouse.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = woodHouse.gif; sourceTree = "<group>"; };
+		387574662271138C00DB1A58 /* house.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = house.mp3; sourceTree = "<group>"; };
 		38E2BDAE21D5AD7200E9616C /* ALSubscriptionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSubscriptionProtocols.swift; sourceTree = "<group>"; };
 		38E2BDB021D5AD8000E9616C /* ALSubscriptionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSubscriptionPresenter.swift; sourceTree = "<group>"; };
 		38E2BDB221D5AD8800E9616C /* ALSubscriptionWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSubscriptionWireframe.swift; sourceTree = "<group>"; };
@@ -514,6 +518,8 @@
 		3861379321A41AEC000BD657 /* Quiet */ = {
 			isa = PBXGroup;
 			children = (
+				387574662271138C00DB1A58 /* house.mp3 */,
+				387574652271138B00DB1A58 /* woodHouse.gif */,
 				38F4ABCA21C08FE700E3ACB5 /* waterfall.gif */,
 				380B0D9021CD198A0042C1E0 /* bell.mp3 */,
 				386137CE21A4780C000BD657 /* Style */,
@@ -829,6 +835,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				387574672271138C00DB1A58 /* woodHouse.gif in Resources */,
 				386137AA21A463D5000BD657 /* ALMainViewController.xib in Resources */,
 				3804B9C121CBC62A00BFDB65 /* ALYogaViewController.xib in Resources */,
 				381F2FEB21A82C6C00B573F8 /* ALMainCollectionViewCell.xib in Resources */,
@@ -844,6 +851,7 @@
 				3804B9B121CBC5C300BFDB65 /* ALASMRViewController.xib in Resources */,
 				380C6CAF21AB794700BF853C /* ALGeneralSelectionViewController.xib in Resources */,
 				3866B30F21C3BC310017A16E /* ALSleepCastViewController.xib in Resources */,
+				387574682271138C00DB1A58 /* house.mp3 in Resources */,
 				38E2BDB721D5AD9C00E9616C /* ALSubscriptionViewController.xib in Resources */,
 				3806EAD821AD9A5400C93662 /* ALSleepViewController.xib in Resources */,
 			);
