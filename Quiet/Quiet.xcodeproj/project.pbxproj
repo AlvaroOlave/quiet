@@ -74,6 +74,7 @@
 		3866B30F21C3BC310017A16E /* ALSleepCastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3866B30D21C3BC310017A16E /* ALSleepCastViewController.xib */; };
 		387574672271138C00DB1A58 /* woodHouse.gif in Resources */ = {isa = PBXBuildFile; fileRef = 387574652271138B00DB1A58 /* woodHouse.gif */; };
 		387574682271138C00DB1A58 /* house.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 387574662271138C00DB1A58 /* house.mp3 */; };
+		38CB8AA022775FDE0010FB39 /* ALNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB8A9F22775FDE0010FB39 /* ALNotificationManager.swift */; };
 		38E2BDAF21D5AD7200E9616C /* ALSubscriptionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2BDAE21D5AD7200E9616C /* ALSubscriptionProtocols.swift */; };
 		38E2BDB121D5AD8000E9616C /* ALSubscriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2BDB021D5AD8000E9616C /* ALSubscriptionPresenter.swift */; };
 		38E2BDB321D5AD8800E9616C /* ALSubscriptionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2BDB221D5AD8800E9616C /* ALSubscriptionWireframe.swift */; };
@@ -152,6 +153,7 @@
 		3866B30D21C3BC310017A16E /* ALSleepCastViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALSleepCastViewController.xib; sourceTree = "<group>"; };
 		387574652271138B00DB1A58 /* woodHouse.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = woodHouse.gif; sourceTree = "<group>"; };
 		387574662271138C00DB1A58 /* house.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = house.mp3; sourceTree = "<group>"; };
+		38CB8A9F22775FDE0010FB39 /* ALNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALNotificationManager.swift; sourceTree = "<group>"; };
 		38E2BDAE21D5AD7200E9616C /* ALSubscriptionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSubscriptionProtocols.swift; sourceTree = "<group>"; };
 		38E2BDB021D5AD8000E9616C /* ALSubscriptionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSubscriptionPresenter.swift; sourceTree = "<group>"; };
 		38E2BDB221D5AD8800E9616C /* ALSubscriptionWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSubscriptionWireframe.swift; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 			children = (
 				384C20D221C07BFE00025D24 /* ALPurchaseManager.swift */,
 				384C20D421C07EF800025D24 /* ALUserTokenManager.swift */,
+				38CB8A9F22775FDE0010FB39 /* ALNotificationManager.swift */,
 			);
 			path = Singletons;
 			sourceTree = "<group>";
@@ -978,6 +981,7 @@
 				384C20D521C07EF800025D24 /* ALUserTokenManager.swift in Sources */,
 				380AC9122210F39800380BA5 /* ALBreatheDataManager.swift in Sources */,
 				381F2FEA21A82C6C00B573F8 /* ALMainCollectionViewCell.swift in Sources */,
+				38CB8AA022775FDE0010FB39 /* ALNotificationManager.swift in Sources */,
 				3804B9B021CBC5C300BFDB65 /* ALASMRViewController.swift in Sources */,
 				380C6CA721AB791700BF853C /* ALGeneralSelectionInteractor.swift in Sources */,
 				386137C121A472C4000BD657 /* ALBreatheProtocols.swift in Sources */,

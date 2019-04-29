@@ -162,10 +162,10 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
         let attributes = [NSAttributedString.Key.font: FontSheet.FontMediumWith(size: SMALLEST_FONT_SIZE - 4),
                           NSAttributedString.Key.foregroundColor: WHITE ]
         
-        description.append(NSMutableAttributedString(string: " Terms of use ", attributes: attributes))
-        description.append(NSMutableAttributedString(string: "https://www.quiet.com/terms-of-use.html", attributes: normalAttributes))
+        description.append(NSMutableAttributedString(string: " Contact us ", attributes: attributes))
+        description.append(NSMutableAttributedString(string: "https://supercoolmobileapps.wixsite.com/website", attributes: normalAttributes))
         description.append(NSMutableAttributedString(string: " Privacy policy ", attributes: attributes))
-        description.append(NSMutableAttributedString(string: "https://www.quiet.com/privacy-policy.html", attributes: normalAttributes))
+        description.append(NSMutableAttributedString(string: "https://supercoolmobileapps.wixsite.com/website/privacy-policy", attributes: normalAttributes))
         
         descriptionTextView.attributedText = description
         descriptionTextHeight.constant = height(for: description.string, width: descriptionTextView.bounds.width, font: FontSheet.FontRegularWith(size: SMALLEST_FONT_SIZE - 4))

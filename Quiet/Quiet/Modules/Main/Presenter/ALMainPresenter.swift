@@ -29,6 +29,7 @@ class ALMainPresenter: NSObject, ALMainPresenterProtocol, UICollectionViewDataSo
             if let adv = advice { self.view.setAdvice(adv) }
         }
         checkPromo()
+        ALNotificationManager.shared.scheduledNotifications()
     }
     
     func viewDidAppear() { playAudio() }

@@ -8,6 +8,8 @@
 
 import UIKit
 import Gifu
+import UserNotifications
+import UserNotificationsUI
 
 class ALMainViewController: UIViewController, ALMainViewProtocol {
     
@@ -29,6 +31,7 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         
         commonInit()
         presenter.viewDidLoad()
+        UNUserNotificationCenter.current().delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -157,5 +160,19 @@ class ALGradientView: UIView {
             if $0.name == "QUOBackgroundSmallGradient" { $0.removeFromSuperlayer() }
         })
         layer.insertSublayer(gradient, at: 0)
+    }
+}
+
+extension ALMainViewController: UNUserNotificationCenterDelegate {
+    
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.notification.request.identifier.hasPrefix("promo") {
+            presenter.promoDidPressed()
+        }
+    }
+    
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        completionHandler( [.alert,.sound,.badge])
     }
 }
