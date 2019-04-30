@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xKB-dY-LwA">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xKB-dY-LwA" customClass="GIFImageView" customModule="Gifu">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2Y-ck-X7K">
@@ -32,7 +32,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8X6-Ku-Sn2" userLabel="Back View">
-                    <rect key="frame" x="25" y="602" width="40" height="40"/>
+                    <rect key="frame" x="25" y="45" width="40" height="40"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cmc-Z6-fCb">
                             <rect key="frame" x="8" y="9" width="24" height="24"/>
@@ -58,7 +58,7 @@
                 <constraint firstItem="Q2Y-ck-X7K" firstAttribute="centerY" secondItem="xKB-dY-LwA" secondAttribute="centerY" id="cDM-9y-Ug9"/>
                 <constraint firstAttribute="bottom" secondItem="xKB-dY-LwA" secondAttribute="bottom" id="dNF-CK-Bri"/>
                 <constraint firstAttribute="trailing" secondItem="xKB-dY-LwA" secondAttribute="trailing" id="faY-Pr-Ce6"/>
-                <constraint firstAttribute="bottom" secondItem="8X6-Ku-Sn2" secondAttribute="bottom" constant="25" id="g90-S6-MJI"/>
+                <constraint firstItem="8X6-Ku-Sn2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="g90-S6-MJI"/>
                 <constraint firstItem="Q2Y-ck-X7K" firstAttribute="centerX" secondItem="xKB-dY-LwA" secondAttribute="centerX" id="iDU-yb-nUW"/>
                 <constraint firstItem="xKB-dY-LwA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lDC-vb-qJC"/>
                 <constraint firstItem="xKB-dY-LwA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mWB-Dq-7dN"/>

@@ -21,21 +21,20 @@ class ALLandscapePresenter: ALLandscapePresenterProtocol {
     var workItem: DispatchWorkItem!
     
     func viewDidLoad() {
-        
-        if let imgData = elem.images?.first, let img = UIImage(data: imgData) {
-            view.setImage(img, animated: false)
+        if let imgData = elem.images?.first {
+            view.setImage(imgData, animated: false)
             currentIndex = 1 % (elem.images ?? []).count
         }
         initPlayer()
-        initWorkItem()
+//        initWorkItem()
     }
     
     func viewWillAppear() {
-        initCarousel()
+//        initCarousel()
         playAudio()
     }
     
-    func backButtonPressed() { stopAudio(); workItem.cancel(); wireframe.dismiss() }
+    func backButtonPressed() { stopAudio();  wireframe.dismiss() } // workItem.cancel();
     
     private func initCarousel() {
         DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 15.0, execute: workItem)
@@ -58,8 +57,8 @@ class ALLandscapePresenter: ALLandscapePresenterProtocol {
     
     private func initWorkItem() {
         workItem = DispatchWorkItem {
-            if let imgData = self.elem.images?[self.currentIndex], let img = UIImage(data: imgData) {
-                DispatchQueue.main.async { self.view.setImage(img, animated: true) }
+            if let imgData = self.elem.images?[self.currentIndex] {
+                DispatchQueue.main.async { self.view.setImage(imgData, animated: true) }
                 self.currentIndex = (self.currentIndex + 1) % (self.elem.images ?? []).count
                 self.initCarousel()
             }

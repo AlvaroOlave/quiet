@@ -52,7 +52,12 @@ class ALNotificationManager {
         }
     }
     
-    private func scheduleNotifications() { scheduleReminder(); schedulePromos() }
+    private func scheduleNotifications() {
+        scheduleReminder()
+        if !ALUserTokenManager.shared.currentUser.isPremium() {
+            schedulePromos()
+        }
+    }
     
     private func scheduleReminder() {
         var triggerM = Calendar.current.dateComponents([.weekday,.hour,.minute,.second], from: Date())

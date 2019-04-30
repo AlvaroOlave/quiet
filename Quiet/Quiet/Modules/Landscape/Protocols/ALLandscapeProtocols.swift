@@ -12,6 +12,7 @@ protocol ALLandscapeViewProtocol {
     var presenter: ALLandscapePresenterProtocol! {get set}
     
     func setImage(_ image: UIImage, animated: Bool)
+    func setImage(_ image: Data, animated: Bool) 
 }
 
 protocol ALLandscapePresenterProtocol {

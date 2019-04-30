@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Gifu
 
 class ALLandscapeViewController: ALBaseViewController, ALLandscapeViewProtocol {
     
-    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var backgroundImage: GIFImageView!
     @IBOutlet weak var curtineView: UIView!
     
     var presenter: ALLandscapePresenterProtocol!
@@ -51,6 +52,10 @@ class ALLandscapeViewController: ALBaseViewController, ALLandscapeViewProtocol {
         }
     }
     
+    func setImage(_ image: Data, animated: Bool) {
+        backgroundImage.animate(withGIFData: image)
+    }
+    
     //MARK:- viewConfiguration
     
     private func commonInit() {
@@ -59,7 +64,7 @@ class ALLandscapeViewController: ALBaseViewController, ALLandscapeViewProtocol {
         curtineView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(curtinePressed)))
         curtineView.isUserInteractionEnabled = true
         
-        backIcon?.image = UIImage(cgImage: UIImage(named: "icBack")!.cgImage!, scale: 1.0, orientation: .left)
+        backIcon?.image = UIImage(named: "icBack")
     }
     
     @objc func curtinePressed() {
