@@ -8,7 +8,7 @@
 
 import UIKit
 
-let SMALLEST_FONT_SIZE : Float = 14.0
+let MINI_FONT_SIZE : Float = 14.0
 let SMALL_FONT_SIZE : Float = 16.0
 let NORMAL_FONT_SIZE : Float = 18.0
 let BIG_FONT_SIZE : Float = 22.0

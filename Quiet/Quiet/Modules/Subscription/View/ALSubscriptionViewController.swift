@@ -30,6 +30,7 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
     @IBOutlet weak var yearlyDescription: UILabel!
     @IBOutlet weak var yearlyArea: UIView!
     @IBOutlet var promoDescriptions: [UILabel]!
+    @IBOutlet weak var freeTrial: UILabel!
     @IBOutlet weak var backSpinnerView : UIView!
     @IBOutlet weak var shadowSpinnerView : UIView!
     @IBOutlet weak var spinnerView : JTMaterialSpinner!
@@ -154,12 +155,15 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
     }
     
     private func setDescriptionText(priceWeek: String, priceMonth: String, priceYear: String) {
+        freeTrial.text = "3 Days Free. Cancel Anytime"
+        freeTrial.font = FontSheet.FontBoldWith(size: MEGA_FONT_SIZE)
+        freeTrial.textColor = WHITE
         
-        let normalAttributes = [NSAttributedString.Key.font: FontSheet.FontRegularWith(size: SMALLEST_FONT_SIZE - 4),
+        let normalAttributes = [NSAttributedString.Key.font: FontSheet.FontRegularWith(size: MINI_FONT_SIZE - 4),
                                 NSAttributedString.Key.foregroundColor: WHITE ]
         //Subscription for a period of (%@/week), (%@/month) or (%@/year).
         let description = NSMutableAttributedString(string: String(format: "Payment will be charged to iTunes Account at confirmation of purchase.Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period.Account will be charged for renewal within 24-hours prior to the end of the current period with (%@/week), (%@/month) or (%@/year) .Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase.", priceWeek, priceMonth, priceYear, priceWeek, priceMonth, priceYear), attributes: normalAttributes)
-        let attributes = [NSAttributedString.Key.font: FontSheet.FontMediumWith(size: SMALLEST_FONT_SIZE - 4),
+        let attributes = [NSAttributedString.Key.font: FontSheet.FontMediumWith(size: MINI_FONT_SIZE - 4),
                           NSAttributedString.Key.foregroundColor: WHITE ]
         
         description.append(NSMutableAttributedString(string: " Contact us ", attributes: attributes))
@@ -168,7 +172,7 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
         description.append(NSMutableAttributedString(string: "https://supercoolmobileapps.wixsite.com/website/privacy-policy", attributes: normalAttributes))
         
         descriptionTextView.attributedText = description
-        descriptionTextHeight.constant = height(for: description.string, width: descriptionTextView.bounds.width, font: FontSheet.FontRegularWith(size: SMALLEST_FONT_SIZE - 4))
+        descriptionTextHeight.constant = height(for: description.string, width: descriptionTextView.bounds.width, font: FontSheet.FontRegularWith(size: MINI_FONT_SIZE - 4))
     }
     
     private func configureLoadingView() {

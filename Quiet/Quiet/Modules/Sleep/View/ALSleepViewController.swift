@@ -32,6 +32,8 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
         
         commonInit()
         presenter.viewDidLoad()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,7 +97,7 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
     }
     
     private func configureResourceInfo() {
-        resourceImage.contentMode = .scaleAspectFit
+        resourceImage.contentMode = .scaleAspectFill
         
         resourceTitle.text = "ResourceTitleAux "
         resourceTitle.textColor = WHITE_TWO
@@ -120,9 +122,11 @@ class ALSleepViewController: ALBaseViewController, ALSleepViewProtocol {
         datePicker.datePickerMode = .countDownTimer
         datePicker.minuteInterval = 15
         datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: UIControl.Event.valueChanged)
+        datePicker.addTarget(self, action: #selector(datePickerValueChanged), for: UIControl.Event.touchDragInside)
         datePicker.timeZone = TimeZone(abbreviation: "UTC")
         datePicker.date = Date(timeIntervalSince1970: 3600)
         datePickerValueChanged(sender: datePicker)
+        
         return datePicker
     }
     
