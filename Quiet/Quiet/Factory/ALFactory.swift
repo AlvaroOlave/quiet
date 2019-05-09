@@ -11,7 +11,11 @@ import UIKit
 func mainFactory() -> ALMainViewWireframeProtocol {
     let wireframe = ALMainWireframe()
     
+    #if SLEEPCAST
+    wireframe.view = ALMainViewController(nibName: "ALSimpleMainViewController", bundle: nil)
+    #elseif QUIET
     wireframe.view = ALMainViewController(nibName: "ALMainViewController", bundle: nil)
+    #endif
     
     wireframe.view.presenter = ALMainPresenter()
     wireframe.view.presenter.view = wireframe.view

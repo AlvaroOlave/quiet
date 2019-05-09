@@ -49,6 +49,80 @@
 		381F2FEA21A82C6C00B573F8 /* ALMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F2FE821A82C6C00B573F8 /* ALMainCollectionViewCell.swift */; };
 		381F2FEB21A82C6C00B573F8 /* ALMainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381F2FE921A82C6C00B573F8 /* ALMainCollectionViewCell.xib */; };
 		382CA5C221EC19D600207CA7 /* ALMainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CA5C121EC19D600207CA7 /* ALMainDataManager.swift */; };
+		3838F8B42282D4AC0029070E /* ALASMRPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804B9AA21CBC5A900BFDB65 /* ALASMRPresenter.swift */; };
+		3838F8B52282D4AC0029070E /* ALSleepProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EAD321AD9A4000C93662 /* ALSleepProtocols.swift */; };
+		3838F8B62282D4AC0029070E /* ALLandscapeWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804B99D21CBAB9E00BFDB65 /* ALLandscapeWireframe.swift */; };
+		3838F8B72282D4AC0029070E /* ALLandscapeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804B99921CBAB7A00BFDB65 /* ALLandscapeProtocols.swift */; };
+		3838F8B82282D4AC0029070E /* ALStyleSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137D121A47832000BD657 /* ALStyleSheet.swift */; };
+		3838F8B92282D4AC0029070E /* ALMainDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382CA5C121EC19D600207CA7 /* ALMainDataManager.swift */; };
+		3838F8BA2282D4AC0029070E /* ALYogaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804B9BE21CBC62A00BFDB65 /* ALYogaViewController.swift */; };
+		3838F8BB2282D4AC0029070E /* ALGeneralSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA421AB790C00BF853C /* ALGeneralSelectionPresenter.swift */; };
+		3838F8BC2282D4AC0029070E /* ALMainWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137B421A46461000BD657 /* ALMainWireframe.swift */; };
+		3838F8BD2282D4AC0029070E /* ALLandscapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804B99F21CBABB000BFDB65 /* ALLandscapeViewController.swift */; };
+		3838F8BE2282D4AC0029070E /* ALSleepWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EADB21AD9A6E00C93662 /* ALSleepWireframe.swift */; };
+		3838F8BF2282D4AC0029070E /* ALSubscriptionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2BDB221D5AD8800E9616C /* ALSubscriptionWireframe.swift */; };
+		3838F8C02282D4AC0029070E /* ALGeneralSelectionDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA821AB792000BF853C /* ALGeneralSelectionDataManager.swift */; };
+		3838F8C12282D4AC0029070E /* ALBaseDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380A430221C6AE9B00A04B2C /* ALBaseDataManager.swift */; };
+		3838F8C22282D4AC0029070E /* ALPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C20D221C07BFE00025D24 /* ALPurchaseManager.swift */; };
+		3838F8C32282D4AC0029070E /* ALYogaProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804B9B821CBC60900BFDB65 /* ALYogaProtocols.swift */; };
+		3838F8C42282D4AC0029070E /* ALMainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380BE1E821F34B7F00EA3B5E /* ALMainInteractor.swift */; };
+		3838F8C52282D4AC0029070E /* ALBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EADE21AD9C8500C93662 /* ALBaseViewController.swift */; };
+		3838F8C62282D4AC0029070E /* ALSleepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EAD521AD9A5400C93662 /* ALSleepViewController.swift */; };
+		3838F8C72282D4AC0029070E /* ALMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137A721A463D5000BD657 /* ALMainViewController.swift */; };
+		3838F8C82282D4AC0029070E /* ALSleepCastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3866B30C21C3BC310017A16E /* ALSleepCastViewController.swift */; };
+		3838F8C92282D4AC0029070E /* ALSleepPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3806EAD921AD9A6400C93662 /* ALSleepPresenter.swift */; };
+		3838F8CA2282D4AC0029070E /* ALYogaWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804B9BC21CBC61D00BFDB65 /* ALYogaWireframe.swift */; };
+		3838F8CB2282D4AC0029070E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861379421A41AEC000BD657 /* AppDelegate.swift */; };
+		3838F8CC2282D4AC0029070E /* ALGeneralSelectionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA221AB78FD00BF853C /* ALGeneralSelectionProtocols.swift */; };
+		3838F8CD2282D4AC0029070E /* ALGeneralSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CAC21AB794700BF853C /* ALGeneralSelectionViewController.swift */; };
+		3838F8CE2282D4AC0029070E /* ALSleepCastWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3866B30821C3BC150017A16E /* ALSleepCastWireframe.swift */; };
+		3838F8CF2282D4AC0029070E /* ALSleepCastProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3866B30621C3BC080017A16E /* ALSleepCastProtocols.swift */; };
+		3838F8D02282D4AC0029070E /* ALBreathePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137C621A472EF000BD657 /* ALBreathePresenter.swift */; };
+		3838F8D12282D4AC0029070E /* ALAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381A1F39223DAD2600D32CC6 /* ALAdViewController.swift */; };
+		3838F8D22282D4AC0029070E /* ALMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137B221A46457000BD657 /* ALMainPresenter.swift */; };
+		3838F8D32282D4AC0029070E /* ALResourceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CB421AB975A00BF853C /* ALResourceCollectionViewCell.swift */; };
+		3838F8D42282D4AC0029070E /* ALGeneralSelectionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CAA21AB792B00BF853C /* ALGeneralSelectionWireframe.swift */; };
+		3838F8D52282D4AC0029070E /* ALMainProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137B021A4644A000BD657 /* ALMainProtocols.swift */; };
+		3838F8D62282D4AC0029070E /* ALSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2BDB421D5AD9C00E9616C /* ALSubscriptionViewController.swift */; };
+		3838F8D72282D4AC0029070E /* ALASMRProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804B9A821CBC59F00BFDB65 /* ALASMRProtocols.swift */; };
+		3838F8D82282D4AC0029070E /* ALFontSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137CF21A4782A000BD657 /* ALFontSheet.swift */; };
+		3838F8D92282D4AC0029070E /* ALASMRWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804B9AC21CBC5B200BFDB65 /* ALASMRWireframe.swift */; };
+		3838F8DA2282D4AC0029070E /* ALSubscriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2BDB021D5AD8000E9616C /* ALSubscriptionPresenter.swift */; };
+		3838F8DB2282D4AC0029070E /* ALFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137B921A46BD3000BD657 /* ALFactory.swift */; };
+		3838F8DC2282D4AC0029070E /* ALBreatheViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137CA21A473AF000BD657 /* ALBreatheViewController.swift */; };
+		3838F8DD2282D4AC0029070E /* ALSectionElem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CB121AB8FF900BF853C /* ALSectionElem.swift */; };
+		3838F8DE2282D4AC0029070E /* ALUserTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C20D421C07EF800025D24 /* ALUserTokenManager.swift */; };
+		3838F8DF2282D4AC0029070E /* ALBreatheDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380AC9112210F39800380BA5 /* ALBreatheDataManager.swift */; };
+		3838F8E02282D4AC0029070E /* ALMainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381F2FE821A82C6C00B573F8 /* ALMainCollectionViewCell.swift */; };
+		3838F8E12282D4AC0029070E /* ALNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB8A9F22775FDE0010FB39 /* ALNotificationManager.swift */; };
+		3838F8E22282D4AC0029070E /* ALASMRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804B9AE21CBC5C300BFDB65 /* ALASMRViewController.swift */; };
+		3838F8E32282D4AC0029070E /* ALGeneralSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380C6CA621AB791700BF853C /* ALGeneralSelectionInteractor.swift */; };
+		3838F8E42282D4AC0029070E /* ALBreatheProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137C021A472C4000BD657 /* ALBreatheProtocols.swift */; };
+		3838F8E52282D4AC0029070E /* ALLandscapePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804B99B21CBAB9100BFDB65 /* ALLandscapePresenter.swift */; };
+		3838F8E62282D4AC0029070E /* ALYogaPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3804B9BA21CBC61200BFDB65 /* ALYogaPresenter.swift */; };
+		3838F8E72282D4AC0029070E /* ALSubscriptionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2BDAE21D5AD7200E9616C /* ALSubscriptionProtocols.swift */; };
+		3838F8E82282D4AC0029070E /* ALSleepCastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3866B30A21C3BC1E0017A16E /* ALSleepCastPresenter.swift */; };
+		3838F8E92282D4AC0029070E /* ALBreatheWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386137C821A472FD000BD657 /* ALBreatheWireframe.swift */; };
+		3838F8EB2282D4AC0029070E /* Pods_Quiet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04D496BA59A2255F4FA6BB52 /* Pods_Quiet.framework */; };
+		3838F8ED2282D4AC0029070E /* woodHouse.gif in Resources */ = {isa = PBXBuildFile; fileRef = 387574652271138B00DB1A58 /* woodHouse.gif */; };
+		3838F8EE2282D4AC0029070E /* ALMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386137A821A463D5000BD657 /* ALMainViewController.xib */; };
+		3838F8EF2282D4AC0029070E /* ALYogaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3804B9BF21CBC62A00BFDB65 /* ALYogaViewController.xib */; };
+		3838F8F02282D4AC0029070E /* ALMainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381F2FE921A82C6C00B573F8 /* ALMainCollectionViewCell.xib */; };
+		3838F8F12282D4AC0029070E /* ALBreatheViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 386137CB21A473AF000BD657 /* ALBreatheViewController.xib */; };
+		3838F8F22282D4AC0029070E /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 380B0D9021CD198A0042C1E0 /* bell.mp3 */; };
+		3838F8F32282D4AC0029070E /* ALResourceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380C6CB521AB975A00BF853C /* ALResourceCollectionViewCell.xib */; };
+		3838F8F42282D4AC0029070E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380A430021C6AB6800A04B2C /* GoogleService-Info.plist */; };
+		3838F8F52282D4AC0029070E /* ALLandscapeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3804B9A021CBABB000BFDB65 /* ALLandscapeViewController.xib */; };
+		3838F8F62282D4AC0029070E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3861379D21A41AED000BD657 /* LaunchScreen.storyboard */; };
+		3838F8F72282D4AC0029070E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3861379B21A41AED000BD657 /* Assets.xcassets */; };
+		3838F8F82282D4AC0029070E /* ALAdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 381A1F3A223DAD2600D32CC6 /* ALAdViewController.xib */; };
+		3838F8F92282D4AC0029070E /* waterfall.gif in Resources */ = {isa = PBXBuildFile; fileRef = 38F4ABCA21C08FE700E3ACB5 /* waterfall.gif */; };
+		3838F8FA2282D4AC0029070E /* ALASMRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3804B9AF21CBC5C300BFDB65 /* ALASMRViewController.xib */; };
+		3838F8FB2282D4AC0029070E /* ALGeneralSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 380C6CAD21AB794700BF853C /* ALGeneralSelectionViewController.xib */; };
+		3838F8FC2282D4AC0029070E /* ALSleepCastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3866B30D21C3BC310017A16E /* ALSleepCastViewController.xib */; };
+		3838F8FD2282D4AC0029070E /* house.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 387574662271138C00DB1A58 /* house.mp3 */; };
+		3838F8FE2282D4AC0029070E /* ALSubscriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38E2BDB521D5AD9C00E9616C /* ALSubscriptionViewController.xib */; };
+		3838F8FF2282D4AC0029070E /* ALSleepViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3806EAD621AD9A5400C93662 /* ALSleepViewController.xib */; };
 		384C20D321C07BFE00025D24 /* ALPurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C20D221C07BFE00025D24 /* ALPurchaseManager.swift */; };
 		384C20D521C07EF800025D24 /* ALUserTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384C20D421C07EF800025D24 /* ALUserTokenManager.swift */; };
 		3861379521A41AEC000BD657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3861379421A41AEC000BD657 /* AppDelegate.swift */; };
@@ -75,6 +149,8 @@
 		387574672271138C00DB1A58 /* woodHouse.gif in Resources */ = {isa = PBXBuildFile; fileRef = 387574652271138B00DB1A58 /* woodHouse.gif */; };
 		387574682271138C00DB1A58 /* house.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 387574662271138C00DB1A58 /* house.mp3 */; };
 		38CB8AA022775FDE0010FB39 /* ALNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB8A9F22775FDE0010FB39 /* ALNotificationManager.swift */; };
+		38D6AC2F2282EC2100BA73B3 /* ALSimpleMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D6AC2E2282EC2100BA73B3 /* ALSimpleMainViewController.xib */; };
+		38D6AC302282F26700BA73B3 /* ALSimpleMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D6AC2E2282EC2100BA73B3 /* ALSimpleMainViewController.xib */; };
 		38E2BDAF21D5AD7200E9616C /* ALSubscriptionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2BDAE21D5AD7200E9616C /* ALSubscriptionProtocols.swift */; };
 		38E2BDB121D5AD8000E9616C /* ALSubscriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2BDB021D5AD8000E9616C /* ALSubscriptionPresenter.swift */; };
 		38E2BDB321D5AD8800E9616C /* ALSubscriptionWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38E2BDB221D5AD8800E9616C /* ALSubscriptionWireframe.swift */; };
@@ -126,6 +202,8 @@
 		381F2FE821A82C6C00B573F8 /* ALMainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALMainCollectionViewCell.swift; sourceTree = "<group>"; };
 		381F2FE921A82C6C00B573F8 /* ALMainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALMainCollectionViewCell.xib; sourceTree = "<group>"; };
 		382CA5C121EC19D600207CA7 /* ALMainDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALMainDataManager.swift; sourceTree = "<group>"; };
+		3838F9042282D4AC0029070E /* SleepCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SleepCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3838F9052282D4AD0029070E /* SleepCast-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "SleepCast-Info.plist"; path = "/Users/alvaro/Documents/quiet/Quiet/SleepCast-Info.plist"; sourceTree = "<absolute>"; };
 		384C20D221C07BFE00025D24 /* ALPurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALPurchaseManager.swift; sourceTree = "<group>"; };
 		384C20D421C07EF800025D24 /* ALUserTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALUserTokenManager.swift; sourceTree = "<group>"; };
 		3861379121A41AEC000BD657 /* Quiet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quiet.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +232,7 @@
 		387574652271138B00DB1A58 /* woodHouse.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = woodHouse.gif; sourceTree = "<group>"; };
 		387574662271138C00DB1A58 /* house.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = house.mp3; sourceTree = "<group>"; };
 		38CB8A9F22775FDE0010FB39 /* ALNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALNotificationManager.swift; sourceTree = "<group>"; };
+		38D6AC2E2282EC2100BA73B3 /* ALSimpleMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALSimpleMainViewController.xib; sourceTree = "<group>"; };
 		38E2BDAE21D5AD7200E9616C /* ALSubscriptionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSubscriptionProtocols.swift; sourceTree = "<group>"; };
 		38E2BDB021D5AD8000E9616C /* ALSubscriptionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSubscriptionPresenter.swift; sourceTree = "<group>"; };
 		38E2BDB221D5AD8800E9616C /* ALSubscriptionWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSubscriptionWireframe.swift; sourceTree = "<group>"; };
@@ -165,6 +244,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3838F8EA2282D4AC0029070E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3838F8EB2282D4AC0029070E /* Pods_Quiet.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3861378E21A41AEC000BD657 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -507,6 +594,7 @@
 				3861379221A41AEC000BD657 /* Products */,
 				9F772C1FB3F4655051A81531 /* Pods */,
 				422B922CC3D18F6B7FCF68D1 /* Frameworks */,
+				3838F9052282D4AD0029070E /* SleepCast-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -514,6 +602,7 @@
 			isa = PBXGroup;
 			children = (
 				3861379121A41AEC000BD657 /* Quiet.app */,
+				3838F9042282D4AC0029070E /* SleepCast.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -593,6 +682,7 @@
 				381F2FE721A82C3B00B573F8 /* Cells */,
 				386137A721A463D5000BD657 /* ALMainViewController.swift */,
 				386137A821A463D5000BD657 /* ALMainViewController.xib */,
+				38D6AC2E2282EC2100BA73B3 /* ALSimpleMainViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -775,6 +865,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3838F8B12282D4AC0029070E /* SleepCast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3838F9012282D4AC0029070E /* Build configuration list for PBXNativeTarget "SleepCast" */;
+			buildPhases = (
+				3838F8B22282D4AC0029070E /* [CP] Check Pods Manifest.lock */,
+				3838F8B32282D4AC0029070E /* Sources */,
+				3838F8EA2282D4AC0029070E /* Frameworks */,
+				3838F8EC2282D4AC0029070E /* Resources */,
+				3838F9002282D4AC0029070E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SleepCast;
+			productName = Quiet;
+			productReference = 3838F9042282D4AC0029070E /* SleepCast.app */;
+			productType = "com.apple.product-type.application";
+		};
 		3861379021A41AEC000BD657 /* Quiet */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 386137A321A41AED000BD657 /* Build configuration list for PBXNativeTarget "Quiet" */;
@@ -829,17 +938,46 @@
 			projectRoot = "";
 			targets = (
 				3861379021A41AEC000BD657 /* Quiet */,
+				3838F8B12282D4AC0029070E /* SleepCast */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3838F8EC2282D4AC0029070E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38D6AC302282F26700BA73B3 /* ALSimpleMainViewController.xib in Resources */,
+				3838F8ED2282D4AC0029070E /* woodHouse.gif in Resources */,
+				3838F8EE2282D4AC0029070E /* ALMainViewController.xib in Resources */,
+				3838F8EF2282D4AC0029070E /* ALYogaViewController.xib in Resources */,
+				3838F8F02282D4AC0029070E /* ALMainCollectionViewCell.xib in Resources */,
+				3838F8F12282D4AC0029070E /* ALBreatheViewController.xib in Resources */,
+				3838F8F22282D4AC0029070E /* bell.mp3 in Resources */,
+				3838F8F32282D4AC0029070E /* ALResourceCollectionViewCell.xib in Resources */,
+				3838F8F42282D4AC0029070E /* GoogleService-Info.plist in Resources */,
+				3838F8F52282D4AC0029070E /* ALLandscapeViewController.xib in Resources */,
+				3838F8F62282D4AC0029070E /* LaunchScreen.storyboard in Resources */,
+				3838F8F72282D4AC0029070E /* Assets.xcassets in Resources */,
+				3838F8F82282D4AC0029070E /* ALAdViewController.xib in Resources */,
+				3838F8F92282D4AC0029070E /* waterfall.gif in Resources */,
+				3838F8FA2282D4AC0029070E /* ALASMRViewController.xib in Resources */,
+				3838F8FB2282D4AC0029070E /* ALGeneralSelectionViewController.xib in Resources */,
+				3838F8FC2282D4AC0029070E /* ALSleepCastViewController.xib in Resources */,
+				3838F8FD2282D4AC0029070E /* house.mp3 in Resources */,
+				3838F8FE2282D4AC0029070E /* ALSubscriptionViewController.xib in Resources */,
+				3838F8FF2282D4AC0029070E /* ALSleepViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3861378F21A41AEC000BD657 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				387574672271138C00DB1A58 /* woodHouse.gif in Resources */,
 				386137AA21A463D5000BD657 /* ALMainViewController.xib in Resources */,
+				38D6AC2F2282EC2100BA73B3 /* ALSimpleMainViewController.xib in Resources */,
 				3804B9C121CBC62A00BFDB65 /* ALYogaViewController.xib in Resources */,
 				381F2FEB21A82C6C00B573F8 /* ALMainCollectionViewCell.xib in Resources */,
 				386137CD21A473B0000BD657 /* ALBreatheViewController.xib in Resources */,
@@ -863,6 +1001,72 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3838F8B22282D4AC0029070E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Quiet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3838F9002282D4AC0029070E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Quiet/Pods-Quiet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/Gifu/Gifu.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JTMaterialSpinner/JTMaterialSpinner.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBase64/SwiftyBase64.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gifu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTMaterialSpinner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBase64.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Quiet/Pods-Quiet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B2D874A70697229E52D5F555 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -932,6 +1136,67 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3838F8B32282D4AC0029070E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3838F8B42282D4AC0029070E /* ALASMRPresenter.swift in Sources */,
+				3838F8B52282D4AC0029070E /* ALSleepProtocols.swift in Sources */,
+				3838F8B62282D4AC0029070E /* ALLandscapeWireframe.swift in Sources */,
+				3838F8B72282D4AC0029070E /* ALLandscapeProtocols.swift in Sources */,
+				3838F8B82282D4AC0029070E /* ALStyleSheet.swift in Sources */,
+				3838F8B92282D4AC0029070E /* ALMainDataManager.swift in Sources */,
+				3838F8BA2282D4AC0029070E /* ALYogaViewController.swift in Sources */,
+				3838F8BB2282D4AC0029070E /* ALGeneralSelectionPresenter.swift in Sources */,
+				3838F8BC2282D4AC0029070E /* ALMainWireframe.swift in Sources */,
+				3838F8BD2282D4AC0029070E /* ALLandscapeViewController.swift in Sources */,
+				3838F8BE2282D4AC0029070E /* ALSleepWireframe.swift in Sources */,
+				3838F8BF2282D4AC0029070E /* ALSubscriptionWireframe.swift in Sources */,
+				3838F8C02282D4AC0029070E /* ALGeneralSelectionDataManager.swift in Sources */,
+				3838F8C12282D4AC0029070E /* ALBaseDataManager.swift in Sources */,
+				3838F8C22282D4AC0029070E /* ALPurchaseManager.swift in Sources */,
+				3838F8C32282D4AC0029070E /* ALYogaProtocols.swift in Sources */,
+				3838F8C42282D4AC0029070E /* ALMainInteractor.swift in Sources */,
+				3838F8C52282D4AC0029070E /* ALBaseViewController.swift in Sources */,
+				3838F8C62282D4AC0029070E /* ALSleepViewController.swift in Sources */,
+				3838F8C72282D4AC0029070E /* ALMainViewController.swift in Sources */,
+				3838F8C82282D4AC0029070E /* ALSleepCastViewController.swift in Sources */,
+				3838F8C92282D4AC0029070E /* ALSleepPresenter.swift in Sources */,
+				3838F8CA2282D4AC0029070E /* ALYogaWireframe.swift in Sources */,
+				3838F8CB2282D4AC0029070E /* AppDelegate.swift in Sources */,
+				3838F8CC2282D4AC0029070E /* ALGeneralSelectionProtocols.swift in Sources */,
+				3838F8CD2282D4AC0029070E /* ALGeneralSelectionViewController.swift in Sources */,
+				3838F8CE2282D4AC0029070E /* ALSleepCastWireframe.swift in Sources */,
+				3838F8CF2282D4AC0029070E /* ALSleepCastProtocols.swift in Sources */,
+				3838F8D02282D4AC0029070E /* ALBreathePresenter.swift in Sources */,
+				3838F8D12282D4AC0029070E /* ALAdViewController.swift in Sources */,
+				3838F8D22282D4AC0029070E /* ALMainPresenter.swift in Sources */,
+				3838F8D32282D4AC0029070E /* ALResourceCollectionViewCell.swift in Sources */,
+				3838F8D42282D4AC0029070E /* ALGeneralSelectionWireframe.swift in Sources */,
+				3838F8D52282D4AC0029070E /* ALMainProtocols.swift in Sources */,
+				3838F8D62282D4AC0029070E /* ALSubscriptionViewController.swift in Sources */,
+				3838F8D72282D4AC0029070E /* ALASMRProtocols.swift in Sources */,
+				3838F8D82282D4AC0029070E /* ALFontSheet.swift in Sources */,
+				3838F8D92282D4AC0029070E /* ALASMRWireframe.swift in Sources */,
+				3838F8DA2282D4AC0029070E /* ALSubscriptionPresenter.swift in Sources */,
+				3838F8DB2282D4AC0029070E /* ALFactory.swift in Sources */,
+				3838F8DC2282D4AC0029070E /* ALBreatheViewController.swift in Sources */,
+				3838F8DD2282D4AC0029070E /* ALSectionElem.swift in Sources */,
+				3838F8DE2282D4AC0029070E /* ALUserTokenManager.swift in Sources */,
+				3838F8DF2282D4AC0029070E /* ALBreatheDataManager.swift in Sources */,
+				3838F8E02282D4AC0029070E /* ALMainCollectionViewCell.swift in Sources */,
+				3838F8E12282D4AC0029070E /* ALNotificationManager.swift in Sources */,
+				3838F8E22282D4AC0029070E /* ALASMRViewController.swift in Sources */,
+				3838F8E32282D4AC0029070E /* ALGeneralSelectionInteractor.swift in Sources */,
+				3838F8E42282D4AC0029070E /* ALBreatheProtocols.swift in Sources */,
+				3838F8E52282D4AC0029070E /* ALLandscapePresenter.swift in Sources */,
+				3838F8E62282D4AC0029070E /* ALYogaPresenter.swift in Sources */,
+				3838F8E72282D4AC0029070E /* ALSubscriptionProtocols.swift in Sources */,
+				3838F8E82282D4AC0029070E /* ALSleepCastPresenter.swift in Sources */,
+				3838F8E92282D4AC0029070E /* ALBreatheWireframe.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3861378D21A41AEC000BD657 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1007,6 +1272,52 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3838F9022282D4AC0029070E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF2234D20B063C4D66276831 /* Pods-Quiet.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 72S9AFUQPQ;
+				INFOPLIST_FILE = "SleepCast-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSLEEPCAST\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.surflabappsios.SleepCast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = development_sleepcast;
+				"SWIFT_ACTIVE_COMPILATION_CONDITIONS[arch=*]" = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3838F9032282D4AC0029070E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64F3B4DF94FB99911BBDED44 /* Pods-Quiet.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 72S9AFUQPQ;
+				INFOPLIST_FILE = "SleepCast-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DSLEEPCAST\"";
+				PRODUCT_BUNDLE_IDENTIFIER = com.surflabappsios.SleepCast;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = distribution_sleepcast;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		386137A121A41AED000BD657 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1136,6 +1447,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DQUIET\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.surflabappsios.Quiet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = development_provisioning_profile;
@@ -1158,6 +1470,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DQUIET\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.surflabappsios.Quiet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = distribution_quiet;
@@ -1169,6 +1482,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3838F9012282D4AC0029070E /* Build configuration list for PBXNativeTarget "SleepCast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3838F9022282D4AC0029070E /* Debug */,
+				3838F9032282D4AC0029070E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3861378C21A41AEC000BD657 /* Build configuration list for PBXProject "Quiet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

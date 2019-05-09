@@ -27,6 +27,7 @@ protocol ALGeneralSelectionPresenterProtocol {
     func viewDidLoad()
     func viewWillDisappear()
     func backButtonPressed()
+    func adDidCompleted()
 }
 
 protocol ALGeneralSelectionInteractorProtocol {

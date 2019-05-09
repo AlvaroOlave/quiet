@@ -44,6 +44,11 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         presenter.viewWillDisappear()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        configureCollectionViewLayout()
+    }
+    
     func setAdvice(_ advice: String) {
         
         let attrs = [ NSAttributedString.Key.font : FontSheet.FontRegularWith(size: NORMAL_FONT_SIZE),
@@ -58,21 +63,15 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
         }, completion: nil)
     }
     
-    func showPromoIcon() {
-        promoImage.isHidden = false
-    }
-    
+    func showPromoIcon() { promoImage.isHidden = false }
     func hideTitle(_ hide: Bool) { titleImageView.isHidden = hide; adviceFrame.isHidden = hide }
-    
-    func setBackgroung(_ data: Data) {
-        backgroundImageView.animate(withGIFData: data)
-    }
+    func setBackgroung(_ data: Data) { backgroundImageView.animate(withGIFData: data) }
     
     //MARK:- private methods
     
     private func commonInit() {
-        configureCollectionViewLayout()
-        configureBackgroundImage() 
+//        configureCollectionViewLayout()
+        configureBackgroundImage()
         configureAdviseLabel()
         configurePromoImage()
         mainCollectionView.dataSource = presenter
@@ -82,12 +81,17 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
     
     private func configureCollectionViewLayout() {
         let flowLayout = UICollectionViewFlowLayout()
-        
+        #if SLEEPCAST
+        flowLayout.itemSize = CGSize(width: view.frame.width, height: 150)
+        mainCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        #elseif QUIET
         flowLayout.itemSize = CGSize(width: 85, height: 150)
+        mainCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        #endif
         flowLayout.scrollDirection = .horizontal
         flowLayout.minimumInteritemSpacing = 10
         flowLayout.minimumLineSpacing = 10
-        mainCollectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        
         mainCollectionView.collectionViewLayout = flowLayout
     }
     

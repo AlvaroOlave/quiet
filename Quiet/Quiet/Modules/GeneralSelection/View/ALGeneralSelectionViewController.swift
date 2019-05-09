@@ -31,7 +31,6 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
         
         interstitialAd = FBInterstitialAd(placementID: "810898249287725_810899832620900")
         interstitialAd?.delegate = self
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -55,14 +54,8 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
         UIView.animate(withDuration: 0.2) { self.backSpinnerView.alpha = 1.0 }
     }
     
-    func stopLoading() {
-        backSpinnerView.isHidden = true
-        spinnerView.endRefreshing()
-    }
-    
-    func showAd() {
-        interstitialAd?.load()
-    }
+    func stopLoading() { backSpinnerView.isHidden = true; spinnerView.endRefreshing() }
+    func showAd() { interstitialAd?.load() }
     
     //MARK:- private methods
     
@@ -146,5 +139,25 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
         if interstitialAd.isAdValid {
             interstitialAd.show(fromRootViewController: self)
         }
+    }
+    
+    func interstitialAdDidClick(_ interstitialAd: FBInterstitialAd) {
+        
+    }
+    
+    func interstitialAdDidClose(_ interstitialAd: FBInterstitialAd) {
+        
+    }
+    
+    func interstitialAdWillClose(_ interstitialAd: FBInterstitialAd) {
+        presenter.adDidCompleted()
+    }
+    
+    func interstitialAdWillLogImpression(_ interstitialAd: FBInterstitialAd) {
+        
+    }
+    
+    func interstitialAd(_ interstitialAd: FBInterstitialAd, didFailWithError error: Error) {
+        print(error)
     }
 }

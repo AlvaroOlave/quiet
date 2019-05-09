@@ -18,10 +18,12 @@ class ALGeneralSelectionPresenter: NSObject, ALGeneralSelectionPresenterProtocol
         didSet { view.reloadCollectionView() }
     }
     
+    var waitingResource: ALSectionElem? = nil
+    
     func viewDidLoad() { getResourcesList() }
     func viewWillDisappear() { interactor.dismiss() }
     func backButtonPressed() {  view.stopLoading(); wireframe.dismiss() }
-    
+    func adDidCompleted() { openResource(waitingResource) }
     
     //MARK:- private methods
     
@@ -39,6 +41,17 @@ class ALGeneralSelectionPresenter: NSObject, ALGeneralSelectionPresenterProtocol
             })
         } else {
             self.resourceList = list
+        }
+    }
+    
+    private func openResource(_ resource: ALSectionElem?) {
+        if let res = resource {
+            view.startLoading()
+            interactor.getCompleteInfoOf(res) { [weak self] elem in
+                self?.view.stopLoading()
+                self?.waitingResource = nil
+                self?.wireframe.presentSectionElem(elem)
+            }
         }
     }
     
@@ -61,14 +74,14 @@ class ALGeneralSelectionPresenter: NSObject, ALGeneralSelectionPresenterProtocol
         if resourceList[indexPath.row].isPremium {
             wireframe.presentSubscriptionInterface()
         } else {
-            view.startLoading()
-            interactor.getCompleteInfoOf(resourceList[indexPath.row]) { [weak self] elem in
-                self?.view.stopLoading()
-                self?.wireframe.presentSectionElem(elem)
+            if ALUserTokenManager.shared.currentUser.isPremium() {
+                openResource(resourceList[indexPath.row])
+            } else {
+                openResource(resourceList[indexPath.row])
+//                waitingResource = resourceList[indexPath.row]
+//                view.showAd()
             }
         }
-//        view.showAd()
-//        wireframe.presentSubscriptionInterface()
     }
     
     //MARK:- UICollectionViewDelegate methods
