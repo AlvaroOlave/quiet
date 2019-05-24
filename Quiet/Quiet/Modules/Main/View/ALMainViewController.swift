@@ -108,7 +108,6 @@ class ALMainViewController: UIViewController, ALMainViewProtocol {
     private func configurePromoImage() {
         promoImage.image = UIImage(named: "promo")?.withRenderingMode(.alwaysTemplate)
         promoImage.tintColor = WHITE
-        promoImage.backgroundColor = MERCURY_GREY.withAlphaComponent(0.9)
         promoImage.layer.cornerRadius = (promoImage.bounds.height) / 2.0
         promoImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(promoButtonDidPressed)))
         promoImage.isUserInteractionEnabled = true

@@ -146,11 +146,11 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
     }
     
     func interstitialAdDidClose(_ interstitialAd: FBInterstitialAd) {
-        
+        presenter.adDidCompleted()
     }
     
     func interstitialAdWillClose(_ interstitialAd: FBInterstitialAd) {
-        presenter.adDidCompleted()
+        
     }
     
     func interstitialAdWillLogImpression(_ interstitialAd: FBInterstitialAd) {
@@ -158,6 +158,7 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
     }
     
     func interstitialAd(_ interstitialAd: FBInterstitialAd, didFailWithError error: Error) {
+        presenter.adDidCompleted()
         print(error)
     }
 }
