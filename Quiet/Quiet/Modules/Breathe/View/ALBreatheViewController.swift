@@ -173,8 +173,7 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
     override func backButtonPressed() { presenter.backButtonPressed() }
     
     @objc func addSecs() {
-        #warning("User premium")
-        if currentTimeSecs >= 30 { // !userPremium
+        if currentTimeSecs >= 30 && !ALUserTokenManager.shared.currentUser.isPremium() {
             presenter.presentSubscriptionInterface()
         } else {
             currentTimeSecs += 2 * breathTime
@@ -183,8 +182,7 @@ class ALBreatheViewController: ALBaseViewController, ALBreatheViewProtocol {
     }
     
     @objc func subsSecs() {
-        #warning("User premium")
-        if currentTimeSecs >= 30 { // !userPremium
+        if currentTimeSecs >= 30 && !ALUserTokenManager.shared.currentUser.isPremium() {
             presenter.presentSubscriptionInterface()
         } else {
             currentTimeSecs = max(currentTimeSecs - (2 * breathTime), 10.0)

@@ -36,6 +36,7 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
     @IBOutlet weak var spinnerView : JTMaterialSpinner!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var descriptionTextHeight: NSLayoutConstraint!
+    @IBOutlet weak var restoreButton: UIButton!
     
     var prices = ("-", "-", "-") {
         didSet {
@@ -140,6 +141,12 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
         yearlyArea.layer.borderColor = WHITE.withAlphaComponent(0.5).cgColor
         yearlyArea.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(yearDidPressed)))
         yearlyArea.isUserInteractionEnabled = true
+        
+        restoreButton.setTitle("Restore", for: .normal)
+        restoreButton.titleLabel?.textColor = WHITE
+        restoreButton.backgroundColor = CLEAR_COLOR
+        restoreButton.titleLabel?.font = FontSheet.FontSemiBoldWith(size: NORMAL_FONT_SIZE)
+        restoreButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(restoreDidPressed)))
     }
     
     private func configurePromoLabels() {
@@ -193,6 +200,7 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
     @objc func weekDidPressed() { vibrate(); presenter.weekDidPressed() }
     @objc func monthDidPressed() { vibrate(); presenter.monthDidPressed() }
     @objc func yearDidPressed() { vibrate(); presenter.yearDidPressed() }
+    @objc func restoreDidPressed() { vibrate(); presenter.restoreDidPressed() }
     
     //MARK:-
     

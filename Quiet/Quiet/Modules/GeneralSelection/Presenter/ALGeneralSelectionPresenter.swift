@@ -77,7 +77,6 @@ class ALGeneralSelectionPresenter: NSObject, ALGeneralSelectionPresenterProtocol
             if ALUserTokenManager.shared.currentUser.isPremium() {
                 openResource(resourceList[indexPath.row])
             } else {
-//                openResource(resourceList[indexPath.row])
                 waitingResource = resourceList[indexPath.row]
                 view.showAd()
             }

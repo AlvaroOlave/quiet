@@ -39,6 +39,9 @@ class ALSubscriptionPresenter: ALSubscriptionPresenterProtocol, ALSubscriptionMa
         ALPurchaseManager.shared.purchaseYearlySubscription()
     }
     
+    func restoreDidPressed() {
+        ALPurchaseManager.shared.restorePurchases()
+    }
     //MARK:- ALSubscriptionManagerDelegate methods
     
     func setWeeklySubscriptionPrice(_ price: NSDecimalNumber, units: String) {

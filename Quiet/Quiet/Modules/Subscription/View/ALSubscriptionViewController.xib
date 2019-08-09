@@ -25,6 +25,7 @@
                 <outlet property="monthlyTitle" destination="Wwb-C8-KDC" id="suR-ur-BJ0"/>
                 <outlet property="popularLabel" destination="smd-ti-tlW" id="0Vi-HI-wpY"/>
                 <outlet property="quietImageView" destination="l1c-XJ-e5p" id="HH6-vP-aS7"/>
+                <outlet property="restoreButton" destination="U6o-jR-58h" id="yl4-CQ-67s"/>
                 <outlet property="shadowSpinnerView" destination="hLY-Mf-7on" id="v9B-OK-p2d"/>
                 <outlet property="spinnerView" destination="iDu-Ds-yTT" id="KJy-hx-Egf"/>
                 <outlet property="subtitleLabel" destination="wup-yw-DG6" id="gPp-6V-UoX"/>
@@ -303,6 +304,7 @@
                                 <constraint firstItem="Wvr-gE-Zce" firstAttribute="centerY" secondItem="oXW-XT-1N9" secondAttribute="centerY" id="vKh-93-7Wy"/>
                                 <constraint firstItem="P8d-5O-QoU" firstAttribute="top" secondItem="VGv-Ud-gsb" secondAttribute="top" id="wJe-82-dVQ"/>
                                 <constraint firstItem="smd-ti-tlW" firstAttribute="centerY" secondItem="oXW-XT-1N9" secondAttribute="top" constant="10" id="z0v-Tl-juT"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="zmB-r1-A3I"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMF-ZD-QRl">
@@ -325,6 +327,10 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             <dataDetectorType key="dataDetectorTypes" link="YES"/>
                         </textView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6o-jR-58h">
+                            <rect key="frame" x="296" y="48" width="54" height="34"/>
+                            <state key="normal" title="Button"/>
+                        </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FpU-ac-EyD">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <subviews>
@@ -378,8 +384,10 @@
                         <constraint firstAttribute="trailing" secondItem="9tR-tA-ddM" secondAttribute="trailing" constant="16" id="Bj4-Ti-97X"/>
                         <constraint firstItem="vDU-yq-Cth" firstAttribute="top" secondItem="Sje-K2-v4w" secondAttribute="top" id="GCm-0W-pfP"/>
                         <constraint firstAttribute="trailing" secondItem="vDU-yq-Cth" secondAttribute="trailing" id="Ijb-2d-tu3"/>
+                        <constraint firstItem="U6o-jR-58h" firstAttribute="centerY" secondItem="HLU-IA-Oty" secondAttribute="centerY" id="IkH-cw-lrD"/>
                         <constraint firstItem="VGv-Ud-gsb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="9tR-tA-ddM" secondAttribute="bottom" constant="16" id="Jg8-J9-Vbr"/>
                         <constraint firstItem="DOp-iO-g3C" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="l1c-XJ-e5p" secondAttribute="top" constant="35" id="K9r-uO-ahL"/>
+                        <constraint firstAttribute="trailing" secondItem="U6o-jR-58h" secondAttribute="trailing" constant="25" id="Mhz-8I-8wM"/>
                         <constraint firstAttribute="trailing" secondItem="tFW-WP-TKX" secondAttribute="trailing" constant="16" id="NjO-ML-D1K"/>
                         <constraint firstItem="l1c-XJ-e5p" firstAttribute="top" secondItem="DOp-iO-g3C" secondAttribute="bottom" priority="970" id="Okt-ZT-8FV"/>
                         <constraint firstItem="fKJ-KG-XeO" firstAttribute="leading" secondItem="Sje-K2-v4w" secondAttribute="leading" constant="32" id="Ozx-zR-oA7"/>

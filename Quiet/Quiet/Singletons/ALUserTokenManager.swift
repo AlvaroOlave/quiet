@@ -30,7 +30,7 @@ struct ALUserToken {
         return userToken!
     }
     
-    func isPremium() -> Bool { return expireDate > Date().timeIntervalSince1970 }
+    func isPremium() -> Bool { return expireDate > (Date().timeIntervalSince1970 * 1000) }
 }
 
 class ALUserTokenManager {
@@ -56,7 +56,7 @@ class ALUserTokenManager {
     
     static func getUserToken() -> ALUserToken {
         let keychain = KeychainSwift()
-        keychain.synchronizable = true
+        keychain.synchronizable = false
         
         if let pass = keychain.getData("AL_USER_TOKEN_PURCHASED") {
             return ALUserToken.unarchive(d: pass)

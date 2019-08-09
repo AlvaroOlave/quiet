@@ -55,7 +55,12 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
     }
     
     func stopLoading() { backSpinnerView.isHidden = true; spinnerView.endRefreshing() }
-    func showAd() { interstitialAd?.load() }
+    
+    func showAd() {
+        guard interstitialAd?.isAdValid ?? false else { interstitialAd?.load(); return }
+        
+        interstitialAd?.show(fromRootViewController: self)
+    }
     
     //MARK:- private methods
     
@@ -138,27 +143,22 @@ class ALGeneralSelectionViewController: ALBaseViewController, ALGeneralSelection
     func interstitialAdDidLoad(_ interstitialAd: FBInterstitialAd) {
         if interstitialAd.isAdValid {
             interstitialAd.show(fromRootViewController: self)
+        } else {
+            presenter.adDidCompleted()
         }
     }
     
-    func interstitialAdDidClick(_ interstitialAd: FBInterstitialAd) {
-        
-    }
+    func interstitialAdDidClick(_ interstitialAd: FBInterstitialAd) { }
     
     func interstitialAdDidClose(_ interstitialAd: FBInterstitialAd) {
         presenter.adDidCompleted()
     }
     
-    func interstitialAdWillClose(_ interstitialAd: FBInterstitialAd) {
-        
-    }
+    func interstitialAdWillClose(_ interstitialAd: FBInterstitialAd) { }
     
-    func interstitialAdWillLogImpression(_ interstitialAd: FBInterstitialAd) {
-        
-    }
+    func interstitialAdWillLogImpression(_ interstitialAd: FBInterstitialAd) { }
     
     func interstitialAd(_ interstitialAd: FBInterstitialAd, didFailWithError error: Error) {
         presenter.adDidCompleted()
-        print(error)
     }
 }

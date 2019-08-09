@@ -29,6 +29,7 @@ protocol ALSubscriptionPresenterProtocol {
     func weekDidPressed()
     func monthDidPressed()
     func yearDidPressed()
+    func restoreDidPressed()
 }
 
 protocol ALSubscriptionWireframeProtocol {
