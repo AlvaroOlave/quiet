@@ -14,6 +14,7 @@ protocol ALSubscriptionViewProtocol {
     func setWeeklySubscriptionPrice(_ price: String)
     func setMonthlySubscriptionPrice(_ price: String)
     func setYearlySubscriptionPrice(_ price: String)
+    func setBackgroungGIF(_ data: Data?)
     func showLoading()
     func hideLoading()
 }

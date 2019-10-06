@@ -147,6 +147,8 @@
 		3866B30F21C3BC310017A16E /* ALSleepCastViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3866B30D21C3BC310017A16E /* ALSleepCastViewController.xib */; };
 		387574672271138C00DB1A58 /* woodHouse.gif in Resources */ = {isa = PBXBuildFile; fileRef = 387574652271138B00DB1A58 /* woodHouse.gif */; };
 		387574682271138C00DB1A58 /* house.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 387574662271138C00DB1A58 /* house.mp3 */; };
+		3887761A234A51110002289F /* ALNewSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38877618234A51110002289F /* ALNewSubscriptionViewController.swift */; };
+		3887761B234A51110002289F /* ALNewSubscriptionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38877619234A51110002289F /* ALNewSubscriptionViewController.xib */; };
 		38CB8AA022775FDE0010FB39 /* ALNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CB8A9F22775FDE0010FB39 /* ALNotificationManager.swift */; };
 		38D6AC2F2282EC2100BA73B3 /* ALSimpleMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D6AC2E2282EC2100BA73B3 /* ALSimpleMainViewController.xib */; };
 		38D6AC302282F26700BA73B3 /* ALSimpleMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38D6AC2E2282EC2100BA73B3 /* ALSimpleMainViewController.xib */; };
@@ -231,6 +233,8 @@
 		3866B30D21C3BC310017A16E /* ALSleepCastViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALSleepCastViewController.xib; sourceTree = "<group>"; };
 		387574652271138B00DB1A58 /* woodHouse.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = woodHouse.gif; sourceTree = "<group>"; };
 		387574662271138C00DB1A58 /* house.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = house.mp3; sourceTree = "<group>"; };
+		38877618234A51110002289F /* ALNewSubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALNewSubscriptionViewController.swift; sourceTree = "<group>"; };
+		38877619234A51110002289F /* ALNewSubscriptionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALNewSubscriptionViewController.xib; sourceTree = "<group>"; };
 		38CB8A9F22775FDE0010FB39 /* ALNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALNotificationManager.swift; sourceTree = "<group>"; };
 		38D6AC2E2282EC2100BA73B3 /* ALSimpleMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ALSimpleMainViewController.xib; sourceTree = "<group>"; };
 		38E2BDAE21D5AD7200E9616C /* ALSubscriptionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSubscriptionProtocols.swift; sourceTree = "<group>"; };
@@ -833,6 +837,8 @@
 			children = (
 				38E2BDB421D5AD9C00E9616C /* ALSubscriptionViewController.swift */,
 				38E2BDB521D5AD9C00E9616C /* ALSubscriptionViewController.xib */,
+				38877618234A51110002289F /* ALNewSubscriptionViewController.swift */,
+				38877619234A51110002289F /* ALNewSubscriptionViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -988,6 +994,7 @@
 				381A1F3C223DAD2600D32CC6 /* ALAdViewController.xib in Resources */,
 				38F4ABCB21C08FE700E3ACB5 /* waterfall.gif in Resources */,
 				3804B9B121CBC5C300BFDB65 /* ALASMRViewController.xib in Resources */,
+				3887761B234A51110002289F /* ALNewSubscriptionViewController.xib in Resources */,
 				380C6CAF21AB794700BF853C /* ALGeneralSelectionViewController.xib in Resources */,
 				3866B30F21C3BC310017A16E /* ALSleepCastViewController.xib in Resources */,
 				387574682271138C00DB1A58 /* house.mp3 in Resources */,
@@ -1188,6 +1195,7 @@
 				386137C121A472C4000BD657 /* ALBreatheProtocols.swift in Sources */,
 				3804B99C21CBAB9100BFDB65 /* ALLandscapePresenter.swift in Sources */,
 				3804B9BB21CBC61200BFDB65 /* ALYogaPresenter.swift in Sources */,
+				3887761A234A51110002289F /* ALNewSubscriptionViewController.swift in Sources */,
 				38E2BDAF21D5AD7200E9616C /* ALSubscriptionProtocols.swift in Sources */,
 				3866B30B21C3BC1E0017A16E /* ALSleepCastPresenter.swift in Sources */,
 				386137C921A472FD000BD657 /* ALBreatheWireframe.swift in Sources */,
@@ -1374,6 +1382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 72S9AFUQPQ;
 				INFOPLIST_FILE = Quiet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1381,6 +1390,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.6;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DQUIET\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.surflabappsios.Quiet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1397,6 +1407,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 0;
 				DEVELOPMENT_TEAM = 72S9AFUQPQ;
 				INFOPLIST_FILE = Quiet/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1404,6 +1415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.6;
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-DQUIET\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.surflabappsios.Quiet;
 				PRODUCT_NAME = "$(TARGET_NAME)";

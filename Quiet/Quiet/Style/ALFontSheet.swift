@@ -34,4 +34,5 @@ struct FontSheet {
     static func FontSemiBoldWith(size : Float) -> UIFont! {
         return UIFont.systemFont(ofSize: CGFloat(size), weight: UIFont.Weight.semibold)
     }
+    
 }

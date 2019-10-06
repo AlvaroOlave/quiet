@@ -22,7 +22,18 @@ class ALSubscriptionPresenter: ALSubscriptionPresenterProtocol, ALSubscriptionMa
     
     func viewDidLoad() {
         ALPurchaseManager.shared.delegate = self
+        getBackground()
         mode == .Normal ? ALPurchaseManager.shared.loadSubscriptions() : ALPurchaseManager.shared.loadOfferedSubscriptions()
+    }
+    
+    func getBackground() {
+        if let nextName = UserDefaults.standard.object(forKey: NEXT_BACKGROUND_NAME) as? String {
+            ALStorageClient.shared.getLocalFile(nextName) { [weak self] data in
+                self?.view.setBackgroungGIF(data ?? self?.defaultBackground())
+            }
+        } else {
+            view.setBackgroungGIF(defaultBackground())
+        }
     }
     
     func backButtonPressed() { wireframe.dismiss() }
@@ -59,7 +70,7 @@ class ALSubscriptionPresenter: ALSubscriptionPresenterProtocol, ALSubscriptionMa
     
     func getAvailableProductsInProcess() { view.showLoading() }
     func getAvailableProductsCompleted() { view.hideLoading() }
-    func getAvailableProductsFailed() { }
+    func getAvailableProductsFailed() { view.hideLoading() }
     func purchaising() { view.showLoading() }
     func endPurchase(_ purchased: Bool) { view.hideLoading(); if purchased { wireframe.dismiss(); wireframe.delegate?.subscribed() } }
     func showMessage(_ title: String, description: String) { }
@@ -76,5 +87,13 @@ class ALSubscriptionPresenter: ALSubscriptionPresenterProtocol, ALSubscriptionMa
                                                        NSAttributedString.Key.foregroundColor : color ]
         
         return NSAttributedString(string: text, attributes: attrs)
+    }
+    
+    private func defaultBackground() -> Data? {
+        do {
+            return try Data(contentsOf: Bundle.main.url(forResource: "woodHouse", withExtension: "gif")!)
+        } catch  {
+            return nil
+        }
     }
 }

@@ -39,7 +39,6 @@ class ALMainInteractor: ALMainInteractorProtocol {
                 self?.dataManager.getLocalFile(nextSound, { (soundData) in
                     completion(data ?? self?.defaultBackground(), soundData ?? self?.defaultSound())
                 })
-                
             }
         } else {
             completion(defaultBackground(), defaultSound())
@@ -80,6 +79,7 @@ class ALMainInteractor: ALMainInteractorProtocol {
             return nil
         }
     }
+    
     private func defaultSound() -> Data? {
         do {
             return try Data(contentsOf: Bundle.main.url(forResource: "house", withExtension: "mp3")!)

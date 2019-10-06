@@ -124,7 +124,7 @@ func yogaFactory(with elem: ALGeneralElem) -> ALYogaWireframeProtocol {
 func subscriptionFactory(with mode: SubscriptionMode) -> ALSubscriptionWireframeProtocol {
     let wireframe = ALSubscriptionWireframe()
     
-    wireframe.view = ALSubscriptionViewController(nibName: "ALSubscriptionViewController", bundle: nil)
+    wireframe.view = ALNewSubscriptionViewController(nibName: "ALNewSubscriptionViewController", bundle: nil)
     
     wireframe.view.presenter = ALSubscriptionPresenter()
     wireframe.view.presenter.view = wireframe.view
