@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         startApp()
         
-        FBSDKAppLinkUtility.fetchDeferredAppLink { (url, error) in
+        AppLinkUtility.fetchDeferredAppLink { (url, error) in
             if let url = url {
                 application.open(url, options: [UIApplication.OpenExternalURLOptionsKey : Any](), completionHandler: nil)
             }
@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        let handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        let handled = ApplicationDelegate.shared.application(app, open: url, options: options)
         
         return handled
     }

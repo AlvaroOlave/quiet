@@ -53,9 +53,7 @@ class ALSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProt
     
     override func backButtonPressed() { presenter.backButtonPressed() }
     
-    func setBackgroungGIF(_ data: Data?) {
-        
-    }
+    func setBackgroungGIF(_ data: Data?) { }
     
     //MARK:- viewConfiguration
     

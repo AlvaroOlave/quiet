@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,7 +31,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y7J-rU-gvB" customClass="GIFImageView" customModule="Gifu">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="y7J-rU-gvB">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="189.5"/>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9HA-Eg-gy6" userLabel="Back View">
@@ -80,26 +80,26 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Then 8,49€ per week." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iex-RL-WGi">
-                    <rect key="frame" x="88.5" y="349.5" width="143.5" height="15"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Then ? per week." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iex-RL-WGi">
+                    <rect key="frame" x="95" y="349.5" width="130.5" height="17"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="15" id="6dv-Kg-OAw"/>
+                        <constraint firstAttribute="height" constant="17" id="6dv-Kg-OAw"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPb-g7-y2m">
-                    <rect key="frame" x="24" y="374.5" width="272" height="48"/>
+                    <rect key="frame" x="24" y="376.5" width="272" height="48"/>
                     <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="0nV-AJ-cdc"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                    <state key="normal" title="Try before subscribing"/>
+                    <state key="normal" title="Continue"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5m-IB-IIc">
-                    <rect key="frame" x="88" y="427.5" width="144" height="30"/>
+                    <rect key="frame" x="88" y="429.5" width="144" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="q5M-sa-yYm"/>
                     </constraints>
@@ -109,20 +109,20 @@
                     </state>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKZ-83-xEH">
-                    <rect key="frame" x="16" y="457.5" width="288" height="1"/>
+                    <rect key="frame" x="16" y="459.5" width="288" height="1"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="gAl-w1-J5f"/>
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mG4-jM-zXv">
-                    <rect key="frame" x="0.0" y="458.5" width="320" height="109.5"/>
+                    <rect key="frame" x="0.0" y="460.5" width="320" height="107.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="99H-zF-AWu"/>
                         <constraint firstAttribute="height" priority="990" constant="140" id="VYu-mY-e1a"/>
                     </constraints>
-                    <mutableString key="text">Payment will be charged to iTunes Account at confirmation of purchase. Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period. Account will be charged for renewal within 24-hours prior to the end of the current period with 5.99$/Week or 4.99€/week. Subscriptions may be managed by the user and auto-renewal may be turned off by going to the users account settings after purchase. Contact us https://supercoolmobileapps.wixsite.com/website Privacy POlicy https://supercoolmobileapps.wixsite.com/website/privacy-policy</mutableString>
+                    <string key="text">Payment will be charged to iTunes Account at confirmation of purchase. Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period. Account will be charged for renewal within 24-hours prior to the end of the current period with ?$/Week or ?€/week. Subscriptions may be managed by the user and auto-renewal may be turned off by going to the users account settings after purchase. Contact us https://supercoolmobileapps.wixsite.com/website Privacy POlicy https://supercoolmobileapps.wixsite.com/website/privacy-policy</string>
                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

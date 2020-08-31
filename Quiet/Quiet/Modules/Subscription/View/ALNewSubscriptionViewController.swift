@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import Gifu
 import JTMaterialSpinner
 
 class ALNewSubscriptionViewController: ALBaseViewController, ALSubscriptionViewProtocol {
     var presenter: ALSubscriptionPresenterProtocol!
     
-    @IBOutlet weak var backgroundImageView: GIFImageView?
+    @IBOutlet weak var backgroundImageView: UIImageView?
     @IBOutlet weak var titleLabel: UILabel?
     @IBOutlet weak var subtitleLabel: UILabel?
     @IBOutlet weak var promoLabel: UILabel?
@@ -42,6 +41,8 @@ class ALNewSubscriptionViewController: ALBaseViewController, ALSubscriptionViewP
     override func backButtonPressed() { presenter.backButtonPressed() }
 
     private func commonInit() {
+        backgroundImageView?.image = UIImage(named: "waves")
+        backgroundImageView?.contentMode = .scaleAspectFill
         configureLabels()
         configureButtons()
         configureLoadingView()
@@ -77,8 +78,8 @@ class ALNewSubscriptionViewController: ALBaseViewController, ALSubscriptionViewP
         
         let normalAttributes = [NSAttributedString.Key.font: FontSheet.FontRegularWith(size: MINI_FONT_SIZE - 4),
                                 NSAttributedString.Key.foregroundColor: WARM_GREY ]
-        //Subscription for a period of (%@/week), (%@/month) or (%@/year).
-        let description = NSMutableAttributedString(string: String(format: "Payment will be charged to iTunes Account at confirmation of purchase.Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period.Account will be charged for renewal within 24-hours prior to the end of the current period with (%@/week) .Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase.", priceWeek, priceWeek), attributes: normalAttributes)
+
+        let description = NSMutableAttributedString(string: String(format: "Payment will be charged to iTunes Account at confirmation of purchase.Subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period.Account will be charged for renewal within 24-hours prior to the end of the current period with (%@/week) .Subscriptions may be managed by the user and auto-renewal may be turned off by going to the user's Account Settings after purchase.", priceWeek), attributes: normalAttributes)
         let attributes = [NSAttributedString.Key.font: FontSheet.FontMediumWith(size: MINI_FONT_SIZE - 4),
                           NSAttributedString.Key.foregroundColor: WARM_GREY ]
         
@@ -87,10 +88,10 @@ class ALNewSubscriptionViewController: ALBaseViewController, ALSubscriptionViewP
         description.append(NSMutableAttributedString(string: " Privacy policy ", attributes: attributes))
         description.append(NSMutableAttributedString(string: "https://supercoolmobileapps.wixsite.com/website/privacy-policy", attributes: normalAttributes))
         
-        tosTextView?.attributedText = description
-        
-        normalPriceLabel?.text = String(format: "Then %@ per week.", priceWeek)
-//        tosTextView?.constant = height(for: description.string, width: descriptionTextView.bounds.width, font: FontSheet.FontRegularWith(size: MINI_FONT_SIZE - 4))
+        DispatchQueue.main.async { [weak self] in
+            self?.tosTextView?.attributedText = description
+            self?.normalPriceLabel?.text = String(format: "Then %@ per week.", priceWeek)
+        }
     }
     
     private func configureLoadingView() {
@@ -109,16 +110,14 @@ class ALNewSubscriptionViewController: ALBaseViewController, ALSubscriptionViewP
     func setWeeklySubscriptionPrice(_ price: String) { prices.0 = price }
     func setMonthlySubscriptionPrice(_ price: String) { }
     func setYearlySubscriptionPrice(_ price: String) { }
-    func setBackgroungGIF(_ data: Data?) {
-        guard let data = data else { return }
-        backgroundImageView?.animate(withGIFData: data)
-    }
     
     func showLoading() {
-        spinnerView?.beginRefreshing()
-        backSpinnerView?.alpha = 0.0
-        backSpinnerView?.isHidden = false
-        UIView.animate(withDuration: 0.2) { self.backSpinnerView?.alpha = 1.0 }
+        DispatchQueue.main.async { [weak self] in
+            self?.spinnerView?.beginRefreshing()
+            self?.backSpinnerView?.alpha = 0.0
+            self?.backSpinnerView?.isHidden = false
+            UIView.animate(withDuration: 0.2) { self?.backSpinnerView?.alpha = 1.0 }
+        }
     }
     
     func hideLoading() {

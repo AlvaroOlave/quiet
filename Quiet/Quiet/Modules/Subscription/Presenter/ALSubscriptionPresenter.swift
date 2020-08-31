@@ -22,32 +22,21 @@ class ALSubscriptionPresenter: ALSubscriptionPresenterProtocol, ALSubscriptionMa
     
     func viewDidLoad() {
         ALPurchaseManager.shared.delegate = self
-        getBackground()
         mode == .Normal ? ALPurchaseManager.shared.loadSubscriptions() : ALPurchaseManager.shared.loadOfferedSubscriptions()
-    }
-    
-    func getBackground() {
-        if let nextName = UserDefaults.standard.object(forKey: NEXT_BACKGROUND_NAME) as? String {
-            ALStorageClient.shared.getLocalFile(nextName) { [weak self] data in
-                self?.view.setBackgroungGIF(data ?? self?.defaultBackground())
-            }
-        } else {
-            view.setBackgroungGIF(defaultBackground())
-        }
     }
     
     func backButtonPressed() { wireframe.dismiss() }
     
     func weekDidPressed() {
-        ALPurchaseManager.shared.purchaseWeeklySubscription()
+        _ = (mode == .Offer ? ALPurchaseManager.shared.purchaseOfferedWeeklySubscription() : ALPurchaseManager.shared.purchaseWeeklySubscription())
     }
     
     func monthDidPressed() {
-        ALPurchaseManager.shared.purchaseMonthlySubscription()
+        _ = (mode == .Offer ? ALPurchaseManager.shared.purchaseOfferedMonthlySubscription() : ALPurchaseManager.shared.purchaseMonthlySubscription())
     }
     
     func yearDidPressed() {
-        ALPurchaseManager.shared.purchaseYearlySubscription()
+        _ = (mode == .Offer ? ALPurchaseManager.shared.purchaseOfferedYearlySubscription() : ALPurchaseManager.shared.purchaseYearlySubscription())
     }
     
     func restoreDidPressed() {
@@ -73,7 +62,11 @@ class ALSubscriptionPresenter: ALSubscriptionPresenterProtocol, ALSubscriptionMa
     func getAvailableProductsFailed() { view.hideLoading() }
     func purchaising() { view.showLoading() }
     func endPurchase(_ purchased: Bool) { view.hideLoading(); if purchased { wireframe.dismiss(); wireframe.delegate?.subscribed() } }
-    func showMessage(_ title: String, description: String) { }
+    func showMessage(_ title: String, description: String) {
+        let alert = UIAlertController(title: title, message: description, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        (view as? UIViewController)?.present(alert, animated: true)
+    }
     
     //MARK:- private methods
     

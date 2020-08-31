@@ -168,7 +168,8 @@ class ALPurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
                 handleFailedState(for: transaction, in: queue)
             case .deferred:
                 handleDeferredState(for: transaction, in: queue)
-             
+            @unknown default:
+                handleFailedState(for: transaction, in: queue)
             }
         }
     }
@@ -199,7 +200,7 @@ class ALPurchaseManager: NSObject, SKProductsRequestDelegate, SKPaymentTransacti
     }
     
     fileprivate func handleFailedState(for transaction: SKPaymentTransaction, in queue: SKPaymentQueue) {
-        delegate?.showMessage("Purchase failed for product id: \(transaction.payment.productIdentifier)", description: transaction.error?.localizedDescription ?? "UNKNOWN_ERROR")
+        delegate?.showMessage("Product purchase failed.", description: transaction.error?.localizedDescription ?? "UNKNOWN_ERROR")
         queue.finishTransaction(transaction)
         delegate?.endPurchase(false)
     }

@@ -23,11 +23,13 @@ struct ALUserToken {
     static func unarchive(d:Data) -> ALUserToken {
         guard d.count == MemoryLayout<ALUserToken>.stride else { fatalError("BOOM!") }
         
-        var userToken:ALUserToken?
-        d.withUnsafeBytes({(bytes: UnsafePointer<ALUserToken>)->Void in
-            userToken = UnsafePointer<ALUserToken>(bytes).pointee
-        })
-        return userToken!
+        return d.withUnsafeBytes { (bytes: UnsafeRawBufferPointer) -> ALUserToken in
+            return bytes.load(as: ALUserToken.self)
+        }
+//        d.withUnsafeBytes({(bytes: UnsafePointer<ALUserToken>)->Void in
+//            userToken = UnsafePointer<ALUserToken>(bytes).pointee
+//        })
+//        return userToken!
     }
     
     func isPremium() -> Bool { return expireDate > (Date().timeIntervalSince1970 * 1000) }
@@ -51,12 +53,17 @@ class ALUserTokenManager {
         let keychain = KeychainSwift()
         keychain.synchronizable = true
         keychain.set(ALUserToken.archive(userToken), forKey: "AL_USER_TOKEN_PURCHASED")
+        UserDefaults.standard.set(userToken.expireDate, forKey: "AL_BACKUP_VALUE")
         currentUser = userToken
     }
     
     static func getUserToken() -> ALUserToken {
         let keychain = KeychainSwift()
         keychain.synchronizable = false
+        let pass = UserDefaults.standard.double(forKey: "AL_BACKUP_VALUE")
+        if !pass.isZero {
+            return ALUserToken(with: pass)
+        }
         
         if let pass = keychain.getData("AL_USER_TOKEN_PURCHASED") {
             return ALUserToken.unarchive(d: pass)
